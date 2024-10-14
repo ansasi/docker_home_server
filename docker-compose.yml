@@ -14,12 +14,10 @@ services:
       - TZ=Europe/Madrid
     network_mode: 'host'
     volumes:
-      - /path/to/config:/config  # TODO: Replace with the actual config path
-      - /path/to/cache:/cache  # TODO: Replace with the actual cache path
-      - type: bind
-        source: /path/to/media  # TODO: Replace with actual media path
-        target: /media
-    restart: 'unless-stopped'
+      - /path/to/jellyfin/config:/config  # TODO: Replace with the actual config path
+      - /path/to/jellyfin/cache:/cache    # TODO: Replace with the actual cache path
+      - /path/to/media:/media             # TODO: Replace with your media path
+    restart: unless-stopped
 
   nextcloud:
     image: linuxserver/nextcloud
@@ -29,8 +27,6 @@ services:
       - MYSQL_USER=nextcloud
       - MYSQL_PASSWORD=your_password  # TODO: Set the database password
       - MYSQL_HOST=nextcloud_mariadb
-      - PUID=1000
-      - PGID=1000
       - TZ=Europe/Madrid
     volumes:
       - /nextcloud/html:/var/www/html  # TODO: Replace with the actual config path
@@ -53,7 +49,7 @@ services:
       - MYSQL_PASSWORD=your_password  # TODO: Set the database password
       - TZ=Europe/Madrid
     volumes:
-      - /path/to/mysql:/var/lib/mysql  # TODO: Replace with the actual data path for persistent data
+      - /path/to/nextcloud_mariadb:/var/lib/mysql  # TODO: Replace with the actual data path for persistent data
     networks:
       - database
     restart: unless-stopped
@@ -62,15 +58,15 @@ services:
     image: photoprism/photoprism:latest
     container_name: photoprism
     environment:
-      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # TODO: Set the admin password
+      - PHOTOPRISM_ADMIN_PASSWORD=your_admin_password     # TODO: Set the admin password
       # PHOTOPRISM_DISABLE_TENSORFLOW: "true"
-      PHOTOPRISM_DATABASE_DRIVER: "mysql"
-      PHOTOPRISM_DATABASE_SERVER: "photoprism_mariadb:3306"
-      PHOTOPRISM_DATABASE_NAME: "photoprism"
-      PHOTOPRISM_DATABASE_USER: "photoprism"
-      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # TODO: Set the database password
-      PHOTOPRISM_SITE_URL: "http://localhost:2342/"
-      PHOTOPRISM_SITE_TITLE: "PhotoPrism"
+      - PHOTOPRISM_DATABASE_DRIVER=mysql
+      - PHOTOPRISM_DATABASE_SERVER=photoprism_mariadb:3306
+      - PHOTOPRISM_DATABASE_NAME=photoprism
+      - PHOTOPRISM_DATABASE_USER=photoprism
+      - PHOTOPRISM_DATABASE_PASSWORD=your_database_password  # TODO: Set the database password
+      - PHOTOPRISM_SITE_URL=http://localhost:2342/
+      - PHOTOPRISM_SITE_TITLE=PhotoPrism
     devices:
       - "/dev/video11:/dev/video11"
     volumes:
@@ -84,12 +80,12 @@ services:
     #   ofelia.enabled: "true"
     #   ofelia.job-exec.photoprism_index.schedule: "@every 1h"
     #   ofelia.job-exec.photoprism_index.command: "photoprism index --cleanup"
-    depends_on: 
+    depends_on:
       - photoprism_mariadb
 
   photoprism_mariadb:
     image: linuxserver/mariadb
-    container_name: "photoprism_mariadb"
+    container_name: photoprism_mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=${PHOTOPRISM_ROOT_DATABASE_PASSWORD} # TODO: Set the database password
       - MYSQL_DATABASE=photoprism
@@ -97,7 +93,7 @@ services:
       - MYSQL_PASSWORD=${PHOTOPRISM_DATABASE_PASSWORD}
       - TZ=Europe/Madrid
     volumes:
-      - "photoprism_mariadb:/var/lib/mysql" # TODO: Replace with the actual path
+      - photoprism_mariadb:/var/lib/mysql # TODO: Replace with the actual path
     networks: 
       - database
     restart: unless-stopped
@@ -116,11 +112,11 @@ services:
   portainer:
     image: portainer/portainer-ce
     container_name: portainer
-    environment: 
+    environment:
       - TZ=Europe/Madrid
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /path/to/data:/data  # TODO: Replace with the actual data path
+      - /path/to/portainer/data:/data  # TODO: Replace with the actual data path
     networks:
       - internal
     ports:
@@ -137,8 +133,8 @@ services:
       - UMASK_SET=022
       - WEBUI_PORT=8080
     volumes:
-      - /path/to/config:/config  # TODO: Replace with the actual config path
-      - /path/to/download:/downloads  # TODO: Replace with the actual download path
+      - /path/to/qbittorrent/config:/config  # TODO: Replace with the actual config path
+      - /path/to/qbittorrent/download:/downloads  # TODO: Replace with the actual download path
     networks:
       - internal
     ports:
@@ -161,11 +157,10 @@ services:
     container_name: prometheus
     volumes:
       - /path/to/prometheus:/etc/prometheus  # TODO: Replace with the actual path
-      - /path/to/prometheus/data:/prometheus  # TODO: Replace with the actual path
-    ports:
-      - 9090:9090
     networks:
       - internal
+    ports:
+      - 9090:9090
     restart: unless-stopped
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -181,10 +176,10 @@ services:
     volumes:
       - /path/to/grafana:/var/lib/grafana  # TODO: Replace with the actual path
       - /path/to/grafana/provisioning:/etc/grafana/provisioning  # TODO: Replace with the actual path
-    ports:
-      - 3000:3000
     networks:
       - internal
+    ports:
+      - 3000:3000
     restart: unless-stopped
     depends_on:
       - prometheus
@@ -199,18 +194,18 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/rootfs:ro
+    networks:
+      - internal
+    ports:
+      - "9100:9100"
     command:
       - '--path.procfs=/host/proc'
       - '--path.sysfs=/host/sys'
       - '--path.rootfs=/rootfs'
-    ports:
-      - "9100:9100"
 
   cadvisor:
     image: google/cadvisor
     container_name: cadvisor
-    ports:
-      - "8081:8081"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
@@ -218,17 +213,19 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - internal
+    ports:
+      - "8081:8081"
     restart: unless-stopped
 
   alertmanager:
     image: prom/alertmanager
     container_name: alertmanager
-    ports:
-      - "9093:9093"
     volumes:
       - /path/to/alertmanager:/etc/alertmanager  # TODO: Replace with the actual path
     command:
       - '--config.file=/etc/alertmanager/config.yml'
     networks:
       - internal
+    ports:
+      - "9093:9093"
     restart: unless-stopped
