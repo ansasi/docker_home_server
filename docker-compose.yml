@@ -1,0 +1,143 @@
+version: '3.8'
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    environment:
+      - TZ=Europe/Madrid
+    user: "1000:1000"  # Corrected the user format to use UID:GID
+    network_mode: 'host'
+    volumes:
+      - /path/to/config:/config  # Replace with the actual config path
+      - /path/to/cache:/cache  # Replace with the actual cache path
+      - type: bind
+        source: /path/to/media  # Replace with actual media path
+        target: /media
+      - type: bind
+        source: /path/to/media2  # Replace with actual second media path
+        target: /media2
+        read_only: true
+    restart: 'unless-stopped'
+
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=your_password  # Set the database password
+      - MYSQL_HOST=db
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - /path/to/config:/config  # Replace with the actual config path
+      - /path/to/data:/data  # Replace with the actual data path
+    networks:
+      - database
+      - internal
+    ports:
+      - 443:443
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  db:
+    image: linuxserver/mariadb
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - /path/to/config:/config  # Replace with the actual config path
+    environment:
+      - TZ=Europe/Madrid
+    networks:
+      - database
+
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    environment: 
+      - TZ=Europe/Madrid
+    networks:
+      - internal
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /path/to/data:/data  # Replace with the actual data path
+    ports:
+      - 9443:9443
+    restart: unless-stopped
+
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    container_name: qbittorrent
+    networks:
+      - internal
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - UMASK_SET=022
+      - WEBUI_PORT=8080
+    volumes:
+      - /path/to/config:/config  # Replace with the actual config path
+      - /path/to/download:/downloads  # Replace with the actual download path
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+    restart: unless-stopped
+
+  photoprism:
+    image: photoprism/photoprism:latest
+    container_name: photoprism
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    networks: 
+      - database
+      - internal
+    ports:
+      - 2342:2342
+    environment:
+      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # Set the admin password
+      PHOTOPRISM_ORIGINALS_LIMIT: 1000
+      PHOTOPRISM_HTTP_COMPRESSION: "none"
+      PHOTOPRISM_WORKERS: 1
+      PHOTOPRISM_DEBUG: "false"
+      PHOTOPRISM_PUBLIC: "false"
+      PHOTOPRISM_READONLY: "false"
+      PHOTOPRISM_EXPERIMENTAL: "false"
+      PHOTOPRISM_DISABLE_WEBDAV: "false"
+      PHOTOPRISM_DISABLE_SETTINGS: "false"
+      PHOTOPRISM_DISABLE_TENSORFLOW: "true"
+      PHOTOPRISM_DARKTABLE_PRESETS: "true"
+      PHOTOPRISM_FFMPEG_ENCODER: "h264_v4l2m2m"
+      PHOTOPRISM_FFMPEG_BUFFERS: "64"
+      PHOTOPRISM_DETECT_NSFW: "false"
+      PHOTOPRISM_UPLOAD_NSFW: "true"
+      PHOTOPRISM_DATABASE_DRIVER: "mysql"
+      PHOTOPRISM_DATABASE_SERVER: "db:3306"
+      PHOTOPRISM_DATABASE_NAME: "photoprism"
+      PHOTOPRISM_DATABASE_USER: "photoprism"
+      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # Set the database password
+      PHOTOPRISM_SITE_URL: "http://localhost:2342/"
+      PHOTOPRISM_SITE_TITLE: "PhotoPrism"
+      PHOTOPRISM_SITE_CAPTION: "Browse Your Life"
+    user: "1000:1000"
+    depends_on: 
+      - db
+    devices:
+      - "/dev/video11:/dev/video11"
+    volumes:
+      - "/path/to/original/photo:/photoprism/originals/"  # Replace with the actual path
+      - "/path/to/data:/photoprism/storage"  # Replace with the actual path
+
+networks:
+  database:
+    name: database
+    driver: bridge
+  internal:
+    name: internal
+    driver: bridge
