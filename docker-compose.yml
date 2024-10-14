@@ -1,5 +1,11 @@
 version: '3.8'
 
+networks:
+  database:
+    driver: bridge
+  internal:
+    driver: bridge
+
 services:
   jellyfin:
     image: jellyfin/jellyfin
@@ -14,10 +20,6 @@ services:
       - type: bind
         source: /path/to/media  # TODO: Replace with actual media path
         target: /media
-      - type: bind
-        source: /path/to/media2  # TODO: Replace with actual second media path
-        target: /media2
-        read_only: true
     restart: 'unless-stopped'
 
   nextcloud:
@@ -27,7 +29,7 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_PASSWORD=your_password  # TODO: Set the database password
-      - MYSQL_HOST=db
+      - MYSQL_HOST=mariadb
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
@@ -41,15 +43,17 @@ services:
       - 443:443
     restart: unless-stopped
     depends_on:
-      - db
+      - mariadb
 
-  db:
+  mariadb:
     image: linuxserver/mariadb
-    container_name: db
+    container_name: mariadb
     environment:
       - TZ=Europe/Madrid
+      - MYSQL_ROOT_PASSWORD=your_password  # TODO: Set the database password
     volumes:
       - /path/to/config:/config  # TODO: Replace with the actual config path
+      - /path/to/mysql:/var/lib/mysql  # TODO: Replace with the actual data path for persistent data
     networks:
       - database
     restart: unless-stopped
@@ -109,7 +113,7 @@ services:
       PHOTOPRISM_DETECT_NSFW: "false"
       PHOTOPRISM_UPLOAD_NSFW: "true"
       PHOTOPRISM_DATABASE_DRIVER: "mysql"
-      PHOTOPRISM_DATABASE_SERVER: "db:3306"
+      PHOTOPRISM_DATABASE_SERVER: "mariadb:3306"
       PHOTOPRISM_DATABASE_NAME: "photoprism"
       PHOTOPRISM_DATABASE_USER: "photoprism"
       PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # TODO: Set the database password
@@ -129,12 +133,90 @@ services:
       - 2342:2342
     restart: unless-stopped
     depends_on: 
-      - db
+      - mariadb
 
-networks:
-  database:
-    name: database
-    driver: bridge
-  internal:
-    name: internal
-    driver: bridge
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - /path/to/prometheus:/etc/prometheus  # TODO: Replace with the actual path
+      - /path/to/prometheus/data:/prometheus  # TODO: Replace with the actual path
+    ports:
+      - 9090:9090
+    networks:
+      - internal
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=your_password  # TODO: Set the Grafana admin password
+    volumes:
+      - /path/to/grafana:/var/lib/grafana  # TODO: Replace with the actual path
+      - /path/to/grafana/provisioning:/etc/grafana/provisioning  # TODO: Replace with the actual path
+    ports:
+      - 3000:3000
+    networks:
+      - internal
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node_exporter
+    network_mode: 'host'
+    pid: "host"
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+    ports:
+      - "9100:9100"
+
+  cadvisor:
+    image: google/cadvisor
+    container_name: cadvisor
+    ports:
+      - "8081:8081"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - internal
+    restart: unless-stopped
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - /path/to/alertmanager:/etc/alertmanager  # TODO: Replace with the actual path
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+    networks:
+      - internal
+    restart: unless-stopped
