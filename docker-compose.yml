@@ -12,7 +12,6 @@ services:
     container_name: jellyfin
     environment:
       - TZ=Europe/Madrid
-    user: "1000:1000"
     network_mode: 'host'
     volumes:
       - /path/to/config:/config  # TODO: Replace with the actual config path
@@ -29,7 +28,7 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_PASSWORD=your_password  # TODO: Set the database password
-      - MYSQL_HOST=mariadb
+      - MYSQL_HOST=nextcloud_mariadb
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
@@ -43,20 +42,79 @@ services:
       - 443:443
     restart: unless-stopped
     depends_on:
-      - mariadb
+      - nextcloud_mariadb
 
-  mariadb:
+  nextcloud_mariadb:
     image: linuxserver/mariadb
-    container_name: mariadb
+    container_name: nextcloud_mariadb
     environment:
-      - TZ=Europe/Madrid
       - MYSQL_ROOT_PASSWORD=your_password  # TODO: Set the database password
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=your_password  # TODO: Set the database password
+      - TZ=Europe/Madrid
     volumes:
-      - /path/to/config:/config  # TODO: Replace with the actual config path
       - /path/to/mysql:/var/lib/mysql  # TODO: Replace with the actual data path for persistent data
     networks:
       - database
     restart: unless-stopped
+
+  photoprism:
+    image: photoprism/photoprism:latest
+    container_name: photoprism
+    environment:
+      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # TODO: Set the admin password
+      # PHOTOPRISM_DISABLE_TENSORFLOW: "true"
+      PHOTOPRISM_DATABASE_DRIVER: "mysql"
+      PHOTOPRISM_DATABASE_SERVER: "photoprism_mariadb:3306"
+      PHOTOPRISM_DATABASE_NAME: "photoprism"
+      PHOTOPRISM_DATABASE_USER: "photoprism"
+      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # TODO: Set the database password
+      PHOTOPRISM_SITE_URL: "http://localhost:2342/"
+      PHOTOPRISM_SITE_TITLE: "PhotoPrism"
+    devices:
+      - "/dev/video11:/dev/video11"
+    volumes:
+      - "/path/to/original/photo:/photoprism/originals/"  # TODO: Replace with the actual path
+      - "/path/to/data:/photoprism/storage"  # TODO: Replace with the actual path
+    networks: 
+      - database
+      - internal
+    ports:
+      - 2342:2342
+    restart: unless-stopped
+    # labels:
+    #   ofelia.enabled: "true"
+    #   ofelia.job-exec.photoprism_index.schedule: "@every 1h"
+    #   ofelia.job-exec.photoprism_index.command: "photoprism index --cleanup"
+    depends_on: 
+      - mariadb
+
+  photoprism_mariadb:
+    image: linuxserver/mariadb
+    container_name: "photoprism_mariadb"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${PHOTOPRISM_ROOT_DATABASE_PASSWORD} # TODO: Set the database password
+      - MYSQL_DATABASE=photoprism
+      - MYSQL_USER=photoprism
+      - MYSQL_PASSWORD=${PHOTOPRISM_DATABASE_PASSWORD}
+      - TZ=Europe/Madrid
+    volumes:
+      - "photoprism_mariadb:/var/lib/mysql" # TODO: Replace with the actual path
+    networks: 
+      - database
+    restart: unless-stopped
+
+
+  # ofelia:
+  #   restart: unless-stopped
+  #   image: mcuadros/ofelia:latest
+  #   container_name: ofelia
+  #   command: daemon --docker
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   depends_on:
+  #     - photoprism
 
   portainer:
     image: portainer/portainer-ce
@@ -91,49 +149,6 @@ services:
       - 6881:6881/udp
       - 8080:8080
     restart: unless-stopped
-
-  photoprism:
-    image: photoprism/photoprism:latest
-    container_name: photoprism
-    environment:
-      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # TODO: Set the admin password
-      PHOTOPRISM_ORIGINALS_LIMIT: 1000
-      PHOTOPRISM_HTTP_COMPRESSION: "none"
-      PHOTOPRISM_WORKERS: 1
-      PHOTOPRISM_DEBUG: "false"
-      PHOTOPRISM_PUBLIC: "false"
-      PHOTOPRISM_READONLY: "false"
-      PHOTOPRISM_EXPERIMENTAL: "false"
-      PHOTOPRISM_DISABLE_WEBDAV: "false"
-      PHOTOPRISM_DISABLE_SETTINGS: "false"
-      PHOTOPRISM_DISABLE_TENSORFLOW: "true"
-      PHOTOPRISM_DARKTABLE_PRESETS: "true"
-      PHOTOPRISM_FFMPEG_ENCODER: "h264_v4l2m2m"
-      PHOTOPRISM_FFMPEG_BUFFERS: "64"
-      PHOTOPRISM_DETECT_NSFW: "false"
-      PHOTOPRISM_UPLOAD_NSFW: "true"
-      PHOTOPRISM_DATABASE_DRIVER: "mysql"
-      PHOTOPRISM_DATABASE_SERVER: "mariadb:3306"
-      PHOTOPRISM_DATABASE_NAME: "photoprism"
-      PHOTOPRISM_DATABASE_USER: "photoprism"
-      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # TODO: Set the database password
-      PHOTOPRISM_SITE_URL: "http://localhost:2342/"
-      PHOTOPRISM_SITE_TITLE: "PhotoPrism"
-      PHOTOPRISM_SITE_CAPTION: "Browse Your Life"
-    user: "1000:1000"
-    devices:
-      - "/dev/video11:/dev/video11"
-    volumes:
-      - "/path/to/original/photo:/photoprism/originals/"  # TODO: Replace with the actual path
-      - "/path/to/data:/photoprism/storage"  # TODO: Replace with the actual path
-    networks: 
-      - database
-      - internal
-    ports:
-      - 2342:2342
-    restart: unless-stopped
-    depends_on: 
-      - mariadb
 
   watchtower:
     image: containrrr/watchtower
