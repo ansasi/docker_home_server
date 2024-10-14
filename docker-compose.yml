@@ -33,10 +33,9 @@ services:
       - PGID=1000
       - TZ=Europe/Madrid
     volumes:
-      - /path/to/config:/config  # TODO: Replace with the actual config path
-      - /path/to/data:/data  # TODO: Replace with the actual data path
+      - /nextcloud/html:/var/www/html  # TODO: Replace with the actual config path
+      - /nextcloud/data:/var/www/html/data  # TODO: Replace with the actual data path
     networks:
-      - database
       - internal
     ports:
       - 443:443
@@ -75,10 +74,8 @@ services:
     devices:
       - "/dev/video11:/dev/video11"
     volumes:
-      - "/path/to/original/photo:/photoprism/originals/"  # TODO: Replace with the actual path
-      - "/path/to/data:/photoprism/storage"  # TODO: Replace with the actual path
-    networks: 
-      - database
+      - /nextcloud/data/angel/files/Photos/Camera:/photoprism/originals/angel:ro  # TODO: Replace with the actual path
+    networks:
       - internal
     ports:
       - 2342:2342
@@ -88,7 +85,7 @@ services:
     #   ofelia.job-exec.photoprism_index.schedule: "@every 1h"
     #   ofelia.job-exec.photoprism_index.command: "photoprism index --cleanup"
     depends_on: 
-      - mariadb
+      - photoprism_mariadb
 
   photoprism_mariadb:
     image: linuxserver/mariadb
