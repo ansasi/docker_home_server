@@ -6,16 +6,16 @@ services:
     container_name: jellyfin
     environment:
       - TZ=Europe/Madrid
-    user: "1000:1000"  # Corrected the user format to use UID:GID
+    user: "1000:1000"
     network_mode: 'host'
     volumes:
-      - /path/to/config:/config  # Replace with the actual config path
-      - /path/to/cache:/cache  # Replace with the actual cache path
+      - /path/to/config:/config  # TODO: Replace with the actual config path
+      - /path/to/cache:/cache  # TODO: Replace with the actual cache path
       - type: bind
-        source: /path/to/media  # Replace with actual media path
+        source: /path/to/media  # TODO: Replace with actual media path
         target: /media
       - type: bind
-        source: /path/to/media2  # Replace with actual second media path
+        source: /path/to/media2  # TODO: Replace with actual second media path
         target: /media2
         read_only: true
     restart: 'unless-stopped'
@@ -26,14 +26,14 @@ services:
     environment:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=your_password  # Set the database password
+      - MYSQL_PASSWORD=your_password  # TODO: Set the database password
       - MYSQL_HOST=db
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
     volumes:
-      - /path/to/config:/config  # Replace with the actual config path
-      - /path/to/data:/data  # Replace with the actual data path
+      - /path/to/config:/config  # TODO: Replace with the actual config path
+      - /path/to/data:/data  # TODO: Replace with the actual data path
     networks:
       - database
       - internal
@@ -46,24 +46,24 @@ services:
   db:
     image: linuxserver/mariadb
     container_name: db
-    restart: unless-stopped
-    volumes:
-      - /path/to/config:/config  # Replace with the actual config path
     environment:
       - TZ=Europe/Madrid
+    volumes:
+      - /path/to/config:/config  # TODO: Replace with the actual config path
     networks:
       - database
+    restart: unless-stopped
 
   portainer:
-    container_name: portainer
     image: portainer/portainer-ce
+    container_name: portainer
     environment: 
       - TZ=Europe/Madrid
-    networks:
-      - internal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /path/to/data:/data  # Replace with the actual data path
+      - /path/to/data:/data  # TODO: Replace with the actual data path
+    networks:
+      - internal
     ports:
       - 9443:9443
     restart: unless-stopped
@@ -71,8 +71,6 @@ services:
   qbittorrent:
     image: linuxserver/qbittorrent
     container_name: qbittorrent
-    networks:
-      - internal
     environment:
       - PUID=1000
       - PGID=1000
@@ -80,8 +78,10 @@ services:
       - UMASK_SET=022
       - WEBUI_PORT=8080
     volumes:
-      - /path/to/config:/config  # Replace with the actual config path
-      - /path/to/download:/downloads  # Replace with the actual download path
+      - /path/to/config:/config  # TODO: Replace with the actual config path
+      - /path/to/download:/downloads  # TODO: Replace with the actual download path
+    networks:
+      - internal
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -91,17 +91,8 @@ services:
   photoprism:
     image: photoprism/photoprism:latest
     container_name: photoprism
-    restart: unless-stopped
-    security_opt:
-      - seccomp:unconfined
-      - apparmor:unconfined
-    networks: 
-      - database
-      - internal
-    ports:
-      - 2342:2342
     environment:
-      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # Set the admin password
+      PHOTOPRISM_ADMIN_PASSWORD: "your_admin_password"  # TODO: Set the admin password
       PHOTOPRISM_ORIGINALS_LIMIT: 1000
       PHOTOPRISM_HTTP_COMPRESSION: "none"
       PHOTOPRISM_WORKERS: 1
@@ -121,18 +112,24 @@ services:
       PHOTOPRISM_DATABASE_SERVER: "db:3306"
       PHOTOPRISM_DATABASE_NAME: "photoprism"
       PHOTOPRISM_DATABASE_USER: "photoprism"
-      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # Set the database password
+      PHOTOPRISM_DATABASE_PASSWORD: "your_database_password"  # TODO: Set the database password
       PHOTOPRISM_SITE_URL: "http://localhost:2342/"
       PHOTOPRISM_SITE_TITLE: "PhotoPrism"
       PHOTOPRISM_SITE_CAPTION: "Browse Your Life"
     user: "1000:1000"
-    depends_on: 
-      - db
     devices:
       - "/dev/video11:/dev/video11"
     volumes:
-      - "/path/to/original/photo:/photoprism/originals/"  # Replace with the actual path
-      - "/path/to/data:/photoprism/storage"  # Replace with the actual path
+      - "/path/to/original/photo:/photoprism/originals/"  # TODO: Replace with the actual path
+      - "/path/to/data:/photoprism/storage"  # TODO: Replace with the actual path
+    networks: 
+      - database
+      - internal
+    ports:
+      - 2342:2342
+    restart: unless-stopped
+    depends_on: 
+      - db
 
 networks:
   database:
