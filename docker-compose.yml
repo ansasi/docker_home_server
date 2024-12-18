@@ -54,49 +54,47 @@ services:
       - database
     restart: unless-stopped
 
-  photoprism:
-    image: photoprism/photoprism:latest
-    container_name: photoprism
-    environment:
-      - PHOTOPRISM_ADMIN_PASSWORD=your_admin_password     # TODO: Set the admin password
-      # PHOTOPRISM_DISABLE_TENSORFLOW: "true"
-      - PHOTOPRISM_DATABASE_DRIVER=mysql
-      - PHOTOPRISM_DATABASE_SERVER=photoprism_mariadb:3306
-      - PHOTOPRISM_DATABASE_NAME=photoprism
-      - PHOTOPRISM_DATABASE_USER=photoprism
-      - PHOTOPRISM_DATABASE_PASSWORD=your_database_password  # TODO: Set the database password
-      - PHOTOPRISM_SITE_URL=http://localhost:2342/
-      - PHOTOPRISM_SITE_TITLE=PhotoPrism
-    devices:
-      - "/dev/video11:/dev/video11"
-    volumes:
-      - /nextcloud/data/angel/files/Photos/Camera:/photoprism/originals/angel:ro  # TODO: Replace with the actual path
-    networks:
-      - internal
-    ports:
-      - 2342:2342
-    restart: unless-stopped
-    # labels:
-    #   ofelia.enabled: "true"
-    #   ofelia.job-exec.photoprism_index.schedule: "@every 1h"
-    #   ofelia.job-exec.photoprism_index.command: "photoprism index --cleanup"
-    depends_on:
-      - photoprism_mariadb
+  # photoprism:
+  #   image: photoprism/photoprism:latest
+  #   container_name: photoprism
+  #   environment:
+  #     - PHOTOPRISM_ADMIN_PASSWORD=your_admin_password     # TODO: Set the admin password
+  #     # PHOTOPRISM_DISABLE_TENSORFLOW: "true"
+  #     - PHOTOPRISM_DATABASE_DRIVER=mysql
+  #     - PHOTOPRISM_DATABASE_SERVER=photoprism_mariadb:3306
+  #     - PHOTOPRISM_DATABASE_NAME=photoprism
+  #     - PHOTOPRISM_DATABASE_USER=photoprism
+  #     - PHOTOPRISM_DATABASE_PASSWORD=your_database_password  # TODO: Set the database password
+  #     - PHOTOPRISM_SITE_URL=http://localhost:2342/
+  #     - PHOTOPRISM_SITE_TITLE=PhotoPrism
+  #   volumes:
+  #     - /nextcloud/data/angel/files/Photos/Camera:/photoprism/originals/angel:ro  # TODO: Replace with the actual path
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - 2342:2342
+  #   restart: unless-stopped
+  #   # labels:
+  #   #   ofelia.enabled: "true"
+  #   #   ofelia.job-exec.photoprism_index.schedule: "@every 1h"
+  #   #   ofelia.job-exec.photoprism_index.command: "photoprism index --cleanup"
+  #   depends_on:
+  #     - photoprism_mariadb
 
-  photoprism_mariadb:
-    image: linuxserver/mariadb
-    container_name: photoprism_mariadb
-    environment:
-      - MYSQL_ROOT_PASSWORD=${PHOTOPRISM_ROOT_DATABASE_PASSWORD} # TODO: Set the database password
-      - MYSQL_DATABASE=photoprism
-      - MYSQL_USER=photoprism
-      - MYSQL_PASSWORD=${PHOTOPRISM_DATABASE_PASSWORD}
-      - TZ=Europe/Madrid
-    volumes:
-      - photoprism_mariadb:/var/lib/mysql # TODO: Replace with the actual path
-    networks: 
-      - database
-    restart: unless-stopped
+  # photoprism_mariadb:
+  #   image: linuxserver/mariadb
+  #   container_name: photoprism_mariadb
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=${PHOTOPRISM_ROOT_DATABASE_PASSWORD} # TODO: Set the database password
+  #     - MYSQL_DATABASE=photoprism
+  #     - MYSQL_USER=photoprism
+  #     - MYSQL_PASSWORD=${PHOTOPRISM_DATABASE_PASSWORD}
+  #     - TZ=Europe/Madrid
+  #   volumes:
+  #     - photoprism_mariadb:/var/lib/mysql # TODO: Replace with the actual path
+  #   networks: 
+  #     - database
+  #   restart: unless-stopped
 
 
   # ofelia:
@@ -203,29 +201,29 @@ services:
       - '--path.sysfs=/host/sys'
       - '--path.rootfs=/rootfs'
 
-  cadvisor:
-    image: google/cadvisor
-    container_name: cadvisor
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-    networks:
-      - internal
-    ports:
-      - "8081:8081"
-    restart: unless-stopped
+  # cadvisor:
+  #   image: gcr.io/cadvisor/cadvisor
+  #   container_name: cadvisor
+  #   volumes:
+  #     - /:/rootfs:ro
+  #     - /var/run:/var/run:ro
+  #     - /sys:/sys:ro
+  #     - /var/lib/docker/:/var/lib/docker:ro
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - "8081:8081"
+  #   restart: unless-stopped
 
-  alertmanager:
-    image: prom/alertmanager
-    container_name: alertmanager
-    volumes:
-      - /path/to/alertmanager:/etc/alertmanager  # TODO: Replace with the actual path
-    command:
-      - '--config.file=/etc/alertmanager/config.yml'
-    networks:
-      - internal
-    ports:
-      - "9093:9093"
-    restart: unless-stopped
+  # alertmanager:
+  #   image: prom/alertmanager
+  #   container_name: alertmanager
+  #   volumes:
+  #     - /path/to/alertmanager:/etc/alertmanager  # TODO: Replace with the actual path
+  #   command:
+  #     - '--config.file=/etc/alertmanager/config.yml'
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - "9093:9093"
+  #   restart: unless-stopped
