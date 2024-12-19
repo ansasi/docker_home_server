@@ -7,6 +7,9 @@ networks:
     driver: bridge
 
 services:
+  # TODO
+  # plex:
+
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
@@ -227,3 +230,6 @@ services:
   #   ports:
   #     - "9093:9093"
   #   restart: unless-stopped
+
+  # TODO:
+  # wireguard:
