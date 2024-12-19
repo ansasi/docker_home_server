@@ -45,8 +45,8 @@ services:
       - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.services.portainer.loadbalancer.server.port=9443"
     # You can remove the ports mapping if you only want it accessible via Traefik:
-    # ports:
-    #   - 9443:9443
+    ports:
+      - 9443:9443
     restart: unless-stopped
 
   watchtower:
@@ -75,8 +75,8 @@ services:
       - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
     # Remove or keep ports mapping depending on if you want direct host access:
-    # ports:
-    #   - 9090:9090
+    ports:
+      - 9090:9090
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -101,8 +101,8 @@ services:
       - "traefik.http.routers.grafana.tls=true"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     # Remove or keep the port mapping:
-    # ports:
-    #   - 3000:3000
+    ports:
+      - 3000:3000
     restart: unless-stopped
     depends_on:
       - prometheus
