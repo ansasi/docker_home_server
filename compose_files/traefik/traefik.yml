@@ -1,0 +1,38 @@
+
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+log:
+  level: DEBUG
+api:
+  insecure: true
+  dashboard: true
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+providers:
+  docker:
+    exposedByDefault: false
+    watch: true
+  file:
+    directory: /var/traefik
+    watch: true
+certificatesResolvers:
+  cloudflare:
+    acme:
+      email: cloudflare.unknotted117@passinbox.com
+      storage: /var/traefik/certs/cloudflare-acme.json
+      caServer: 'https://acme-v02.api.letsencrypt.org/directory'
+      keyType: EC256
+      dnsChallenge:
+        provider: cloudflare
+        resolvers:
+          - 1.1.1.1:53
+          - 8.8.8.8:53

@@ -1,38 +1,43 @@
 version: '3.8'
 
 networks:
-  database:
-    driver: bridge
   internal:
     driver: bridge
+    name: internal
 
 services:
-  traefik:
-    image: traefik:v2.10
-    container_name: traefik
-    command:
-      - "--api.dashboard=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--providers.file.directory=/etc/traefik/dynamic/"
-    ports:
-      - "80:80"
-      - "443:443"
+  homer:
+    image: b4bz/homer
+    container_name: homer
     volumes:
-      - /home/ansasi/docker/traefik/dynamic:/etc/traefik/dynamic
-      - /home/ansasi/docker/traefik/certs:/certs:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    networks:
-      - internal
+      - ./homer/:/www/assets # Make sure your local config directory exists
+    ports:
+      - 8080:8080
+    user: 1000:1000 # default
+    environment:
+      - INIT_ASSETS=1 # default, requires the config directory to be writable for the container user (see user option)
     restart: unless-stopped
+    
+  # traefik:
+  #   image: traefik:v3
+  #   container_name: traefik
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #     - "8081:8080"
+  #   environment:
+  #     - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
+  #   volumes:
+  #     - ./traefik/traefik.yml:/etc/traefik/traefik.yaml:ro
+  #     - ./traefik/certs:/var/traefik/certs/:rw
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   networks:
+  #     - internal
+  #   restart: unless-stopped
 
   portainer:
     image: portainer/portainer-ce
     container_name: portainer
-    environment:
-      - TZ=Europe/Madrid
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/ansasi/docker/portainer/data:/data
@@ -40,9 +45,10 @@ services:
       - internal
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.example.com`)"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.sheetgenius.app`)"
       - "traefik.http.routers.portainer.entrypoints=websecure"
       - "traefik.http.routers.portainer.tls=true"
+      - "traefik.http.routers.portainer.certresolver=cloudflare"
       - "traefik.http.services.portainer.loadbalancer.server.port=9443"
     # You can remove the ports mapping if you only want it accessible via Traefik:
     ports:
@@ -52,31 +58,30 @@ services:
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
-    environment:
-      - TZ=Europe/Madrid
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - internal
     restart: unless-stopped
-    # watchtower doesn't need to be exposed via Traefik unless desired
 
   prometheus:
     image: prom/prometheus
     container_name: prometheus
-    volumes:
-      - /home/ansasi/docker/prometheus:/etc/prometheus
+    # # TODO
+    # volumes:
+    #   - /home/ansasi/docker/prometheus:/etc/prometheus
     networks:
       - internal
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.prometheus.rule=Host(`prometheus.example.com`)"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.sheetgenius.app`)"
       - "traefik.http.routers.prometheus.entrypoints=websecure"
       - "traefik.http.routers.prometheus.tls=true"
+      - "traefik.http.routers.prometheus.certresolver=cloudflare"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
-    # Remove or keep ports mapping depending on if you want direct host access:
-    ports:
-      - 9090:9090
+    # # Remove or keep ports mapping depending on if you want direct host access:
+    # ports:
+    #   - 9090:9090
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -89,20 +94,21 @@ services:
     container_name: grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin  # Replace with a secure password
-    volumes:
-      - /home/ansasi/docker/grafana:/var/lib/grafana
-      - /home/ansasi/docker/grafana/provisioning:/etc/grafana/provisioning
+    # # TODO
+    # volumes:
+    #   - /home/ansasi/docker/grafana:/var/lib/grafana
     networks:
       - internal
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.grafana.rule=Host(`grafana.example.com`)"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)"
       - "traefik.http.routers.grafana.entrypoints=websecure"
       - "traefik.http.routers.grafana.tls=true"
+      - "traefik.http.routers.grafana.certresolver=cloudflare"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     # Remove or keep the port mapping:
     ports:
-      - 3000:3000
+      - 3000:3000 
     restart: unless-stopped
     depends_on:
       - prometheus
