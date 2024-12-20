@@ -1,2 +1,2 @@
 *.env
-*/traefik/cert/*
+compose_files/traefik/certs/*
