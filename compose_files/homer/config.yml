@@ -25,18 +25,18 @@ colors:
     text-subtitle: "#424242"
     card-shadow: rgba(0, 0, 0, 0.1)
     link-hover: "#363636"
-  dark:
-    highlight-primary: "#2E3440"
-    highlight-secondary: "#4C566A"
-    highlight-hover: "#81A1C1"
-    background: "#3B4252"
-    card-background: "#2E3440"
-    text: "#D8DEE9"
-    text-header: "#D8DEE9"
-    text-title: "#81A1C1"
-    text-subtitle: "#81A1C1"
-    card-shadow: rgba(0, 0, 0, 0.4)
-    link-hover: "#BF616A"
+  # dark:
+  #   highlight-primary: "#2E3440"
+  #   highlight-secondary: "#4C566A"
+  #   highlight-hover: "#81A1C1"
+  #   background: "#3B4252"
+  #   card-background: "#2E3440"
+  #   text: "#D8DEE9"
+  #   text-header: "#D8DEE9"
+  #   text-title: "#81A1C1"
+  #   text-subtitle: "#81A1C1"
+  #   card-shadow: rgba(0, 0, 0, 0.4)
+  #   link-hover: "#BF616A"
 
 # Optional navbar
 links:
@@ -53,19 +53,19 @@ services:
       - name: "Plex Media Server"
         logo: "assets/tools/plex.svg"
         subtitle: "Stream Movies & TV Shows"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:32400"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
       - name: "Jellyfin"
         logo: "assets/tools/jellyfin.svg"
         subtitle: "Stream Movies & TV Shows"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:8096"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
       - name: "Photoprism"
         logo: "assets/tools/photoprism.svg"
         subtitle: "Photo storage at home"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:2342"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
   - name: "File Storage & Sharing"
@@ -74,13 +74,13 @@ services:
       - name: "Nextcloud"
         logo: "assets/tools/nextcloud.svg"
         subtitle: "File hosting at home"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:8008"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
       - name: "Bittorrent"
         logo: "assets/tools/qbittorrent.svg"
         subtitle: "Bittorrent client"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:9091"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
   - name: "Monitoring"
@@ -89,7 +89,7 @@ services:
       - name: "Grafana"
         logo: "assets/tools/grafana.svg"
         subtitle: "Monitoring tool"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:61208"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
   - name: "Automation"
@@ -98,7 +98,7 @@ services:
       - name: "Home Assistant"
         logo: "assets/tools/homeassistant.svg"
         subtitle: "Home automation"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:8123"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
   - name: "Server"
@@ -107,20 +107,20 @@ services:
       - name: "Portainer"
         logo: "assets/tools/portainer.svg"
         subtitle: "Docker Container Management"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:9000"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         type: "Portainer"
         apikey: "{{ portainer_api_key }}"
       
       - name: "Pihole"
         logo: "assets/tools/pihole.svg"
         subtitle: "Ad-Blocker"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
       - name: "Wireguard"
         logo: "assets/tools/wireguard.svg"
         subtitle: "VPN"
-        url: "http://{{ ansible_hostname }}.{{ domain_name }}:51820"
+        url: "https://{{ ansible_hostname }}.{{ domain_name }}"
         target: "_blank"
 
   - name: "Cluster"
@@ -128,5 +128,5 @@ services:
     items:
       - name: "{{ nas.hostname }}"
         icon: "fas fa-database"
-        url: "http://{{ nas.hostname }}.{{ domain_name}}"
+        url: "https://{{ nas.hostname }}.{{ domain_name}}"
         tag: "nas"

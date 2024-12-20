@@ -5,6 +5,16 @@ networks:
     driver: bridge
     name: internal
 
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+  pihole-data:
+    driver: local
+  pihole-dnsmasq.d:
+    driver: local
+
 services:
   homer:
     image: b4bz/homer
@@ -17,23 +27,71 @@ services:
     environment:
       - INIT_ASSETS=1 # default, requires the config directory to be writable for the container user (see user option)
     restart: unless-stopped
+  
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - 3000:3000
+    volumes:
+      - /path/to/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
     
-  # traefik:
-  #   image: traefik:v3
-  #   container_name: traefik
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #     - "8081:8080"
-  #   environment:
-  #     - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
-  #   volumes:
-  #     - ./traefik/traefik.yml:/etc/traefik/traefik.yaml:ro
-  #     - ./traefik/certs:/var/traefik/certs/:rw
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #   networks:
-  #     - internal
-  #   restart: unless-stopped
+  traefik:
+    image: traefik:v3
+    container_name: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - TZ=Europe/Madrid
+      - CF_DNS_API_TOKEN=$CF_DNS_API_TOKEN
+    volumes:
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yaml:ro
+      - ./traefik/certs:/var/traefik/certs/:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - internal
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.sheetgenius.app`)"
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+      # TODO: review if other tags are needed
+      # - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$apr1$$QWVXQWVX$$"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.sheetgenius.app`)"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=sheetgenius.app"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.sheetgenius.app"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.http.services.traefik-secure.loadbalancer.server.port=8080"
+    restart: unless-stopped
+  
+  pihole:
+    container_name: pihole
+    image: pihole/pihole
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "8081:80/tcp"
+    environment:
+      TZ: 'Europe/Madrid'
+      # WEBPASSWORD: 'set a secure password here or it will be random'
+    # Volumes store your data between container upgrades
+    volumes:
+      - pihole-data:/etc/pihole/
+      - 'pihole-dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
 
   portainer:
     image: portainer/portainer-ce
@@ -46,7 +104,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.rule=Host(`portainer.sheetgenius.app`)"
-      - "traefik.http.routers.portainer.entrypoints=websecure"
+      - "traefik.http.routers.portainer.entrypoints=https"
       - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.routers.portainer.certresolver=cloudflare"
       - "traefik.http.services.portainer.loadbalancer.server.port=9443"
@@ -67,26 +125,24 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
-    # # TODO
-    # volumes:
-    #   - /home/ansasi/docker/prometheus:/etc/prometheus
+    volumes:
+      - prometheus-data:/prometheus
+      - ./prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     networks:
       - internal
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.sheetgenius.app`)"
-      - "traefik.http.routers.prometheus.entrypoints=websecure"
+      - "traefik.http.routers.prometheus.entrypoints=https"
       - "traefik.http.routers.prometheus.tls=true"
       - "traefik.http.routers.prometheus.certresolver=cloudflare"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
-    # # Remove or keep ports mapping depending on if you want direct host access:
-    # ports:
-    #   - 9090:9090
+    ports:
+      - "9090:9090"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/etc/prometheus/console_libraries'
-      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=7d'
     restart: unless-stopped
 
   grafana:
@@ -94,37 +150,108 @@ services:
     container_name: grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin  # Replace with a secure password
-    # # TODO
-    # volumes:
-    #   - /home/ansasi/docker/grafana:/var/lib/grafana
+    # TODO
+    volumes:
+      - grafana-data:/var/lib/grafana
     networks:
       - internal
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)"
-      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.http.routers.grafana.entrypoints=https"
       - "traefik.http.routers.grafana.tls=true"
       - "traefik.http.routers.grafana.certresolver=cloudflare"
-      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3001"
     # Remove or keep the port mapping:
     ports:
-      - 3000:3000 
+      - 3001:3000 
     restart: unless-stopped
     depends_on:
       - prometheus
+    
+  node_exporter:
+    image: quay.io/prometheus/node-exporter
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+    networks:
+      - internal
+    pid: host
+    restart: unless-stopped
+  
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    container_name: cadvisor
+    # ports:
+    #   - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /run:/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      - internal
+    devices:
+      - /dev/kmsg
+    # privileged: true
+    restart: unless-stopped
   
   # # Media
   # plex:
-  #   image: lscr.io/linuxserver/plex
+  #   image: lscr.io/linuxserver/plex:latest
   #   container_name: plex
-  #   network_mode: host
   #   environment:
   #     - PUID=1000
   #     - PGID=1000
-  #     - TZ=Etc/UTC
+  #     - TZ=Europe/Madrid
   #     - VERSION=docker
   #   # volumes:
-  #   #   - /path/to/plex/library:/config
-  #   #   - /path/to/tvseries:/tv
-  #   #   - /path/to/movies:/movies
+  #   #   - /home/ansasi/docker/plex/config:/config  # Plex library data
+  #   #   - /home/ansasi/media/tvseries:/tv         # TV series directory
+  #   #   - /home/ansasi/media/movies:/movies       # Movies directory
+  #   networks:
+  #     - internal
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.plex.rule=Host(`plex.sheetgenius.app`)"
+  #     - "traefik.http.routers.plex.entrypoints=https"
+  #     - "traefik.http.routers.plex.tls=true"
+  #     - "traefik.http.routers.plex.certresolver=cloudflare"
+  #     - "traefik.http.services.plex.loadbalancer.server.port=32400"
+  #   ports:
+  #     - 32400:32400
+  #     - 3005:3005
+  #     - 8324:8324
+  #     - 32469:32469
+  #     - 1900:1900/udp
+  #     - 32410:32410/udp
+  #     - 32412:32412/udp
+  #     - 32413:32413/udp
+  #     - 32414:32414/udp
+  #   restart: unless-stopped
+
+  # jellyfin:
+  #   image: jellyfin/jellyfin:latest
+  #   container_name: jellyfin
+  #   environment:
+  #     - TZ=Europe/Madrid
+  #   # volumes:
+  #   #   - /home/ansasi/docker/jellyfin/config:/config  # Jellyfin configuration
+  #   #   - /home/ansasi/docker/jellyfin/cache:/cache    # Jellyfin cache
+  #   #   - /home/ansasi/media:/media                    # Media files
+  #   networks:
+  #     - internal
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.jellyfin.rule=Host(`jellyfin.sheetgenius.app`)"
+  #     - "traefik.http.routers.jellyfin.entrypoints=https"
+  #     - "traefik.http.routers.jellyfin.tls=true"
+  #     - "traefik.http.routers.jellyfin.certresolver=cloudflare"
+  #     - "traefik.http.services.jellyfin.loadbalancer.server.port=8096"
+  #   ports:
+  #     - 8096:8096
+  #     - 8920:8920
   #   restart: unless-stopped
