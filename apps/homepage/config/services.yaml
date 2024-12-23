@@ -9,81 +9,81 @@
             type: fritzbox
             url: http://192.168.82.1
     - Pihole:
-        href: https://pihole-prod-1.srv-prod-1.home.clcreative.de
+        href: https://pihole.sheetgenius.app
         icon: pihole.png
         description: pihole-prod-1 on srv-prod-1
         widget:
             type: pihole
-            url: https://pihole-prod-1.srv-prod-1.home.clcreative.de
+            url: https://pihole.sheetgenius.app
             key: {{HOMEPAGE_VAR_PIHOLE_KEY}}
     - Traefik:
-        href: https://traefik-prod-1.srv-prod-1.home.clcreative.de
+        href: https://traefik.sheetgenius.app
         icon: traefik.png
         description: traefik-prod-1 on srv-prod-1
         widget:
             type: traefik
-            url: https://traefik-prod-1.srv-prod-1.home.clcreative.de
+            url: https://traefik.sheetgenius.app
             key: {{HOMEPAGE_VAR_TRAEFIK_KEY}}
 
 - Storage:
     - Nexcloud:
-        href: https://nextcloud-prod-1.srv-prod-1.home.clcreative.de
+        href: https://nextcloud.sheetgenius.app
         icon: nextcloud.png
         description: nextcloud-prod-1 on srv-prod-1
         widget:
             type: nextcloud
-            url: https://nextcloud-prod-1.srv-prod-1.home.clcreative.de
+            url: https://nextcloud.sheetgenius.app
             key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
     - Bittorrent:
-        href: https://bittorrent-prod-1.srv-prod-1.home.clcreative.de
+        href: https://bittorrent.sheetgenius.app
         icon: bittorrent.png
         description: bittorrent-prod-1 on srv-prod-1
         widget:
             type: bittorrent
-            url: https://bittorrent-prod-1.srv-prod-1.home.clcreative.de
+            url: https://bittorrent.sheetgenius.app
             key: {{HOMEPAGE_VAR_BITTORRENT_KEY}}
     
 - Media:
     - Plex:
-        href: https://plex-prod-1.srv-prod-1.home.clcreative.de
+        href: https://plex.sheetgenius.app
         icon: plex.png
         description: plex-prod-1 on srv-prod-1
         widget:
             type: plex
-            url: https://plex-prod-1.srv-prod-1.home.clcreative.de
+            url: https://plex.sheetgenius.app
             key: {{HOMEPAGE_VAR_PLEX_KEY}}
     - Jellyfin:
-        href: https://jellyfin-prod-1.srv-prod-1.home.clcreative.de
+        href: https://jellyfin.sheetgenius.app
         icon: jellyfin.png
         description: jellyfin-prod-1 on srv-prod-1
         widget:
             type: jellyfin
-            url: https://jellyfin-prod-1.srv-prod-1.home.clcreative.de
+            url: https://jellyfin.sheetgenius.app
             key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
         
 - Management:
     - Portainer:
-        href: https://portainer-demo-1.srv-demo-1.home.clcreative.de
+        href: https://portainer-demo-1.srv-demo-1.sheetgenius.app
         icon: portainer.png
         description: portainer-demo-1 on srv-demo-1
         widget:
             type: portainer
-            url: https://portainer-demo-1.srv-demo-1.home.clcreative.de
+            url: https://portainer-demo-1.srv-demo-1.sheetgenius.app
             env: 2
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
         
 - Monitoring:
     - Prometheus:
-        href: https://prometheus-prod-1.srv-prod-1.home.clcreative.de
+        href: https://prometheus.sheetgenius.app
         description: prometheus-prod-1 on srv-prod-1
         icon: prometheus.png
         server: srv-prod-1
         container: prometheus-prod-1
         widget:
             type: prometheus
-            url: https://prometheus-prod-1.srv-prod-1.home.clcreative.de
+            url: https://prometheus.sheetgenius.app
     - Grafana:
-        href: https://grafana-prod-1.srv-prod-1.home.clcreative.de
+        href: https://grafana.sheetgenius.app
         description: grafana-prod-1 on srv-prod-1
         icon: grafana.png
         server: srv-prod-1
@@ -91,15 +91,15 @@
 
 - Security:
     - Authentik:
-        href: https://authentik-prod-1.kube-prod-1.home.clcreative.de
+        href: https://authentik-prod-1.kube-prod-1.sheetgenius.app
         description: authentik-prod-1 on kube-prod-1
         icon: authentik.png
         widget:
             type: authentik
-            url: https://authentik-prod-1.kube-prod-1.home.clcreative.de
+            url: https://authentik-prod-1.kube-prod-1.sheetgenius.app
             key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Wireguard:
-        href: https://wireguard-prod-1.srv-prod-1.home.clcreative.de
+        href: https://wireguard.sheetgenius.app
         description: wireguard-prod-1 on srv-prod-1
         icon: wireguard.png
 

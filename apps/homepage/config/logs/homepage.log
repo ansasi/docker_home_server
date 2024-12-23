@@ -7549,3 +7549,638 @@
     code: 'ECONNRESET'
   }
 ]
+[2024-12-23T11:27:15.860Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:27:15.968Z] error: <httpProxy> Error calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:15.968Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:15.968Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:15.975Z] error: <httpProxy> Error calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:15.975Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:15.975Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:16.038Z] error: <httpProxy> Error calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:16.038Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.038Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:16.041Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:16.052Z] error: <httpProxy> Error calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:27:16.052Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.srv-demo-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.srv-demo-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.052Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:27:16.174Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.175Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.176Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.176Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.177Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.177Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.236Z] error: <httpProxy> Error calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:27:16.237Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.237Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:27:16.277Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:16.277Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.278Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:16.278Z] error: undefined
+[2024-12-23T11:27:16.305Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:16.305Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.306Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:16.306Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:16.306Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.306Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:16.317Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:27:16.334Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:16.334Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.334Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:27:16.335Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/...
+[2024-12-23T11:27:16.336Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.336Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/?page_size=1
+[2024-12-23T11:27:16.336Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:16.336Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.337Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:27:16.423Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:27:16.443Z] error: <httpProxy> Error calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:16.443Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.444Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:16.444Z] error: <httpProxy> Error calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:16.444Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.444Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:16.444Z] error: <httpProxy> Error calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:27:16.445Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.srv-demo-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.srv-demo-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.445Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:27:16.564Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:16.571Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.571Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.571Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.571Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.571Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:16.571Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:16.571Z] error: <httpProxy> Error calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:16.571Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.572Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:16.572Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:16.572Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.572Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:16.573Z] error: undefined
+[2024-12-23T11:27:16.573Z] error: <httpProxy> Error calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:27:16.574Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.574Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:27:16.588Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:16.588Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.589Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:16.595Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:16.595Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.595Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:16.595Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/...
+[2024-12-23T11:27:16.595Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.596Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/?page_size=1
+[2024-12-23T11:27:16.600Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:16.601Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.601Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:27:16.604Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:16.605Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.605Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:27:16.856Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:16.859Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:16.860Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:16.860Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:16.860Z] error: undefined
+[2024-12-23T11:27:21.168Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:21.168Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:21.168Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:26.002Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:27:26.032Z] error: <httpProxy> Error calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:26.032Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.033Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole-prod-1.srv-prod-1.home.clcreative.de/admin/api.php...
+[2024-12-23T11:27:26.040Z] error: <httpProxy> Error calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:26.040Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.040Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik-prod-1.srv-prod-1.home.clcreative.de/api/overview...
+[2024-12-23T11:27:26.055Z] error: <httpProxy> Error calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:27:26.055Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.srv-demo-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.srv-demo-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.055Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.srv-demo-1.home.clcreative.de/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:27:26.057Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:26.066Z] error: <httpProxy> Error calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:26.066Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.066Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus-prod-1.srv-prod-1.home.clcreative.de/api/v1/targets...
+[2024-12-23T11:27:26.201Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:26.202Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:26.202Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:26.202Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:26.202Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:27:26.203Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:27:26.223Z] error: <httpProxy> Error calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:27:26.223Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.223Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud-prod-1.srv-prod-1.home.clcreative.de/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:27:26.224Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:26.224Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.224Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:26.224Z] error: undefined
+[2024-12-23T11:27:26.225Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:26.225Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.225Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Sessions...
+[2024-12-23T11:27:26.225Z] error: <httpProxy> Error calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:26.225Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.225Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin-prod-1.srv-prod-1.home.clcreative.de/emby/Items/Counts...
+[2024-12-23T11:27:26.291Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:26.291Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.291Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:27:26.292Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/...
+[2024-12-23T11:27:26.293Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.293Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/core/users/?page_size=1
+[2024-12-23T11:27:26.293Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/...
+[2024-12-23T11:27:26.293Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:26.294Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.home.clcreative.de/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:27:28.628Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:28.633Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:28.633Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:28.633Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:28.633Z] error: undefined
+[2024-12-23T11:27:29.545Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:27:29.549Z] error: <httpProxy> Error calling https://plex-prod-1.srv-prod-1.home.clcreative.de/status/sessions...
+[2024-12-23T11:27:29.549Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex-prod-1.srv-prod-1.home.clcreative.de
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex-prod-1.srv-prod-1.home.clcreative.de'
+  }
+]
+[2024-12-23T11:27:29.549Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:27:29.549Z] error: undefined
+[2024-12-23T11:27:37.897Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:27:37.898Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:27:37.898Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:27:37.899Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:27:37.899Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:27:37.899Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:27:38.440Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:27:38.440Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:27:38.440Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:27:38.441Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:27:38.441Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:27:38.441Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
