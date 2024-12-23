@@ -60,6 +60,46 @@
             type: jellyfin
             url: https://jellyfin.sheetgenius.app
             key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
+    - Sonarr:
+        href: https://sonarr.sheetgenius.app
+        icon: sonarr.svg
+        description: sonarr-prod-1 on srv-prod-1
+        widget:
+            type: sonarr
+            url: https://sonarr.sheetgenius.app
+            key: {{HOMEPAGE_VAR_SONARR_KEY}}
+    - Radarr:
+        href: https://radarr.sheetgenius.app
+        icon: radarr.svg
+        description: radarr-prod-1 on srv-prod-1
+        widget:
+            type: radarr
+            url: https://radarr.sheetgenius.app
+            key: {{HOMEPAGE_VAR_RADARR_KEY}}
+    - Lidarr:
+        href: https://lidarr.sheetgenius.app
+        icon: lidarr.svg
+        description: lidarr-prod-1 on srv-prod-1
+        widget:
+            type: lidarr
+            url: https://lidarr.sheetgenius.app
+            key: {{HOMEPAGE_VAR_LIDARR_KEY}}
+    - Readarr:
+        href: https://readarr.sheetgenius.app
+        icon: readarr.svg
+        description: readarr-prod-1 on srv-prod-1
+        widget:
+            type: readarr
+            url: https://readarr.sheetgenius.app
+            key: {{HOMEPAGE_VAR_READARR_KEY}}
+    - Bazarr:
+        href: https://bazarr.sheetgenius.app
+        icon: bazarr.svg
+        description: bazarr-prod-1 on srv-prod-1
+        widget:
+            type: bazarr
+            url: https://bazarr.sheetgenius.app
+            key: {{HOMEPAGE_VAR_BAZARR_KEY}}
         
 - Management:
     - Portainer:

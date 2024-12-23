@@ -10,10 +10,46 @@ background:
 
 cardBlur: sm
 
+language: en
+
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
 
 layout:
-  columns: 3
-  rows: 3
+  Networking:
+    icon: networking.svg
+    tab: general
+    columns: 2
+  Management:
+    icon: management.svg
+    tab: general
+    columns: 2
+  Monitoring:
+    icon: monitoring.svg
+    tab: general
+    columns: 2
+  Storage:
+    icon: storage.svg
+    tab: general
+    columns: 2
+  Media:
+    icon: media.svg
+    tab: media
+    style: columns
+    columns: 3
+  Security:
+    icon: security.svg
+    tab: general
+    columns: 2
+  Automation:
+    icon: automation.svg
+    tab: general
+    columns: 2
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: duckduckgo # google, duckduckgo, bing, baidu, brave or custom
