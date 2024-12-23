@@ -2,7 +2,7 @@
 - Networking:
     - FritzBox:
         href: http://192.168.82.1
-        icon: avmfritzbox.png
+        icon: avmfritzbox.svg
         description: gw-prod-1
         siteMonitor: http://192.168.82.1
         widget:
@@ -10,7 +10,7 @@
             url: http://192.168.82.1
     - Pihole:
         href: https://pihole.sheetgenius.app
-        icon: pihole.png
+        icon: pi-hole.svg
         description: pihole-prod-1 on srv-prod-1
         widget:
             type: pihole
@@ -18,7 +18,7 @@
             key: {{HOMEPAGE_VAR_PIHOLE_KEY}}
     - Traefik:
         href: https://traefik.sheetgenius.app
-        icon: traefik.png
+        icon: traefik.svg
         description: traefik-prod-1 on srv-prod-1
         widget:
             type: traefik
@@ -28,7 +28,7 @@
 - Storage:
     - Nexcloud:
         href: https://nextcloud.sheetgenius.app
-        icon: nextcloud.png
+        icon: nextcloud.svg
         description: nextcloud-prod-1 on srv-prod-1
         widget:
             type: nextcloud
@@ -46,7 +46,7 @@
 - Media:
     - Plex:
         href: https://plex.sheetgenius.app
-        icon: plex.png
+        icon: plex.svg
         description: plex-prod-1 on srv-prod-1
         widget:
             type: plex
@@ -54,7 +54,7 @@
             key: {{HOMEPAGE_VAR_PLEX_KEY}}
     - Jellyfin:
         href: https://jellyfin.sheetgenius.app
-        icon: jellyfin.png
+        icon: jellyfin.svg
         description: jellyfin-prod-1 on srv-prod-1
         widget:
             type: jellyfin
@@ -64,19 +64,27 @@
 - Management:
     - Portainer:
         href: https://portainer-demo-1.sheetgenius.app
-        icon: portainer.png
+        icon: portainer.svg
         description: portainer-demo-1 on srv-demo-1
         widget:
             type: portainer
             url: https://portainer-demo-1.sheetgenius.app
             env: 2
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+    - Watchtower:
+        href: https://watchtower.sheetgenius.app
+        icon: watchtower.svg
+        description: watchtower-prod-1 on srv-prod-1
+        widget:
+            type: watchtower
+            url: https://watchtower.sheetgenius.app
+            key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
         
 - Monitoring:
     - Prometheus:
         href: https://prometheus.sheetgenius.app
         description: prometheus-prod-1 on srv-prod-1
-        icon: prometheus.png
+        icon: prometheus.svg
         server: srv-prod-1
         container: prometheus-prod-1
         widget:
@@ -85,7 +93,7 @@
     - Grafana:
         href: https://grafana.sheetgenius.app
         description: grafana-prod-1 on srv-prod-1
-        icon: grafana.png
+        icon: grafana.svg
         server: srv-prod-1
         container: grafana-prod-1
 
@@ -101,12 +109,12 @@
     - Wireguard:
         href: https://wireguard.sheetgenius.app
         description: wireguard-prod-1 on srv-prod-1
-        icon: wireguard.png
+        icon: wireguard.svg
 
 - Automation:
     - Home Assistant:
         href: https://homeassistant.sheetgenius.app
-        icon: home-assistant.png
+        icon: home-assistant.svg
         description: homeassistant-prod-1 on srv-prod-7
         widget:
             type: homeassistant

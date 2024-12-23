@@ -1,5 +1,5 @@
 ---
-title: My Awesome Homepage
+title: Homepage
 headerStyle: boxed
 
 background: 
@@ -15,17 +15,5 @@ providers:
   weatherapi: weatherapiapikey
 
 layout:
-  Networking:
-    icon: mdi-network-#FFFFFF
-  Infrastructure and Data:
-    icon: mdi-server-#FFFFFF
-  Management:
-    icon: mdi-auto-fix-#FFFFFF
-  Monitoring:
-    icon: mdi-list-status-#FFFFFF
-  Automation:
-    icon: mdi-cog-play-#FFFFFF
-  IoT and Smarthome:
-    icon: mdi-home-#FFFFFF
-  Security and Identity:
-    icon: mdi-shield-lock-#FFFFFF
+  columns: 3
+  rows: 3
