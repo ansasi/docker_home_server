@@ -1,0 +1,17 @@
+---
+networks:
+  backend:
+    external: true
+  frontend:
+    external: true
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - backend
+      - frontend
+    restart: unless-stopped

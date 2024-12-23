@@ -36,7 +36,7 @@
             key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
     - Bittorrent:
         href: https://bittorrent.sheetgenius.app
-        icon: bittorrent.png
+        icon: si-bittorrent
         description: bittorrent-prod-1 on srv-prod-1
         widget:
             type: bittorrent
@@ -63,12 +63,12 @@
         
 - Management:
     - Portainer:
-        href: https://portainer-demo-1.srv-demo-1.sheetgenius.app
+        href: https://portainer-demo-1.sheetgenius.app
         icon: portainer.png
         description: portainer-demo-1 on srv-demo-1
         widget:
             type: portainer
-            url: https://portainer-demo-1.srv-demo-1.sheetgenius.app
+            url: https://portainer-demo-1.sheetgenius.app
             env: 2
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
         
@@ -91,12 +91,12 @@
 
 - Security:
     - Authentik:
-        href: https://authentik-prod-1.kube-prod-1.sheetgenius.app
+        href: https://authentik.sheetgenius.app
         description: authentik-prod-1 on kube-prod-1
         icon: authentik.png
         widget:
             type: authentik
-            url: https://authentik-prod-1.kube-prod-1.sheetgenius.app
+            url: https://authentik.sheetgenius.app
             key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Wireguard:
         href: https://wireguard.sheetgenius.app
@@ -105,11 +105,11 @@
 
 - Automation:
     - Home Assistant:
-        href: https://homeassistant-prod-1.sheetgenius.app
+        href: https://homeassistant.sheetgenius.app
         icon: home-assistant.png
         description: homeassistant-prod-1 on srv-prod-7
         widget:
             type: homeassistant
-            url: https://homeassistant-prod-1.sheetgenius.app
+            url: https://homeassistant.sheetgenius.app
             key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
             custom:

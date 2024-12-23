@@ -34,7 +34,7 @@ services:
       - /nextcloud/html:/var/www/html  # TODO: Replace with the actual config path
       - /nextcloud/data:/var/www/html/data  # TODO: Replace with the actual data path
     networks:
-      - internal
+      - backend
     ports:
       - 443:443
     restart: unless-stopped
@@ -72,7 +72,7 @@ services:
   #   volumes:
   #     - /nextcloud/data/angel/files/Photos/Camera:/photoprism/originals/angel:ro  # TODO: Replace with the actual path
   #   networks:
-  #     - internal
+  #     - backend
   #   ports:
   #     - 2342:2342
   #   restart: unless-stopped
@@ -118,7 +118,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /path/to/portainer/data:/data  # TODO: Replace with the actual data path
     networks:
-      - internal
+      - backend
     ports:
       - 9443:9443
     restart: unless-stopped
@@ -136,7 +136,7 @@ services:
       - /path/to/qbittorrent/config:/config  # TODO: Replace with the actual config path
       - /path/to/qbittorrent/download:/downloads  # TODO: Replace with the actual download path
     networks:
-      - internal
+      - backend
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -158,7 +158,7 @@ services:
     volumes:
       - /path/to/prometheus:/etc/prometheus  # TODO: Replace with the actual path
     networks:
-      - internal
+      - backend
     ports:
       - 9090:9090
     restart: unless-stopped
@@ -177,7 +177,7 @@ services:
       - /path/to/grafana:/var/lib/grafana  # TODO: Replace with the actual path
       - /path/to/grafana/provisioning:/etc/grafana/provisioning  # TODO: Replace with the actual path
     networks:
-      - internal
+      - backend
     ports:
       - 3000:3000
     restart: unless-stopped
@@ -195,7 +195,7 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     networks:
-      - internal
+      - backend
     ports:
       - "9100:9100"
     command:
@@ -212,7 +212,7 @@ services:
   #     - /sys:/sys:ro
   #     - /var/lib/docker/:/var/lib/docker:ro
   #   networks:
-  #     - internal
+  #     - backend
   #   ports:
   #     - "8081:8081"
   #   restart: unless-stopped
@@ -225,7 +225,7 @@ services:
   #   command:
   #     - '--config.file=/etc/alertmanager/config.yml'
   #   networks:
-  #     - internal
+  #     - backend
   #   ports:
   #     - "9093:9093"
   #   restart: unless-stopped

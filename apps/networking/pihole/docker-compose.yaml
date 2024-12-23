@@ -1,0 +1,36 @@
+---
+networks:
+  backend:
+    external: true
+  frontend:
+    external: true
+
+volumes:
+  pihole-data:
+    driver: local
+  pihole-dnsmasq.d:
+    driver: local
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    environment:
+      - TZ=Europe/Madrid
+      - WEBPASSWORD=admin   # Set a secure password
+      - DNS1=1.1.1.1
+      - DNS2=1.0.0.1
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "8081:80/tcp" # localhost:8081/admin for the Web UI
+    volumes:
+      - pihole-data:/etc/pihole/
+      - pihole-dnsmasq.d:/etc/dnsmasq.d
+    cap_add:
+      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
+    networks:
+      - backend
+      - frontend

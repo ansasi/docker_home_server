@@ -8184,3 +8184,3150 @@
     rawError: [ 500, [Error] ]
   }
 }
+[2024-12-23T11:29:18.531Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:29:18.573Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:29:18.573Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.573Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:29:18.574Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:29:18.574Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.574Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:29:18.599Z] error: <httpProxy> Error calling https://portainer-demo-1.srv-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:29:18.599Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.srv-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.srv-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.599Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.srv-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:29:18.602Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:29:18.626Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:18.627Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.628Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:18.628Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.629Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:18.629Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.712Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:29:18.712Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.713Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:29:18.790Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:29:18.790Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.790Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:29:18.831Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:29:18.831Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.831Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:29:18.831Z] error: undefined
+[2024-12-23T11:29:18.896Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:29:18.896Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.896Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:29:18.896Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:29:18.896Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.896Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:29:18.919Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:29:18.939Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:29:18.939Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.939Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:29:18.939Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:29:18.940Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.940Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:29:18.940Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:29:18.940Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:18.940Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:29:19.011Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:29:19.046Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:29:19.046Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.046Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:29:19.046Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:29:19.046Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.047Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:29:19.047Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:29:19.047Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.047Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:29:19.048Z] error: <httpProxy> Error calling https://portainer-demo-1.srv-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:29:19.048Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.srv-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.srv-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.048Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.srv-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:29:19.065Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:19.065Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.066Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:19.066Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.066Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:29:19.072Z] error: <httpProxy> Error calling https://homeassistant-prod-1.sheetgenius.app/api/template...
+[2024-12-23T11:29:19.072Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.074Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:29:19.074Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.074Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:29:19.075Z] error: undefined
+[2024-12-23T11:29:19.076Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:29:19.076Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.076Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:29:19.077Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:29:19.078Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.078Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:29:19.086Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:29:19.086Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.086Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:29:19.089Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:29:19.089Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.089Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:29:19.092Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:29:19.092Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.092Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:29:19.094Z] error: <httpProxy> Error calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:29:19.094Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik-prod-1.kube-prod-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik-prod-1.kube-prod-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:19.094Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik-prod-1.kube-prod-1.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:29:24.057Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:29:24.126Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:29:24.127Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:29:24.127Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:29:24.128Z] error: undefined
+[2024-12-23T11:29:25.862Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:29:25.862Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:29:25.867Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:29:25.867Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:29:40.566Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:29:40.566Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:29:40.566Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:29:40.567Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:29:40.567Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:29:40.567Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:29:41.039Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:29:41.039Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:29:41.039Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:29:41.040Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:29:41.040Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:29:41.040Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:30:19.806Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:19.842Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:19.842Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.843Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:19.851Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:19.852Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.852Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:19.879Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:30:19.879Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.879Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:30:19.880Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:19.880Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.880Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:19.883Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:19.908Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:19.908Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.908Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:19.908Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.909Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:19.909Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.936Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:30:19.936Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.936Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:30:19.963Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:19.964Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.964Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:19.964Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:19.964Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.964Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:19.988Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:19.989Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.989Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:19.989Z] error: undefined
+[2024-12-23T11:30:19.993Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:30:19.993Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.993Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:30:19.993Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:19.994Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.994Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:30:19.996Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:19.996Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:19.996Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:30:20.012Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:20.103Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:20.120Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:20.121Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.121Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:20.122Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:20.122Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.122Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:20.129Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:30:20.129Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.129Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:30:20.131Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:20.131Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.131Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:20.139Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:20.140Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.140Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:20.140Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.140Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:20.140Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.141Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:20.142Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:30:20.142Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.142Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:30:20.144Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:20.144Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.144Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:20.144Z] error: undefined
+[2024-12-23T11:30:20.196Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:20.196Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.196Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:20.197Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:20.197Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.198Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:20.201Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:20.202Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.202Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:30:20.204Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:30:20.204Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.205Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:30:20.213Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:20.213Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:20.213Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:30:25.113Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:25.151Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:25.151Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.151Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:25.151Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:25.151Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.151Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:25.177Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:25.178Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.178Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:25.178Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:30:25.178Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.178Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:30:25.181Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:25.213Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:25.213Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.213Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:25.213Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.214Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:25.214Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.232Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:30:25.233Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.233Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:30:25.242Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:25.242Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.242Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:25.242Z] error: undefined
+[2024-12-23T11:30:25.260Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:25.260Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.260Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:25.261Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:25.261Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.261Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:25.300Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:25.300Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.300Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:30:25.301Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:30:25.301Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.301Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:30:25.303Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:25.303Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:25.303Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:30:29.412Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:29.436Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:29.436Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:29.437Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:29.437Z] error: undefined
+[2024-12-23T11:30:29.833Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:29.838Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:29.838Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:29.838Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:29.839Z] error: undefined
+[2024-12-23T11:30:29.888Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:29.889Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:29.889Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:34.530Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:34.530Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:34.530Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:37.749Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:30:37.749Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:30:37.749Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:30:37.749Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:30:37.749Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:30:37.749Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:30:42.118Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:30:42.118Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:30:42.119Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:30:42.119Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:30:42.119Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:30:42.119Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:30:46.480Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:46.517Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:46.517Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:46.517Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:46.518Z] error: undefined
+[2024-12-23T11:30:52.170Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:52.220Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:52.221Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.221Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:52.235Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:52.235Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.235Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:52.246Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:30:52.247Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.247Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:30:52.249Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:52.257Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:52.258Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.258Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:52.271Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.271Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.272Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.272Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.273Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.273Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.290Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:30:52.290Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.290Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:30:52.301Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:52.301Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.302Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:52.302Z] error: undefined
+[2024-12-23T11:30:52.316Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:52.316Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.316Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:52.317Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:52.317Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.317Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:52.333Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:52.342Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:52.342Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.342Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:30:52.342Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:30:52.342Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.342Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:30:52.343Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:52.343Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.343Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:30:52.424Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:52.424Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.424Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:30:52.426Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:52.426Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.426Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:30:52.438Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:30:52.438Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.439Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:30:52.441Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:52.441Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.441Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:30:52.441Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.441Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.441Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.441Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.441Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:30:52.441Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.443Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:30:52.443Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.443Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:30:52.445Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:30:52.449Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:30:52.449Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.449Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:30:52.449Z] error: undefined
+[2024-12-23T11:30:52.455Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:52.455Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.455Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:52.457Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:52.457Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.457Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:30:52.457Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:30:52.457Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.457Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:30:52.463Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:52.463Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.463Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:30:52.464Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:30:52.464Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:52.464Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:30:52.469Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:30:57.035Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:30:57.035Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:30:57.035Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:31:02.075Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:31:02.107Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:31:02.107Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:02.107Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:31:02.108Z] error: undefined
+[2024-12-23T11:31:07.646Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:31:07.691Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:31:07.691Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.691Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:31:07.692Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:31:07.692Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.692Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:31:07.712Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:31:07.712Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.712Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:31:07.715Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:31:07.722Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:31:07.723Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.723Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:31:07.737Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:31:07.738Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.738Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:31:07.738Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.739Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:31:07.739Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.763Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:31:07.764Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.764Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:31:07.764Z] error: undefined
+[2024-12-23T11:31:07.764Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:31:07.764Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.764Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:31:07.793Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:31:07.794Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.794Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:31:07.794Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:31:07.794Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.794Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:31:07.822Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:31:07.822Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.822Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:31:07.822Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:31:07.822Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.823Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:31:07.824Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:31:07.825Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:07.825Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:31:11.475Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:31:11.475Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:31:11.475Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:31:11.475Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:31:11.475Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:31:11.475Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:31:11.709Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:31:11.709Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:31:11.709Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:31:11.709Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:31:11.709Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:31:11.709Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:31:15.803Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:31:15.835Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:31:15.835Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:31:15.835Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:31:15.835Z] error: undefined
+[2024-12-23T11:31:29.412Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:31:29.413Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:31:36.918Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:31:36.918Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:31:36.919Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:31:36.919Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:32:31.184Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:32:31.184Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:33:02.072Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:33:02.072Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:33:40.471Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:33:40.471Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:34:42.245Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:34:42.246Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:35:13.128Z] error: <httpProxy> Error calling http://192.168.82.1/...
+[2024-12-23T11:35:13.128Z] error: <httpProxy> [
+  500,
+  Error: socket hang up
+      at connResetException (node:internal/errors:720:14)
+      at Socket.socketOnEnd (node:_http_client:525:23)
+      at Socket.emit (node:events:529:35)
+      at endReadableNT (node:internal/streams/readable:1400:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    code: 'ECONNRESET'
+  }
+]
+[2024-12-23T11:50:06.474Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:50:06.612Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:06.612Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.612Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:06.635Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:06.636Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.636Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:06.752Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:06.752Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.752Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:06.753Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:50:06.755Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.755Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:50:06.760Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:06.857Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:06.857Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.857Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:06.858Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.859Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:06.859Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.891Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:06.891Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.891Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:06.891Z] error: undefined
+[2024-12-23T11:50:06.916Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:06.916Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.917Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:06.918Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:06.918Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.918Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:06.938Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:50:06.938Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.939Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:50:06.953Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:50:06.953Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.953Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:50:06.953Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:06.953Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.953Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:50:06.955Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:06.955Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:06.955Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:50:13.824Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:50:13.857Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:13.857Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.857Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:13.858Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:13.858Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.858Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:13.890Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:13.890Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.891Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:13.891Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:50:13.891Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.891Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:50:13.896Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:13.919Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:13.920Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.920Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:13.920Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.921Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:13.921Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.945Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:50:13.945Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.945Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:50:13.946Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:13.946Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.946Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:13.946Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:13.946Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.946Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:13.977Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:50:13.977Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.978Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:50:13.979Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:13.979Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.979Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:50:13.980Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:13.980Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:13.980Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:50:14.004Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:14.004Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:14.004Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:14.004Z] error: undefined
+[2024-12-23T11:50:16.319Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:16.320Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:16.320Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:23.704Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:23.705Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:23.705Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:25.940Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:25.978Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:25.978Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:25.978Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:25.979Z] error: undefined
+[2024-12-23T11:50:28.348Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:28.348Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:28.348Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:28.521Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:50:28.522Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:50:28.522Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:50:28.522Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:50:28.522Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:50:28.523Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:50:29.242Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:50:29.266Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:29.266Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.266Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:29.267Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:29.267Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.267Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:29.271Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:29.304Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:29.304Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.304Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:29.305Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:50:29.305Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.305Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:50:29.329Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:29.329Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.329Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:29.329Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.330Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:29.330Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.331Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:29.331Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.332Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:29.332Z] error: undefined
+[2024-12-23T11:50:29.333Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:29.333Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.333Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:29.362Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:50:29.363Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.363Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:50:29.363Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:50:29.363Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.363Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:50:29.365Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:29.366Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.366Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:50:29.367Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:29.368Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:29.368Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:50:34.613Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:34.649Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:34.649Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:34.649Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:34.649Z] error: undefined
+[2024-12-23T11:50:37.566Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:50:37.614Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:37.614Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.614Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:37.631Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:37.631Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.631Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:37.643Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:50:37.643Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.643Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:50:37.651Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:37.654Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:37.654Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.655Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:37.663Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:37.663Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.663Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:37.663Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.664Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:37.665Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.666Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:37.666Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.666Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:37.666Z] error: undefined
+[2024-12-23T11:50:37.703Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:37.703Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.704Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:37.704Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:50:37.704Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.704Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:50:37.704Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:37.704Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.705Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:37.731Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:37.732Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.732Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:50:37.732Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:50:37.732Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.732Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:50:37.733Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:37.733Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:37.733Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:50:42.872Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:42.899Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:42.899Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:42.899Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:42.900Z] error: undefined
+[2024-12-23T11:50:43.484Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:50:43.523Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:43.523Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.524Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:50:43.524Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:43.524Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.524Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:50:43.553Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:50:43.554Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.554Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:50:43.554Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:43.554Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.554Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:50:43.557Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:43.584Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:43.584Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.584Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:43.584Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.585Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:50:43.585Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.586Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:43.586Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.586Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:43.586Z] error: undefined
+[2024-12-23T11:50:43.610Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:50:43.610Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.610Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:50:43.610Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:43.610Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.611Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:43.611Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:43.611Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.611Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:50:43.635Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:43.635Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.635Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:50:43.636Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:50:43.636Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.636Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:50:43.637Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:50:43.637Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:43.637Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:50:47.502Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:47.503Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:47.503Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:48.183Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:48.209Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:48.209Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:48.209Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:48.210Z] error: undefined
+[2024-12-23T11:50:48.907Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:50:48.911Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:50:48.911Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:48.911Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:50:48.912Z] error: undefined
+[2024-12-23T11:50:54.881Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:54.881Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:54.882Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:59.505Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:59.505Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:50:59.505Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:50:59.590Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:50:59.590Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:50:59.590Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:50:59.591Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:50:59.591Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:50:59.591Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:51:04.133Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:04.133Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:04.133Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:04.697Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:51:04.724Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:51:04.725Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:04.725Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:51:04.725Z] error: undefined
+[2024-12-23T11:51:08.760Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:08.760Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:08.760Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:11.706Z] debug: No containers were found with homepage labels.
+[2024-12-23T11:51:11.747Z] error: <httpProxy> Error calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:51:11.747Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pihole.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pihole.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.747Z] debug: <genericProxyHandler> HTTP Error 500 calling https://pihole.sheetgenius.app/admin/api.php...
+[2024-12-23T11:51:11.759Z] error: <httpProxy> Error calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:51:11.759Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND traefik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'traefik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.759Z] debug: <genericProxyHandler> HTTP Error 500 calling https://traefik.sheetgenius.app/api/overview...
+[2024-12-23T11:51:11.775Z] error: <httpProxy> Error calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json...
+[2024-12-23T11:51:11.775Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND portainer-demo-1.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'portainer-demo-1.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.775Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://portainer-demo-1.sheetgenius.app/api/endpoints/2/docker/containers/json?all=1
+[2024-12-23T11:51:11.778Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:51:11.799Z] error: <httpProxy> Error calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:51:11.799Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND prometheus.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'prometheus.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.799Z] debug: <genericProxyHandler> HTTP Error 500 calling https://prometheus.sheetgenius.app/api/v1/targets...
+[2024-12-23T11:51:11.800Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:51:11.800Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.800Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:51:11.800Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.801Z] error: <httpProxy> Error calling https://homeassistant.sheetgenius.app/api/template...
+[2024-12-23T11:51:11.801Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND homeassistant.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'homeassistant.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.829Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:51:11.829Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.829Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:51:11.829Z] error: undefined
+[2024-12-23T11:51:11.830Z] error: <httpProxy> Error calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info...
+[2024-12-23T11:51:11.830Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND nextcloud.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'nextcloud.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.830Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://nextcloud.sheetgenius.app/ocs/v2.php/apps/serverinfo/api/v1/info?format=json
+[2024-12-23T11:51:11.831Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:51:11.831Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.831Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Items/Counts...
+[2024-12-23T11:51:11.832Z] error: <httpProxy> Error calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:11.832Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND jellyfin.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'jellyfin.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.832Z] debug: <genericProxyHandler> HTTP Error 500 calling https://jellyfin.sheetgenius.app/emby/Sessions...
+[2024-12-23T11:51:11.865Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:51:11.865Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.865Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login
+[2024-12-23T11:51:11.865Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/core/users/...
+[2024-12-23T11:51:11.865Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.865Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/core/users/?page_size=1
+[2024-12-23T11:51:11.866Z] error: <httpProxy> Error calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/...
+[2024-12-23T11:51:11.866Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND authentik.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'authentik.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:11.866Z] error: <credentialedProxyHandler> HTTP Error 500 calling https://authentik.sheetgenius.app/api/v3/events/events/per_month/?action=login_failed
+[2024-12-23T11:51:21.345Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:51:21.373Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:51:21.374Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:21.374Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:51:21.374Z] error: undefined
+[2024-12-23T11:51:33.720Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANIPConn1...
+[2024-12-23T11:51:33.720Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:51:33.721Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANIPConnection->GetStatusInfo {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANIPConn1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:51:33.722Z] error: <httpProxy> Error calling http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1...
+[2024-12-23T11:51:33.722Z] error: <httpProxy> [
+  500,
+  Error: connect ECONNREFUSED 192.168.82.1:49000
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '192.168.82.1',
+    port: 49000
+  }
+]
+[2024-12-23T11:51:33.723Z] debug: <fritzboxProxyHandler> HTTP 500 performing SoapRequest for WANCommonInterfaceConfig->GetCommonLinkProperties {
+  error: {
+    message: 'Unknown error',
+    url: 'http://192.168.82.1:49000/igdupnp/control/WANCommonIFC1',
+    rawError: [ 500, [Error] ]
+  }
+}
+[2024-12-23T11:51:40.573Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:51:40.599Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:51:40.599Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:40.599Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:51:40.599Z] error: undefined
+[2024-12-23T11:51:48.828Z] debug: <plexProxyHandler> Getting streams from Plex API
+[2024-12-23T11:51:48.860Z] error: <httpProxy> Error calling https://plex.sheetgenius.app/status/sessions...
+[2024-12-23T11:51:48.861Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND plex.sheetgenius.app
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'plex.sheetgenius.app'
+  }
+]
+[2024-12-23T11:51:48.861Z] error: <plexProxyHandler> HTTP 500 communicating with Plex. Data: [object Object]
+[2024-12-23T11:51:48.861Z] error: undefined

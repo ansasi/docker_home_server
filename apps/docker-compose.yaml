@@ -1,14 +1,11 @@
 ---
 networks:
-  internal:
-    driver: bridge
-    name: internal
+  backend:
+    external: true
+  frontend:
+    external: true
 
 volumes:
-  prometheus-data:
-    driver: local
-  grafana-data:
-    driver: local
   pihole-data:
     driver: local
   pihole-dnsmasq.d:
@@ -38,7 +35,7 @@ services:
       - ./traefik/certs:/var/traefik/certs/:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - internal
+      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.rule=Host(`traefik.sheetgenius.app`)"
@@ -80,7 +77,7 @@ services:
     restart: unless-stopped
     # Add Pi-hole to the internal network if you want internal name resolution
     networks:
-      - internal
+      - backend
 
   portainer:
     image: portainer/portainer-ce
@@ -89,7 +86,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/ansasi/docker/portainer/data:/data
     networks:
-      - internal
+      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.rule=Host(`portainer.sheetgenius.app`)"
@@ -108,7 +105,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      - internal
+      - backend
     restart: unless-stopped
 
   prometheus:
@@ -118,7 +115,7 @@ services:
       - prometheus-data:/prometheus
       - ./prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     networks:
-      - internal
+      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.prometheus.rule=Host(`prometheus.sheetgenius.app`)"
@@ -142,7 +139,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     networks:
-      - internal
+      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)"
@@ -164,7 +161,7 @@ services:
     volumes:
       - '/:/host:ro,rslave'
     networks:
-      - internal
+      - backend
     pid: host
     restart: unless-stopped
   
@@ -180,7 +177,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
     networks:
-      - internal
+      - backend
     devices:
       - /dev/kmsg
     restart: unless-stopped
@@ -199,7 +196,7 @@ services:
   #   #   - /home/ansasi/media/tvseries:/tv         # TV series directory
   #   #   - /home/ansasi/media/movies:/movies       # Movies directory
   #   networks:
-  #     - internal
+  #     - backend
   #   labels:
   #     - "traefik.enable=true"
   #     - "traefik.http.routers.plex.rule=Host(`plex.sheetgenius.app`)"
@@ -229,7 +226,7 @@ services:
   #   #   - /home/ansasi/docker/jellyfin/cache:/cache    # Jellyfin cache
   #   #   - /home/ansasi/media:/media                    # Media files
   #   networks:
-  #     - internal
+  #     - backend
   #   labels:
   #     - "traefik.enable=true"
   #     - "traefik.http.routers.jellyfin.rule=Host(`jellyfin.sheetgenius.app`)"
