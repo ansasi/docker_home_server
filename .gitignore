@@ -1,3 +1,2 @@
 *.env
-compose_files/traefik/certs/*
-homelab/*
+apps/networking/traefik/certs/*

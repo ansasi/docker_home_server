@@ -1,0 +1,44 @@
+---
+networks:
+  backend:
+    external: true
+  frontend:
+    external: true
+
+services:
+  traefik:
+    image: traefik:v3
+    container_name: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - TZ=Europe/Madrid
+      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+    volumes:
+      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./certs:/var/traefik/certs/:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - frontend
+      - backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.sheetgenius.app`)"
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+      # TODO: review if other tags are needed
+      # - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$apr1$$QWVXQWVX$$"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.sheetgenius.app`)"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=sheetgenius.app"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.sheetgenius.app"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.http.services.traefik-secure.loadbalancer.server.port=8080"
+    restart: unless-stopped
+  

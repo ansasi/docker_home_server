@@ -1,0 +1,32 @@
+---
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+
+volumes:
+  grafana-data:
+    driver: local
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # TODO: Replace with a secure password
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - frontend
+      - backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)"
+      - "traefik.http.routers.grafana.entrypoints=https"
+      - "traefik.http.routers.grafana.tls=true"
+      - "traefik.http.routers.grafana.certresolver=cloudflare"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+    ports:
+      - 3001:3000
+    restart: unless-stopped

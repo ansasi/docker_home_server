@@ -1,0 +1,24 @@
+---
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+
+volumes:
+  prometheus-data:
+    driver: local
+
+services:
+  node_exporter:
+    image: quay.io/prometheus/node-exporter
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+    networks:
+      - frontend
+      - backend
+    pid: host
+    restart: unless-stopped

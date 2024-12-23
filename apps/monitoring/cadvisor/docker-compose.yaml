@@ -1,0 +1,25 @@
+---
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
+
+services:
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    container_name: cadvisor
+    # ports:
+    #   - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /run:/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      - frontend
+      - backend
+    devices:
+      - /dev/kmsg
+    restart: unless-stopped
