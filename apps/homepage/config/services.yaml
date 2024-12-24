@@ -19,13 +19,13 @@
             version: 5
             key: admin # {{HOMEPAGE_VAR_PIHOLE_KEY}}
     - Traefik:
-        href: http://traefik.localhost:8080/dashboard/ # https://traefik.sheetgenius.app
+        href: https://traefik.sheetgenius.app/dashboard/ # https://traefik.sheetgenius.app
         icon: traefik.svg
         description: traefik-prod-1 on srv-prod-1
         container: traefik
         widget:
             type: traefik
-            url: http://traefik.localhost:8080 # https://traefik.sheetgenius.app
+            url: https://traefik.sheetgenius.app # https://traefik.sheetgenius.app
             username: admin # TODO
             password: admin # TODO
 
@@ -115,23 +115,23 @@
         
 - Management:
     - Portainer:
-        href: https://portainer.localhost:9443 # https://portainer.sheetgenius.app
+        href: https://portainer.sheetgenius.app # https://portainer.sheetgenius.app
         icon: portainer.svg
         description: portainer-demo-1 on srv-demo-1
         container: portainer
         widget:
             type: portainer
-            url: https://portainer.localhost:9443 # https://portainer.sheetgenius.app
+            url: https://portainer.sheetgenius.app # https://portainer.sheetgenius.app
             env: 1
             key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Watchtower:
-        href: http://localhost:8082 # https://watchtower.sheetgenius.app
+        href: https://watchtower.sheetgenius.app # https://watchtower.sheetgenius.app
         icon: watchtower.svg
         description: watchtower-prod-1 on srv-prod-1
         container: watchtower
         widget:
             type: watchtower
-            url: http://localhost:8082 # https://watchtower.sheetgenius.app
+            url: https://watchtower.sheetgenius.app # https://watchtower.sheetgenius.app
             key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
         
 - Monitoring:
@@ -144,7 +144,7 @@
             type: prometheus
             url: http://localhost:9090 # https://prometheus.sheetgenius.app
     - Grafana:
-        href: http://localhost:3001 # https://grafana.sheetgenius.app
+        href: http://grafana.sheetgenius.app # https://grafana.sheetgenius.app
         description: grafana on srv-prod-1
         icon: grafana.svg
         container: grafana

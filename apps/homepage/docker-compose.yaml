@@ -11,19 +11,19 @@ networks:
 #     driver_opts:
 #       type: nfs
 #       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-prod-1-vol-1"
+#       device: ":/mnt/store/app-pv/homepage-vol-1"
 #   vol-2-images:
 #     driver: local
 #     driver_opts:
 #       type: nfs
 #       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-prod-1-vol-2/images"
+#       device: ":/mnt/store/app-pv/homepage-vol-2/images"
 #   vol-2-icons:
 #     driver: local
 #     driver_opts:
 #       type: nfs
 #       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-prod-1-vol-2/icons"
+#       device: ":/mnt/store/app-pv/homepage-vol-2/icons"
 
 services:
   homepage:
@@ -41,16 +41,16 @@ services:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
-      traefik.enable: "true"
-      traefik.http.routers.homepage-prod-1-http.entrypoints: "http"
-      traefik.http.routers.homepage-prod-1-http.rule: "Host(`homepage.sheetgenius.app`)"
-      traefik.http.routers.homepage-prod-1-https.entrypoints: "https"
-      traefik.http.routers.homepage-prod-1-https.rule: "Host(`homepage.sheetgenius.app`)"
-      traefik.http.routers.homepage-prod-1-https.tls: "true"
-      traefik.http.routers.homepage-prod-1-https.tls.certresolver: "cloudflare"
+      - traefik.enable=true
+      - traefik.http.routers.homepage-https.entrypoints=https
+      - traefik.http.routers.homepage-https.rule=Host(`homepage.sheetgenius.app`)
+      - traefik.http.routers.homepage-https.tls=true
+      - traefik.http.routers.homepage-https.tls.certresolver=cloudflare
+      - traefik.http.routers.homelab-https.entrypoints=https
+      - traefik.http.routers.homelab-https.rule=Host(`homelab.sheetgenius.app`)
+      - traefik.http.routers.homelab-https.tls=true
+      - traefik.http.routers.homelab-https.tls.certresolver=cloudflare
     networks:
       - frontend
       - backend
-    ports:
-      - "3000:3000"
     restart: unless-stopped
