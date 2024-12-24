@@ -1,3 +1,4 @@
 *.env
 apps/networking/traefik/certs/*
+apps/automation/homeassistant/config/*
 *.log

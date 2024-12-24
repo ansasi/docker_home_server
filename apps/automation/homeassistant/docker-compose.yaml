@@ -15,13 +15,13 @@ services:
       - /dev/ttyACMO
     privileged: true
     labels:
-      traefik.enable: "true"
-      traefik.http.services.homeassistant.loadbalancer.server.port: "8123"
-      traefik.http.services.homeassistant.loadbalancer.server.scheme: "http"
-      traefik.http.routers.homeassistant-https.entrypoints: "https"
-      traefik.http.routers.homeassistant-https.rule: "Host(`homeassistant.sheetgenius.app`)"
-      traefik.http.routers.homeassistant-https.tls: "true"
-      traefik.http.routers.homeassistant-https.tls.certresolver: "cloudflare"
+      - traefik.enable=true
+      - traefik.http.services.homeassistant.loadbalancer.server.port=8123
+      - traefik.http.services.homeassistant.loadbalancer.server.scheme=http
+      - traefik.http.routers.homeassistant-https.entrypoints=websecure
+      - traefik.http.routers.homeassistant-https.rule=Host(`homeassistant.sheetgenius.app`)
+      - traefik.http.routers.homeassistant-https.tls=true
+      - traefik.http.routers.homeassistant-https.tls.certresolver=cloudflare
     networks:
       - frontend
     restart: unless-stopped

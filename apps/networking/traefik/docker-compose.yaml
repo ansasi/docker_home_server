@@ -25,19 +25,18 @@ services:
       - backend
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.sheetgenius.app`)"
-      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.sheetgenius.app`)"
+      - "traefik.http.routers.traefik.entrypoints=web"
       - "traefik.http.routers.traefik.tls=true"
       # TODO: review if other tags are needed
       # - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$apr1$$QWVXQWVX$$"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.sheetgenius.app`)"
-      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.sheetgenius.app`)"
+      - "traefik.http.routers.traefik-secure.entrypoints=websecure"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=sheetgenius.app"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.sheetgenius.app"
       - "traefik.http.routers.traefik-secure.service=api@internal"
     restart: unless-stopped
-  

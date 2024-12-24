@@ -12,14 +12,14 @@ api:
   debug: true
 
 entryPoints:
-  http:
+  web:
     address: ":80"
     http:
       redirections:
         entryPoint:
           to: https
           scheme: https
-  https:
+  websecure:
     address: ":443"
 
 certificatesResolvers:
