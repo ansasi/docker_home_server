@@ -20,14 +20,13 @@ services:
       - frontend
       - backend
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.prometheus.rule=Host(`prometheus.sheetgenius.app`)"
-      - "traefik.http.routers.prometheus.entrypoints=https"
-      - "traefik.http.routers.prometheus.tls=true"
-      - "traefik.http.routers.prometheus.certresolver=cloudflare"
-      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
-    ports:
-      - "9090:9090"
+      - traefik.enable=true
+      - traefik.http.routers.prometheus-http.entrypoints=web
+      - traefik.http.routers.prometheus-http.rule=Host(`prometheus.sheetgenius.app`)
+      - traefik.http.routers.prometheus-https.entrypoints=websecure
+      - traefik.http.routers.prometheus-https.rule=Host(`prometheus.sheetgenius.app`)
+      - traefik.http.routers.prometheus-https.tls=true
+      - traefik.http.routers.prometheus-https.tls.certresolver=cloudflare
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--storage.tsdb.path=/prometheus'
