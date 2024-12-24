@@ -5,10 +5,6 @@ networks:
   backend:
     external: true
 
-volumes:
-  prometheus-data:
-    driver: local
-
 services:
   node_exporter:
     image: quay.io/prometheus/node-exporter

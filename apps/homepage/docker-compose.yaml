@@ -42,10 +42,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - traefik.enable=true
-      - traefik.http.routers.homepage-https.entrypoints=https
+      - traefik.http.routers.homepage-http.entrypoints=web
+      - traefik.http.routers.homepage-http.rule=Host(`homepage.sheetgenius.app`)
+      - traefik.http.routers.homepage-https.entrypoints=websecure
       - traefik.http.routers.homepage-https.rule=Host(`homepage.sheetgenius.app`)
       - traefik.http.routers.homepage-https.tls=true
       - traefik.http.routers.homepage-https.tls.certresolver=cloudflare
+      - traefik.http.routers.homelab-http.entrypoints=http
+      - traefik.http.routers.homelab-http.rule=Host(`homelab.sheetgenius.app`)
       - traefik.http.routers.homelab-https.entrypoints=https
       - traefik.http.routers.homelab-https.rule=Host(`homelab.sheetgenius.app`)
       - traefik.http.routers.homelab-https.tls=true
