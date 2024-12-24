@@ -2,11 +2,15 @@
 global:
   checkNewVersion: false
   sendAnonymousUsage: false
+
 log:
   level: DEBUG
+
 api:
   insecure: true
   dashboard: true
+  debug: true
+
 entryPoints:
   http:
     address: ":80"
@@ -17,23 +21,28 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
+
+certificatesResolvers:
+  cloudflare:
+    acme:
+      email: cloudflare.unknotted117@passinbox.com
+      storage: /etc/traefik/certs/cloudflare-acme.json
+      caServer: 'https://acme-v02.api.letsencrypt.org/directory' # prod (default)
+      # caServer: 'https://acme-staging-v02.api.letsencrypt.org/directory' # staging
+      dnsChallenge:
+        provider: cloudflare
+        resolvers:
+          - 1.1.1.1:53
+          - 1.0.0.1:53
+
+serversTransport:
+  insecureSkipVerify: true
+
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
     watch: true
   file:
-    directory: /var/traefik # /config.yml
+    directory: /etc/traefik
     watch: true
-certificatesResolvers:
-  cloudflare:
-    acme:
-      email: cloudflare.unknotted117@passinbox.com
-      storage: /var/traefik/certs/cloudflare-acme.json
-      # caServer: 'https://acme-v02.api.letsencrypt.org/directory' # prod (default)
-      caServer: 'https://acme-staging-v02.api.letsencrypt.org/directory' # staging
-      dnsChallenge:
-        provider: cloudflare
-        resolvers:
-          - 1.1.1.1:53
-          - 8.8.8.8:53

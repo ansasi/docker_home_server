@@ -9,9 +9,14 @@ services:
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    environment:
+      - TZ=Europe/Madrid
+      # - WATCHTOWER_CLEANUP=true
+      # - WATCHTOWER_HTTP_API_METRICS=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - backend
-      - frontend
+    # ports:
+    #   - "8082:8080" # TODO: remove when traefik is working
     restart: unless-stopped

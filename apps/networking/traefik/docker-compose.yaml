@@ -12,13 +12,15 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080"
     environment:
       - TZ=Europe/Madrid
       - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
     volumes:
-      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
-      - ./certs:/var/traefik/certs/:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./certs:/etc/traefik/certs/
+      - ./conf/:/etc/traefik/conf/
     networks:
       - frontend
       - backend
