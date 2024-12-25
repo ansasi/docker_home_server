@@ -2,28 +2,6 @@
 networks:
   frontend:
     external: true
-  backend:
-    external: true
-
-# volumes:
-#   vol-1:
-#     driver: local
-#     driver_opts:
-#       type: nfs
-#       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-vol-1"
-#   vol-2-images:
-#     driver: local
-#     driver_opts:
-#       type: nfs
-#       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-vol-2/images"
-#   vol-2-icons:
-#     driver: local
-#     driver_opts:
-#       type: nfs
-#       o: addr=nas-prod-1.sheetgenius.app,rw,vers=4.1
-#       device: ":/mnt/store/app-pv/homepage-vol-2/icons"
 
 services:
   homepage:
@@ -35,20 +13,17 @@ services:
       # - HOMEPAGE_VAR_AUTHENTIK_KEY=${HOMEPAGE_VAR_AUTHENTIK_KEY}
       # - HOMEPAGE_VAR_HOMEASSISTANT_KEY=${HOMEPAGE_VAR_HOMEASSISTANT_KEY}
     volumes:
-      # - vol-1:/app/config
-      # - vol-2-images:/app/public/images
-      # - vol-2-icons:/app/public/icons
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - traefik.enable=true
-      - traefik.http.routers.homepage-http.entrypoints=web
-      - traefik.http.routers.homepage-http.rule=Host(`homepage.sheetgenius.app`)
-      - traefik.http.routers.homepage-https.entrypoints=websecure
-      - traefik.http.routers.homepage-https.rule=Host(`homepage.sheetgenius.app`)
-      - traefik.http.routers.homepage-https.tls=true
-      - traefik.http.routers.homepage-https.tls.certresolver=cloudflare
+      - traefik.http.routers.homepage.entrypoints=web
+      - traefik.http.routers.homepage.rule=Host(`homepage.sheetgenius.app`)
+      # - traefik.http.routers.homepage.middlewares=default-whitelist@file
+      - traefik.http.routers.homepage-secure.entrypoints=websecure
+      - traefik.http.routers.homepage-secure.rule=Host(`homepage.sheetgenius.app`)
+      - traefik.http.routers.homepage-secure.tls=true
+      - traefik.http.routers.homepage-secure.tls.certresolver=cloudflare
     networks:
       - frontend
-      - backend
     restart: unless-stopped
