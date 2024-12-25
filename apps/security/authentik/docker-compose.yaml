@@ -46,16 +46,16 @@ services:
     networks:
       - backend
   server:
-    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2024.6.1}
+    image: ghcr.io/goauthentik/server:2024.12.1
     container_name: authentik_server
     restart: unless-stopped
     command: server
     environment:
-      AUTHENTIK_REDIS__HOST: redis
-      AUTHENTIK_POSTGRESQL__HOST: postgresql
-      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-authentik}
-      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
-      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      - AUTHENTIK_REDIS__HOST=redis
+      - AUTHENTIK_POSTGRESQL__HOST=postgresql
+      - AUTHENTIK_POSTGRESQL__USER=${PG_USER:-authentik}
+      - AUTHENTIK_POSTGRESQL__NAME=${PG_DB:-authentik}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${PG_PASS}
     volumes:
       - ./media:/media
       - ./custom-templates:/templates
@@ -65,7 +65,8 @@ services:
       - postgresql
       - redis
     networks:
-      - proxy
+      - frontend
+      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.authentik.entrypoints=web"
@@ -80,15 +81,15 @@ services:
       - "traefik.http.services.authentik.loadbalancer.server.port=9443"
       - "traefik.docker.network=proxy"
   worker:
-    image: ghcr.io/goauthentik/worker:${AUTHENTIK_TAG:-2024.6.1}
+    image: ghcr.io/goauthentik/server:2024.12.1
     restart: unless-stopped
     command: worker
     environment:
-      AUTHENTIK_REDIS__HOST: redis
-      AUTHENTIK_POSTGRESQL__HOST: postgresql
-      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-authentik}
-      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
-      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      - AUTHENTIK_REDIS__HOST=redis
+      - AUTHENTIK_POSTGRESQL__HOST=postgresql
+      - AUTHENTIK_POSTGRESQL__USER=${PG_USER:-authentik}
+      - AUTHENTIK_POSTGRESQL__NAME=${PG_DB:-authentik}
+      - AUTHENTIK_POSTGRESQL__PASSWORD=${PG_PASS}
     # `user: root` and the docker socket volume are optional.
     # See more for the docker socket integration here:
     # https://goauthentik.io/docs/outposts/integrations/docker
