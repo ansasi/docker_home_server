@@ -1,0 +1,15 @@
+http:
+  middlewares:    
+    crowdsec-bouncer:
+      forwardauth:
+        address: http://bouncer-traefik:8080/api/v1/forwardAuth
+        trustForwardHeader: true
+    ip-allowlist:
+      ipAllowList:
+        sourceRange:
+          - "127.0.0.1/32"
+          - "192.168.1.7"
+        # ipStrategy:
+        #   excludedIPs:
+        #     - "127.0.0.1/32"
+        #     - "192.168.1.7"
