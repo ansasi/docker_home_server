@@ -23,7 +23,7 @@ Traefik is a popular reverse proxy that integrates well with Docker to manage an
 
 ---
 networks:
-  proxy:
+  frontend:
     external: true
 
 volumes:
@@ -38,7 +38,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer-data:/data
     networks:
-      - proxy
+      - frontend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.entrypoints=websecure"
@@ -55,7 +55,7 @@ services:
 
 ---
 networks:
-  proxy:
+  frontend:
     external: true
 
 volumes:
@@ -71,7 +71,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     networks:
-      - proxy
+      - frontend
     labels:
       - traefik.enable=true
       - traefik.http.routers.grafana-http.entrypoints=web
