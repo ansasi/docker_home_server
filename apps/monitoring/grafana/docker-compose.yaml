@@ -2,8 +2,6 @@
 networks:
   frontend:
     external: true
-  backend:
-    external: true
 
 volumes:
   grafana-data:
@@ -19,13 +17,12 @@ services:
       - grafana-data:/var/lib/grafana
     networks:
       - frontend
-      - backend
     labels:
       - traefik.enable=true
-      - traefik.http.routers.grafana-http.entrypoints=web
-      - traefik.http.routers.grafana-http.rule=Host(`grafana.sheetgenius.app`)
-      - traefik.http.routers.grafana-https.entrypoints=websecure
-      - traefik.http.routers.grafana-https.rule=Host(`grafana.sheetgenius.app`)
-      - traefik.http.routers.grafana-https.tls=true
-      - traefik.http.routers.grafana-https.tls.certresolver=cloudflare
+      - traefik.http.routers.grafana.entrypoints=web
+      - traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-websecure.entrypoints=websecure
+      - traefik.http.routers.grafana-websecure.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-websecure.tls=true
+      - traefik.http.routers.grafana-websecure.tls.certresolver=cloudflare
     restart: unless-stopped
