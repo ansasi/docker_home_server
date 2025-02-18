@@ -1,12 +1,22 @@
 version: "3.8"
 
-# --- Uptime Kuma Image
+volumes:
+  uptimekuma-data:
+    driver: local
+  # netdata-data:
+  #   driver: local
+  grafana-data:
+    driver: local
+  prometheus-data:
+    driver: local
+
 services:
+# --- Uptime Kuma Image
   uptimekuma:
     image: louislam/uptime-kuma:latest
     container_name: uptimekuma
     volumes:
-      - ./monitoring/uptime-kuma/data:/app/data
+      - uptimekuma-data:/app/data # ./monitoring/uptime-kuma/data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8160:3001"
@@ -23,37 +33,37 @@ services:
       - netmonitor
 
 
-# --- Netdata Image
-  netdata:
-    image: netdata/netdata
-    container_name: netdata
-#    hostname: example.com       # Optional set to fqdn of host
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - apparmor:unconfined
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /etc/os-release:/host/etc/os-release:ro
-      - /etc/passwd:/host/etc/passwd:ro
-      - /etc/group:/host/etc/group:ro
-#      - ./monitoring/netdata/netdataconfig:/etc/netdata        # Optional
-#      - ./monitoring/netdata/netdatalib:/var/lib/netdata       # Optional
-#      - ./monitoring/netdata/netdatacache:/var/cache/netdata   # Optional
-    ports:
-      - 8166:19999
-    restart: unless-stopped
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.netdata.entrypoints=web
-      - traefik.http.routers.netdata.rule=Host(`netdata.sheetgenius.app`)
-      - traefik.http.routers.netdata-websecure.entrypoints=websecure
-      - traefik.http.routers.netdata-websecure.rule=Host(`netdata.sheetgenius.app`)
-      - traefik.http.routers.netdata-websecure.tls=true
-      - traefik.http.routers.netdata-websecure.tls.certresolver=cloudflare
-    networks:
-      - netmonitor
+# # --- Netdata Image
+#   netdata:
+#     image: netdata/netdata
+#     container_name: netdata
+# #    hostname: example.com       # Optional set to fqdn of host
+#     cap_add:
+#       - SYS_PTRACE
+#     security_opt:
+#       - apparmor:unconfined
+#     volumes:
+#       - /proc:/host/proc:ro
+#       - /sys:/host/sys:ro
+#       - /etc/os-release:/host/etc/os-release:ro
+#       - /etc/passwd:/host/etc/passwd:ro
+#       - /etc/group:/host/etc/group:ro
+# #      - ./monitoring/netdata/netdataconfig:/etc/netdata        # Optional
+# #      - ./monitoring/netdata/netdatalib:/var/lib/netdata       # Optional
+# #      - ./monitoring/netdata/netdatacache:/var/cache/netdata   # Optional
+#     ports:
+#       - 8166:19999
+#     restart: unless-stopped
+#     labels:
+#       - traefik.enable=true
+#       - traefik.http.routers.netdata.entrypoints=web
+#       - traefik.http.routers.netdata.rule=Host(`netdata.sheetgenius.app`)
+#       - traefik.http.routers.netdata-websecure.entrypoints=websecure
+#       - traefik.http.routers.netdata-websecure.rule=Host(`netdata.sheetgenius.app`)
+#       - traefik.http.routers.netdata-websecure.tls=true
+#       - traefik.http.routers.netdata-websecure.tls.certresolver=cloudflare
+#     networks:
+#       - netmonitor
 
 
 # --- Grafana Image
@@ -61,7 +71,8 @@ services:
     image: grafana/grafana
     container_name: grafana
     volumes:
-      - ./monitoring/grafana/data:/var/lib/grafana
+      # - ./monitoring/grafana/data:/var/lib/grafana
+      - grafana-data:/var/lib/grafana # ./monitoring/grafana/data:/var/lib/grafana
     ports:
       - "8164:3000"
     restart: unless-stopped
@@ -82,10 +93,12 @@ services:
     image: prom/prometheus:latest
     container_name: prometheus
     command:
-      - "--config.file=/etc/prometheus:"
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
     volumes:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
-      - ./monitoring/prometheus/data:/prometheus
+      - prometheus-data:/prometheus # ./monitoring/prometheus/data:/prometheus
     ports:
       - "8163:9090"
     restart: unless-stopped
