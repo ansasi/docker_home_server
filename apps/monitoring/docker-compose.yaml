@@ -139,7 +139,7 @@ networks:
     driver: bridge
     attachable: true
     internal: false
-    ipam:
-      config:
-        - subnet: 172.50.0.0/16 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
-          gateway: 172.50.0.1 # GATEWAY GOES WITH THE SUBNET!!!
+    # ipam:
+    #   config:
+    #     - subnet: 172.50.0.0/16 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
+    #       gateway: 172.50.0.1 # GATEWAY GOES WITH THE SUBNET!!!
