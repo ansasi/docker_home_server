@@ -58,7 +58,7 @@ services:
 
 # --- Grafana Image
   grafana:
-    image: grafana/grafana-oss:latest
+    image: grafana/grafana
     container_name: grafana
     volumes:
       - ./monitoring/grafana/data:/var/lib/grafana
