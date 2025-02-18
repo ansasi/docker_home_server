@@ -2,3 +2,6 @@
 apps/networking/traefik/certs/*
 apps/automation/homeassistant/config/*
 *.log
+!apps/security/authentik/docker-compose.yaml
+!apps/security/authentik/README.md
+apps/security/authentik/*
