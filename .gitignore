@@ -5,3 +5,4 @@ apps/automation/homeassistant/config/*
 !apps/security/authentik/docker-compose.yaml
 !apps/security/authentik/README.md
 apps/security/authentik/*
+app/monitoring/monitoring/*
