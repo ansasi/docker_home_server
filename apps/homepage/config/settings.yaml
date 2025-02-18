@@ -18,32 +18,32 @@ providers:
 
 layout:
   Networking:
-    icon: networking.svg
+    icon: traefik.svg
     tab: general
     columns: 2
   Management:
-    icon: management.svg
+    icon: portainer.svg
     tab: general
     columns: 2
   Monitoring:
-    icon: monitoring.svg
+    icon: prometheus.svg
     tab: general
     columns: 2
   Storage:
-    icon: storage.svg
+    icon: qnap.svg
     tab: general
     columns: 2
   Media:
-    icon: media.svg
+    icon: plex.svg
     tab: media
     style: columns
     columns: 3
   Security:
-    icon: security.svg
+    icon: authentik.png
     tab: general
     columns: 2
   Automation:
-    icon: automation.svg
+    icon: home-assistant.svg
     tab: general
     columns: 2
 
