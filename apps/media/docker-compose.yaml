@@ -458,7 +458,7 @@ networks:
     driver: bridge
     attachable: true
     internal: false
-    ipam:
-      config:
-        - subnet: 10.0.30.0/24 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
-          gateway: 10.0.30.1 # GATEWAY GOES WITH THE SUBNET!!!
+    # ipam:
+    #   config:
+    #     - subnet: 10.0.30.0/24 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
+    #       gateway: 10.0.30.1 # GATEWAY GOES WITH THE SUBNET!!!
