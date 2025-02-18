@@ -8,8 +8,8 @@ services:
     volumes:
       - ./monitoring/uptime-kuma/data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
-    # ports:
-    #   - "8160:3001"
+    ports:
+      - "8160:3001"
     restart: unless-stopped
     labels:
       - traefik.enable=true
@@ -41,8 +41,8 @@ services:
 #      - ./monitoring/netdata/netdataconfig:/etc/netdata        # Optional
 #      - ./monitoring/netdata/netdatalib:/var/lib/netdata       # Optional
 #      - ./monitoring/netdata/netdatacache:/var/cache/netdata   # Optional
-    # ports:
-    #   - 8166:19999
+    ports:
+      - 8166:19999
     restart: unless-stopped
     labels:
       - traefik.enable=true
@@ -62,8 +62,8 @@ services:
     container_name: grafana
     volumes:
       - ./monitoring/grafana/data:/var/lib/grafana
-    # ports:
-    #   - "8164:3000"
+    ports:
+      - "8164:3000"
     restart: unless-stopped
     labels:
       - traefik.enable=true
@@ -86,8 +86,8 @@ services:
     volumes:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
       - ./monitoring/prometheus/data:/prometheus
-    # ports:
-    #   - "8163:9090"
+    ports:
+      - "8163:9090"
     restart: unless-stopped
     labels:
       - traefik.enable=true
@@ -101,25 +101,25 @@ services:
       - netmonitor
 
 
-# --- OpenSpeedTest Image
-  openspeedtest:
-    image: openspeedtest:latest
-    container_name: openspeedtest
-    # ports:
-    #   - 8161:3000
-    #   - 8162:3001
-    restart: unless-stopped
-    # TODO: Check if the labels are correct for both ports
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.openspeedtest.entrypoints=web
-      - traefik.http.routers.openspeedtest.rule=Host(`openspeedtest.sheetgenius.app`)
-      - traefik.http.routers.openspeedtest-websecure.entrypoints=websecure
-      - traefik.http.routers.openspeedtest-websecure.rule=Host(`openspeedtest.sheetgenius.app`)
-      - traefik.http.routers.openspeedtest-websecure.tls=true
-      - traefik.http.routers.openspeedtest-websecure.tls.certresolver=cloudflare
-    networks:
-      - netmonitor
+# # --- OpenSpeedTest Image
+#   openspeedtest:
+#     image: openspeedtest/latest
+#     container_name: openspeedtest
+#     ports:
+#       - 8161:3000
+#       - 8162:3001
+#     restart: unless-stopped
+#     # TODO: Check if the labels are correct for both ports
+#     labels:
+#       - traefik.enable=true
+#       - traefik.http.routers.openspeedtest.entrypoints=web
+#       - traefik.http.routers.openspeedtest.rule=Host(`openspeedtest.sheetgenius.app`)
+#       - traefik.http.routers.openspeedtest-websecure.entrypoints=websecure
+#       - traefik.http.routers.openspeedtest-websecure.rule=Host(`openspeedtest.sheetgenius.app`)
+#       - traefik.http.routers.openspeedtest-websecure.tls=true
+#       - traefik.http.routers.openspeedtest-websecure.tls.certresolver=cloudflare
+#     networks:
+#       - netmonitor
 
 networks:
   netmonitor:
