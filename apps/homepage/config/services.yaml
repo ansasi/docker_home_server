@@ -5,9 +5,9 @@
         icon: avmfritzbox.svg
         description: gw-prod-1
         siteMonitor: http://192.168.82.1
-        widget:
-            type: fritzbox
-            url: http://192.168.82.1
+        # widget:
+        #     type: fritzbox
+        #     url: http://192.168.82.1
     - Traefik:
         href: https://traefik-dashboard.sheetgenius.app/
         icon: traefik.svg
@@ -15,7 +15,7 @@
         container: traefik
         widget:
             type: traefik
-            url: https://traefik-dashboard.sheetgenius.app
+            url: http://traefik:8080
 
 - Storage:
     - QNAP 462:
@@ -32,105 +32,98 @@
         href: https://plex.sheetgenius.app
         icon: plex.svg
         description: plex-prod-1 on srv-prod-1
-        widget:
-            type: plex
-            url: https://plex.sheetgenius.app
-            key: {{HOMEPAGE_VAR_PLEX_KEY}}
+        # widget:
+        #     type: plex
+        #     url: https://plex.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_PLEX_KEY}}
     - Jellyfin:
         href: https://jellyfin.sheetgenius.app
         icon: jellyfin.svg
         description: jellyfin-prod-1 on srv-prod-1
-        widget:
-            type: jellyfin
-            url: https://jellyfin.sheetgenius.app
-            key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
-    - Sonarr:
-        href: https://sonarr.sheetgenius.app
-        icon: sonarr.svg
-        description: sonarr-prod-1 on srv-prod-1
-        widget:
-            type: sonarr
-            url: https://sonarr.sheetgenius.app
-            key: {{HOMEPAGE_VAR_SONARR_KEY}}
-    - Radarr:
-        href: https://radarr.sheetgenius.app
-        icon: radarr.svg
-        description: radarr-prod-1 on srv-prod-1
-        widget:
-            type: radarr
-            url: https://radarr.sheetgenius.app
-            key: {{HOMEPAGE_VAR_RADARR_KEY}}
-    - Lidarr:
-        href: https://lidarr.sheetgenius.app
-        icon: lidarr.svg
-        description: lidarr-prod-1 on srv-prod-1
-        widget:
-            type: lidarr
-            url: https://lidarr.sheetgenius.app
-            key: {{HOMEPAGE_VAR_LIDARR_KEY}}
-    - Readarr:
-        href: https://readarr.sheetgenius.app
-        icon: readarr.svg
-        description: readarr-prod-1 on srv-prod-1
-        widget:
-            type: readarr
-            url: https://readarr.sheetgenius.app
-            key: {{HOMEPAGE_VAR_READARR_KEY}}
-    - Bazarr:
-        href: https://bazarr.sheetgenius.app
-        icon: bazarr.svg
-        description: bazarr-prod-1 on srv-prod-1
-        widget:
-            type: bazarr
-            url: https://bazarr.sheetgenius.app
-            key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+        # widget:
+        #     type: jellyfin
+        #     url: https://jellyfin.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
     - Nexcloud:
         href: https://nextcloud.sheetgenius.app
         icon: nextcloud.svg
         description: nextcloud-prod-1 on srv-prod-1
-        widget:
-            type: nextcloud
-            url: https://nextcloud.sheetgenius.app
-            key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
-    - Bittorrent:
-        href: https://bittorrent.sheetgenius.app
-        icon: si-bittorrent
-        description: bittorrent-prod-1 on srv-prod-1
-        widget:
-            type: bittorrent
-            url: https://bittorrent.sheetgenius.app
-            key: {{HOMEPAGE_VAR_BITTORRENT_KEY}}
+        # widget:
+        #     type: nextcloud
+        #     url: https://nextcloud.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
+    - Torrent:
+        - Sonarr:
+            href: https://sonarr.sheetgenius.app
+            icon: sonarr.svg
+            description: sonarr-prod-1 on srv-prod-1
+            # widget:
+            #     type: sonarr
+            #     url: https://sonarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_SONARR_KEY}}
+        - Radarr:
+            href: https://radarr.sheetgenius.app
+            icon: radarr.svg
+            description: radarr-prod-1 on srv-prod-1
+            # widget:
+            #     type: radarr
+            #     url: https://radarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_RADARR_KEY}}
+        - Lidarr:
+            href: https://lidarr.sheetgenius.app
+            icon: lidarr.svg
+            description: lidarr-prod-1 on srv-prod-1
+            # widget:
+            #     type: lidarr
+            #     url: https://lidarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_LIDARR_KEY}}
+        - Readarr:
+            href: https://readarr.sheetgenius.app
+            icon: readarr.svg
+            description: readarr-prod-1 on srv-prod-1
+            # widget:
+            #     type: readarr
+            #     url: https://readarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_READARR_KEY}}
+        - Bazarr:
+            href: https://bazarr.sheetgenius.app
+            icon: bazarr.svg
+            description: bazarr-prod-1 on srv-prod-1
+            # widget:
+            #     type: bazarr
+            #     url: https://bazarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+        - Bittorrent:
+            href: https://bittorrent.sheetgenius.app
+            icon: si-bittorrent
+            description: bittorrent-prod-1 on srv-prod-1
+            # widget:
+            #     type: bittorrent
+            #     url: https://bittorrent.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_BITTORRENT_KEY}}
         
 - Management:
     - Portainer:
-        href: https://portainer.sheetgenius.app # https://portainer.sheetgenius.app
+        href: https://portainer.sheetgenius.app
         icon: portainer.svg
         description: portainer-demo-1 on srv-demo-1
         container: portainer
-        # widget:
-        #     type: portainer
-        #     url: https://portainer.sheetgenius.app # https://portainer.sheetgenius.app
-        #     env: 1
-        #     key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+        widget:
+            type: portainer
+            url: https://portainer.sheetgenius.app
+            env: 1
+            key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Watchtower:
-        href: https://watchtower.sheetgenius.app # https://watchtower.sheetgenius.app
+        href: https://watchtower.sheetgenius.app
         icon: watchtower.svg
         description: watchtower-prod-1 on srv-prod-1
         container: watchtower
         # widget:
         #     type: watchtower
-        #     url: https://watchtower.sheetgenius.app # https://watchtower.sheetgenius.app
+        #     url: http://<ip-machine>:8080
         #     key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
         
 - Monitoring:
-    - Prometheus:
-        href: https://prometheus.sheetgenius.app
-        description: prometheus on srv-prod-1
-        icon: prometheus.svg
-        container: prometheus
-        widget:
-            type: prometheus
-            url: https://prometheus.sheetgenius.app
     - Grafana:
         href: https://grafana.sheetgenius.app
         description: grafana on srv-prod-1
@@ -139,8 +132,17 @@
         widget:
             type: grafana
             url: https://grafana.sheetgenius.app
-            username: admin # TODO
-            password: pEW*QdSUQvyvuxRH5x0wft&F # TODO
+            username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
+            password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+    - Prometheus:
+        href: https://prometheus.sheetgenius.app
+        description: prometheus on srv-prod-1
+        icon: prometheus.svg
+        container: prometheus
+        # widget:
+        #     type: prometheus
+        #     url: https://prometheus.sheetgenius.app
+    
 
 - Security:
     - Authentik:
@@ -164,7 +166,7 @@
         icon: home-assistant.svg
         description: homeassistant-prod-1 on srv-prod-7
         container: homeassistant
-        widget:
-            type: homeassistant
-            url: https://homeassistant.sheetgenius.app
-            key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
+        # widget:
+        #     type: homeassistant
+        #     url: https://homeassistant.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
