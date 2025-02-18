@@ -24,6 +24,8 @@ services:
     volumes:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "8165:3000"
     labels:
       - traefik.enable=true
       - traefik.http.routers.homepage.entrypoints=web

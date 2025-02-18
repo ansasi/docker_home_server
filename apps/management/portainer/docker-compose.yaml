@@ -16,6 +16,8 @@ services:
       - portainer-data:/data
     networks:
       - frontend
+    ports:
+      - "9000:9000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.entrypoints=websecure"
