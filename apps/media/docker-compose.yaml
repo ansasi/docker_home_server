@@ -40,16 +40,8 @@ services:
       - ./appdata/jellyfin/cache:/cache
       - /dev/shm:/transcode
 #      - /opt/vc/lib:/opt/vc/lib # Raspberry Pi GPU libraries for multimedia operations
-    ports:
-      - 8110:8096
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.jellyfin.entrypoints=web
-      - traefik.http.routers.jellyfin.rule=Host(`jellyfin.sheetgenius.app`)
-      - traefik.http.routers.jellyfin-websecure.entrypoints=websecure
-      - traefik.http.routers.jellyfin-websecure.rule=Host(`jellyfin.sheetgenius.app`)
-      - traefik.http.routers.jellyfin-websecure.tls=true
-      - traefik.http.routers.jellyfin-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8110:8096
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -100,16 +92,8 @@ services:
       TZ: Etc/UTC
     volumes:
       - ./appdata/jellyseerr/config:/app/config
-    ports:
-      - 8111:5055
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.jellyseerr.entrypoints=web
-      - traefik.http.routers.jellyseerr.rule=Host(`jellyseerr.sheetgenius.app`)
-      - traefik.http.routers.jellyseerr-websecure.entrypoints=websecure
-      - traefik.http.routers.jellyseerr-websecure.rule=Host(`jellyseerr.sheetgenius.app`)
-      - traefik.http.routers.jellyseerr-websecure.tls=true
-      - traefik.http.routers.jellyseerr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8111:5055
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -125,23 +109,12 @@ services:
       PGID: 1000
       UMASK: 002
       TZ: Etc/UTC
-      WEBUI_PORTS: 8080/tcp,8080/udp
-    # TODO: Check ports with traefik
-    ports:
-      - 8290:8080
-      - 8291:6881
-      - 8291:6881/udp
+      WEBUI_PORTS: "8085"
+    # ports:
+    #   - 8085:8085
     volumes:
       - ./appdata/qbittorrent/config:/config
       - ./data/torrents:/data/torrents
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.qbittorrent.entrypoints=web
-      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.sheetgenius.app`)
-      - traefik.http.routers.qbittorrent-websecure.entrypoints=websecure
-      - traefik.http.routers.qbittorrent-websecure.rule=Host(`qbittorrent.sheetgenius.app`)
-      - traefik.http.routers.qbittorrent-websecure.tls=true
-      - traefik.http.routers.qbittorrent-websecure.tls.certresolver=cloudflare
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -217,18 +190,8 @@ services:
       TZ: Etc/UTC
     volumes:
       - ./appdata/prowlarr/config:/config
-    ports:
-      - "8113:9696"
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.prowlarr.entrypoints=web
-      - traefik.http.routers.prowlarr.rule=Host(`prowlarr.sheetgenius.app`)
-      - traefik.http.routers.prowlarr-websecure.entrypoints=websecure
-      - traefik.http.routers.prowlarr-websecure.rule=Host(`prowlarr.sheetgenius.app`)
-      - traefik.http.routers.prowlarr-websecure.tls=true
-      - traefik.http.routers.prowlarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - "8113:9696"
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -247,18 +210,8 @@ services:
     volumes:
       - ./appdata/radarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    ports:
-      - 8114:7878
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.radarr.entrypoints=web
-      - traefik.http.routers.radarr.rule=Host(`radarr.sheetgenius.app`)
-      - traefik.http.routers.radarr-websecure.entrypoints=websecure
-      - traefik.http.routers.radarr-websecure.rule=Host(`radarr.sheetgenius.app`)
-      - traefik.http.routers.radarr-websecure.tls=true
-      - traefik.http.routers.radarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8114:7878
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -296,18 +249,8 @@ services:
     volumes:
       - ./appdata/sonarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    ports:
-      - 8115:8989
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.sonarr.entrypoints=web
-      - traefik.http.routers.sonarr.rule=Host(`sonarr.sheetgenius.app`)
-      - traefik.http.routers.sonarr-websecure.entrypoints=websecure
-      - traefik.http.routers.sonarr-websecure.rule=Host(`sonarr.sheetgenius.app`)
-      - traefik.http.routers.sonarr-websecure.tls=true
-      - traefik.http.routers.sonarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8115:8989
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -345,18 +288,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/bazarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    ports:
-      - 8116:6767
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.bazarr.entrypoints=web
-      - traefik.http.routers.bazarr.rule=Host(`bazarr.sheetgenius.app`)
-      - traefik.http.routers.bazarr-websecure.entrypoints=websecure
-      - traefik.http.routers.bazarr-websecure.rule=Host(`bazarr.sheetgenius.app`)
-      - traefik.http.routers.bazarr-websecure.tls=true
-      - traefik.http.routers.bazarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8116:6767
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -375,18 +308,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/lidarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    ports:
-      - 8117:8686
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.lidarr.entrypoints=web
-      - traefik.http.routers.lidarr.rule=Host(`lidarr.sheetgenius.app`)
-      - traefik.http.routers.lidarr-websecure.entrypoints=websecure
-      - traefik.http.routers.lidarr-websecure.rule=Host(`lidarr.sheetgenius.app`)
-      - traefik.http.routers.lidarr-websecure.tls=true
-      - traefik.http.routers.lidarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8117:8686
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -405,18 +328,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/readarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    ports:
-      - 8118:8787
-    logging:
-      driver: json-file
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.readarr.entrypoints=web
-      - traefik.http.routers.readarr.rule=Host(`readarr.sheetgenius.app`)
-      - traefik.http.routers.readarr-websecure.entrypoints=websecure
-      - traefik.http.routers.readarr-websecure.rule=Host(`readarr.sheetgenius.app`)
-      - traefik.http.routers.readarr-websecure.tls=true
-      - traefik.http.routers.readarr-websecure.tls.certresolver=cloudflare
+    # ports:
+    #   - 8118:8787
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -453,6 +366,23 @@ services:
     depends_on:
       - gluetun
 
+  jackett:
+    image: ghcr.io/linuxserver/jackett:latest
+    container_name: jackett
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+    volumes:
+      - ./appdata/jackett/config:/config
+      - /media/disk/exthdd01/extarrs/data:/data
+    # ports:
+    #   - 8112:9117
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
+
   # --- Gluetun Image - VPN Client - Used to connect to VPN services ---###
   gluetun:
     image: qmcgaw/gluetun
@@ -466,7 +396,16 @@ services:
       - 6881:6881
       - 6881:6881/udp
       # Port to apps
+      - 8110:8096 # Jellyfin
+      - 8111:5055 # Jellyseerr
       - 8085:8085 # qbittorrent
+      - 9696:9696 # Prowlarr
+      - 7878:7878 # Radarr
+      - 8989:8989 # Sonarr
+      - 6767:6767 # Bazarr
+      - 8686:8686 # Lidarr
+      - 8787:8787 # Readarr
+      - 9117:9117 # Jackett
     volumes:
       - gluetun-data:/gluetun
     environment:
@@ -487,79 +426,103 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
-      - "traefik.http.routers.qbittorrent.entrypoints=http"
-      - "traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.qbittorrent-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.qbittorrent.middlewares=qbittorrent-https-redirect"
-      - "traefik.http.routers.qbittorrent-secure.entrypoints=https"
-      - "traefik.http.routers.qbittorrent-secure.rule=Host(`qbittorrent.jimsgarage.co.uk`)"
-      - "traefik.http.routers.qbittorrent-secure.tls=true"
-      - "traefik.http.routers.qbittorrent-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.qbittorrent-secure.service=qbittorrent"
-      - "traefik.http.services.qbittorrent.loadbalancer.server.port=8085"
 
-      - "traefik.http.routers.jackett.entrypoints=http"
-      - "traefik.http.routers.jackett.rule=Host(`jackett.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.jackett-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.jackett.middlewares=jackett-https-redirect"
-      - "traefik.http.routers.jackett-secure.entrypoints=https"
-      - "traefik.http.routers.jackett-secure.rule=Host(`jackett.jimsgarage.co.uk`)"
-      - "traefik.http.routers.jackett-secure.tls=true"
-      - "traefik.http.routers.jackett-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.jackett-secure.service=jackett"
-      - "traefik.http.services.jackett.loadbalancer.server.port=9117"
+      # Jellyfin
+      - traefik.http.routers.jellyfin.entrypoints=web
+      - traefik.http.routers.jellyfin.rule=Host(`jellyfin.sheetgenius.app`)
+      - traefik.http.routers.jellyfin-websecure.entrypoints=websecure
+      - traefik.http.routers.jellyfin-websecure.rule=Host(`jellyfin.sheetgenius.app`)
+      - traefik.http.routers.jellyfin-websecure.tls=true
+      - traefik.http.routers.jellyfin-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.jellyfin-websecure.service=jellyfin
+      - traefik.http.services.jellyfin.loadbalancer.server.port=8096
 
-      - "traefik.http.routers.sonarr.entrypoints=http"
-      - "traefik.http.routers.sonarr.rule=Host(`sonarr.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.sonarr-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.sonarr.middlewares=sonarr-https-redirect"
-      - "traefik.http.routers.sonarr-secure.entrypoints=https"
-      - "traefik.http.routers.sonarr-secure.rule=Host(`sonarr.jimsgarage.co.uk`)"
-      - "traefik.http.routers.sonarr-secure.tls=true"
-      - "traefik.http.routers.sonarr-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.sonarr-secure.service=sonarr"
-      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+      # Jellyseerr
+      - traefik.http.routers.jellyseerr.entrypoints=web
+      - traefik.http.routers.jellyseerr.rule=Host(`jellyseerr.sheetgenius.app`)
+      - traefik.http.routers.jellyseerr-websecure.entrypoints=websecure
+      - traefik.http.routers.jellyseerr-websecure.rule=Host(`jellyseerr.sheetgenius.app`)
+      - traefik.http.routers.jellyseerr-websecure.tls=true
+      - traefik.http.routers.jellyseerr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.jellyseerr-websecure.service=jellyseerr
+      - traefik.http.services.jellyseerr.loadbalancer.server.port=5055
 
-      - "traefik.http.routers.prowlarr.entrypoints=http"
-      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.prowlarr-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.prowlarr.middlewares=prowlarr-https-redirect"
-      - "traefik.http.routers.prowlarr-secure.entrypoints=https"
-      - "traefik.http.routers.prowlarr-secure.rule=Host(`prowlarr.jimsgarage.co.uk`)"
-      - "traefik.http.routers.prowlarr-secure.tls=true"
-      - "traefik.http.routers.prowlarr-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.prowlarr-secure.service=prowlarr"
-      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
+      # qBittorrent
+      - traefik.http.routers.qbittorrent.entrypoints=web
+      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.sheetgenius.app`)
+      - traefik.http.routers.qbittorrent-websecure.entrypoints=websecure
+      - traefik.http.routers.qbittorrent-websecure.rule=Host(`qbittorrent.sheetgenius.app`)
+      - traefik.http.routers.qbittorrent-websecure.tls=true
+      - traefik.http.routers.qbittorrent-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.qbittorrent-websecure.service=qbittorrent
+      - traefik.http.services.qbittorrent.loadbalancer.server.port=8085
 
-      - "traefik.http.routers.radarr.entrypoints=http"
-      - "traefik.http.routers.radarr.rule=Host(`radarr.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.radarr-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.radarr.middlewares=radarr-https-redirect"
-      - "traefik.http.routers.radarr-secure.entrypoints=https"
-      - "traefik.http.routers.radarr-secure.rule=Host(`radarr.jimsgarage.co.uk`)"
-      - "traefik.http.routers.radarr-secure.tls=true"
-      - "traefik.http.routers.radarr-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.radarr-secure.service=radarr"
-      - "traefik.http.services.radarr.loadbalancer.server.port=7878"
+      # Prowlarr
+      - traefik.http.routers.prowlarr.entrypoints=web
+      - traefik.http.routers.prowlarr.rule=Host(`prowlarr.sheetgenius.app`)
+      - traefik.http.routers.prowlarr-websecure.entrypoints=websecure
+      - traefik.http.routers.prowlarr-websecure.rule=Host(`prowlarr.sheetgenius.app`)
+      - traefik.http.routers.prowlarr-websecure.tls=true
+      - traefik.http.routers.prowlarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.prowlarr-websecure.service=prowlarr
+      - traefik.http.services.prowlarr.loadbalancer.server.port=9696
 
-      - "traefik.http.routers.homepage-arr.entrypoints=http"
-      - "traefik.http.routers.homepage-arr.rule=Host(`homepage-arr.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.homepage-arr-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.homepage-arr.middlewares=homepage-arr-https-redirect"
-      - "traefik.http.routers.homepage-arr-secure.entrypoints=https"
-      - "traefik.http.routers.homepage-arr-secure.rule=Host(`homepage-arr.jimsgarage.co.uk`)"
-      - "traefik.http.routers.homepage-arr-secure.tls=true"
-      - "traefik.http.routers.homepage-arr-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.homepage-arr-secure.service=homepage-arr"
-      - "traefik.http.services.homepage-arr.loadbalancer.server.port=3000"
+      # Radarr
+      - traefik.http.routers.radarr.entrypoints=web
+      - traefik.http.routers.radarr.rule=Host(`radarr.sheetgenius.app`)
+      - traefik.http.routers.radarr-websecure.entrypoints=websecure
+      - traefik.http.routers.radarr-websecure.rule=Host(`radarr.sheetgenius.app`)
+      - traefik.http.routers.radarr-websecure.tls=true
+      - traefik.http.routers.radarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.radarr-websecure.service=radarr
+      - traefik.http.services.radarr.loadbalancer.server.port=7878
 
-      - "traefik.http.routers.jellyfin-arr.entrypoints=http"
-      - "traefik.http.routers.jellyfin-arr.rule=Host(`jellyfin-arr.jimsgarage.co.uk`)"
-      - "traefik.http.middlewares.jellyfin-arr-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.jellyfin-arr.middlewares=jellyfin-arr-https-redirect"
-      - "traefik.http.routers.jellyfin-arr-secure.entrypoints=https"
-      - "traefik.http.routers.jellyfin-arr-secure.rule=Host(`jellyfin-arr.jimsgarage.co.uk`)"
-      - "traefik.http.routers.jellyfin-arr-secure.tls=true"
-      - "traefik.http.routers.jellyfin-arr-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.jellyfin-arr-secure.service=jellyfin-arr"
-      - "traefik.http.services.jellyfin-arr.loadbalancer.server.port=8096"
+      # Sonarr
+      - traefik.http.routers.sonarr.entrypoints=web
+      - traefik.http.routers.sonarr.rule=Host(`sonarr.sheetgenius.app`)
+      - traefik.http.routers.sonarr-websecure.entrypoints=websecure
+      - traefik.http.routers.sonarr-websecure.rule=Host(`sonarr.sheetgenius.app`)
+      - traefik.http.routers.sonarr-websecure.tls=true
+      - traefik.http.routers.sonarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.sonarr-websecure.service=sonarr
+      - traefik.http.services.sonarr.loadbalancer.server.port=8989
+
+      # Bazarr
+      - traefik.http.routers.bazarr.entrypoints=web
+      - traefik.http.routers.bazarr.rule=Host(`bazarr.sheetgenius.app`)
+      - traefik.http.routers.bazarr-websecure.entrypoints=websecure
+      - traefik.http.routers.bazarr-websecure.rule=Host(`bazarr.sheetgenius.app`)
+      - traefik.http.routers.bazarr-websecure.tls=true
+      - traefik.http.routers.bazarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.bazarr-websecure.service=bazarr
+      - traefik.http.services.bazarr.loadbalancer.server.port=6767
+
+      # Lidarr
+      - traefik.http.routers.lidarr.entrypoints=web
+      - traefik.http.routers.lidarr.rule=Host(`lidarr.sheetgenius.app`)
+      - traefik.http.routers.lidarr-websecure.entrypoints=websecure
+      - traefik.http.routers.lidarr-websecure.rule=Host(`lidarr.sheetgenius.app`)
+      - traefik.http.routers.lidarr-websecure.tls=true
+      - traefik.http.routers.lidarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.lidarr-websecure.service=lidarr
+      - traefik.http.services.lidarr.loadbalancer.server.port=8686
+
+      # Readarr
+      - traefik.http.routers.readarr.entrypoints=web
+      - traefik.http.routers.readarr.rule=Host(`readarr.sheetgenius.app`)
+      - traefik.http.routers.readarr-websecure.entrypoints=websecure
+      - traefik.http.routers.readarr-websecure.rule=Host(`readarr.sheetgenius.app`)
+      - traefik.http.routers.readarr-websecure.tls=true
+      - traefik.http.routers.readarr-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.readarr-websecure.service=readarr
+      - traefik.http.services.readarr.loadbalancer.server.port=8787
+
+      # Jackett
+      - traefik.http.routers.jackett.entrypoints=web
+      - traefik.http.routers.jackett.rule=Host(`jackett.sheetgenius.app`)
+      - traefik.http.routers.jackett-websecure.entrypoints=websecure
+      - traefik.http.routers.jackett-websecure.rule=Host(`jackett.sheetgenius.app`)
+      - traefik.http.routers.jackett-websecure.tls=true
+      - traefik.http.routers.jackett-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.jackett-websecure.service=jackett
+      - traefik.http.services.jackett.loadbalancer.server.port=9117
