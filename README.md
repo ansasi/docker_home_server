@@ -69,8 +69,7 @@ Each service is designed to fulfill a specific role within the project. Below is
 
 Some services, such as Nextcloud, Jellyfin, and qBittorrent, require additional configuration after deployment. Please refer to the official documentation for each service for more details on setting up users, security options, and other advanced features.
 
-## Security Considerations
+## TODO
 
-- **Port and Access Control:** Ensure that you configure proper firewall rules to control access to each service. Only expose necessary services to external networks and secure them with HTTPS.
-- **Passwords:** Replace all placeholder passwords in the `docker-compose.yml` file with strong, unique passwords before deploying the services.
-- **SSL/TLS:** Use proper SSL/TLS certificates for services accessible over the internet (such as Nextcloud or Portainer) to secure data in transit.
+- Secrets management. Have a proper secrets manager tool. Some options:
+  - Vault (Hashicorp).

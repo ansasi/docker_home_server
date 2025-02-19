@@ -1,7 +1,15 @@
 version: "3.8"
 
-###--- Jellyfin Image - Media Library / Player - Used to play the media content ---###
+volumes:
+  gluetun-data:
+    driver: local
+
+networks:
+  proxy:
+    external: true
+
 services:
+###--- Jellyfin Image - Media Library / Player - Used to play the media content ---###
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin:latest
@@ -32,8 +40,8 @@ services:
       - ./appdata/jellyfin/cache:/cache
       - /dev/shm:/transcode
 #      - /opt/vc/lib:/opt/vc/lib # Raspberry Pi GPU libraries for multimedia operations
-    # ports:
-    #   - 8110:8096
+    ports:
+      - 8110:8096
     labels:
       - traefik.enable=true
       - traefik.http.routers.jellyfin.entrypoints=web
@@ -42,9 +50,9 @@ services:
       - traefik.http.routers.jellyfin-websecure.rule=Host(`jellyfin.sheetgenius.app`)
       - traefik.http.routers.jellyfin-websecure.tls=true
       - traefik.http.routers.jellyfin-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.100
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- ErsatzTV Image - IPTV Server. - configure and stream custom live TV channels using the media library. ---###
@@ -69,9 +77,7 @@ services:
 #      - 8294:8409
 #    volumes:
 #      - ./appdata/ersatztv/config:/root/.local/share/ersatztv
-#    networks:
-#      media:
-#        ipv4_address: 10.0.30.112
+#    network_mode: "service:gluetun"
 # ---------------
 # Media paths not needed if you connect ErsatzTV to jellyfin with API key
 #      - /media/disk/exthdd01/extarrs/data/library/tv:/media/TV
@@ -94,8 +100,8 @@ services:
       TZ: Etc/UTC
     volumes:
       - ./appdata/jellyseerr/config:/app/config
-    # ports:
-    #   - 8111:5055
+    ports:
+      - 8111:5055
     labels:
       - traefik.enable=true
       - traefik.http.routers.jellyseerr.entrypoints=web
@@ -104,9 +110,9 @@ services:
       - traefik.http.routers.jellyseerr-websecure.rule=Host(`jellyseerr.sheetgenius.app`)
       - traefik.http.routers.jellyseerr-websecure.tls=true
       - traefik.http.routers.jellyseerr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.101
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- qBittorrent Image - Download Client - Used to download torrent files ---###
@@ -136,9 +142,9 @@ services:
       - traefik.http.routers.qbittorrent-websecure.rule=Host(`qbittorrent.sheetgenius.app`)
       - traefik.http.routers.qbittorrent-websecure.tls=true
       - traefik.http.routers.qbittorrent-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.102
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 ###--- qBitmanage Image - qBittorrent manager - Used to run automated tasks for qBittorrent ---###
   qbitmanage:
@@ -172,9 +178,9 @@ services:
       - /media/disk/exthdd01/extarrs/data/torrents:/data/torrents
       - ./appdata/qbitmanage/config:/config
       - ./appdata/qbittorrent/data/BT_backup:/torrentdir
-    networks:
-      media:
-        ipv4_address: 10.0.30.111
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- SABnzbd Image - Download client - Used to download NZB from Usenet groups ---###
@@ -197,9 +203,7 @@ services:
 #      - 8293:9090
 #    logging:
 #      driver: json-file
-#    networks:
-#      media:
-#        ipv4_address: 10.0.30.103
+#    network_mode: "service:gluetun"
 
 
 ###--- Prowlarr Image - Index and Search Management for "ARR" apps ---###
@@ -213,8 +217,8 @@ services:
       TZ: Etc/UTC
     volumes:
       - ./appdata/prowlarr/config:/config
-    # ports:
-    #   - "8113:9696"
+    ports:
+      - "8113:9696"
     logging:
       driver: json-file
     labels:
@@ -225,9 +229,9 @@ services:
       - traefik.http.routers.prowlarr-websecure.rule=Host(`prowlarr.sheetgenius.app`)
       - traefik.http.routers.prowlarr-websecure.tls=true
       - traefik.http.routers.prowlarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.104
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- Radarr Image - Library Manager for Movie content management ---###
@@ -243,8 +247,8 @@ services:
     volumes:
       - ./appdata/radarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    # ports:
-    #   - 8114:7878
+    ports:
+      - 8114:7878
     logging:
       driver: json-file
     labels:
@@ -255,9 +259,9 @@ services:
       - traefik.http.routers.radarr-websecure.rule=Host(`radarr.sheetgenius.app`)
       - traefik.http.routers.radarr-websecure.tls=true
       - traefik.http.routers.radarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.105
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 ###--- Radarr 4K Image - Library Manager for Movie 4K content management ---###
 ### Enable this container to get seperate instance for 4K Movie content ###
@@ -276,9 +280,7 @@ services:
 #      - 8344:7878
 #    logging:
 #      driver: json-file
-#    networks:
-#      media:
-#        ipv4_address: 10.0.30.115
+#    network_mode: "service:gluetun"
 
 
 ###--- Sonarr Image - Library Manager for TV Show / Series / Anime content management ---###
@@ -294,8 +296,8 @@ services:
     volumes:
       - ./appdata/sonarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    # ports:
-    #   - 8115:8989
+    ports:
+      - 8115:8989
     logging:
       driver: json-file
     labels:
@@ -306,9 +308,9 @@ services:
       - traefik.http.routers.sonarr-websecure.rule=Host(`sonarr.sheetgenius.app`)
       - traefik.http.routers.sonarr-websecure.tls=true
       - traefik.http.routers.sonarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.106
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 ###--- Sonarr 4K Image - Library Manager for 4K TV Show / Series / Anime content management ---###
 ### Enable this container to get seperate instance for 4K TV content ###
@@ -327,9 +329,7 @@ services:
 #      - 8345:8989
 #    logging:
 #      driver: json-file
-#    networks:
-#      media:
-#        ipv4_address: 10.0.30.116
+#    network_mode: "service:gluetun"
 
 
 ###--- Bazarr Image - Library Manager for Subtitle management ---###
@@ -345,8 +345,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/bazarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    # ports:
-    #   - 8116:6767
+    ports:
+      - 8116:6767
     logging:
       driver: json-file
     labels:
@@ -357,9 +357,9 @@ services:
       - traefik.http.routers.bazarr-websecure.rule=Host(`bazarr.sheetgenius.app`)
       - traefik.http.routers.bazarr-websecure.tls=true
       - traefik.http.routers.bazarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.107
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- Lidarr Image - Library Manager for Music content management ---###
@@ -375,8 +375,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/lidarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    # ports:
-    #   - 8117:8686
+    ports:
+      - 8117:8686
     logging:
       driver: json-file
     labels:
@@ -387,9 +387,9 @@ services:
       - traefik.http.routers.lidarr-websecure.rule=Host(`lidarr.sheetgenius.app`)
       - traefik.http.routers.lidarr-websecure.tls=true
       - traefik.http.routers.lidarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.108
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- Readarr Image - Library Manager for Books / Epubs content management ---###
@@ -405,8 +405,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./appdata/readarr/config:/config
       - /media/disk/exthdd01/extarrs/data:/data
-    # ports:
-    #   - 8118:8787
+    ports:
+      - 8118:8787
     logging:
       driver: json-file
     labels:
@@ -417,9 +417,9 @@ services:
       - traefik.http.routers.readarr-websecure.rule=Host(`readarr.sheetgenius.app`)
       - traefik.http.routers.readarr-websecure.tls=true
       - traefik.http.routers.readarr-websecure.tls.certresolver=cloudflare
-    networks:
-      media:
-        ipv4_address: 10.0.30.109
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
 
 ###--- Unpackerr Image - Extracts downloads for Radarr, Sonarr, Lidarr, and Readarr - Deletes extracted files after import. ---###
@@ -449,16 +449,117 @@ services:
       UN_READARR_0_API_KEY: IMPORT_READARR_API_KEY_HERE
     security_opt:
       - no-new-privileges:true
-    networks:
-      media:
-        ipv4_address: 10.0.30.110
+    network_mode: "service:gluetun"
+    depends_on:
+      - gluetun
 
-networks:
-  media:
-    driver: bridge
-    attachable: true
-    internal: false
-    # ipam:
-    #   config:
-    #     - subnet: 10.0.30.0/24 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
-    #       gateway: 10.0.30.1 # GATEWAY GOES WITH THE SUBNET!!!
+  # --- Gluetun Image - VPN Client - Used to connect to VPN services ---###
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    hostname: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      # Port to apps
+      - 8085:8085 # qbittorrent
+    volumes:
+      - gluetun-data:/gluetun
+    environment:
+      # See https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
+      - VPN_SERVICE_PROVIDER=protonvpn
+      - VPN_TYPE=wireguard
+      # Wireguard:
+      - WIREGUARD_PRIVATE_KEY=<YOUR_PRIVATE_KEY> # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/nordvpn.md#obtain-your-wireguard-private-key
+      - SERVER_COUNTRIES=Switzerland
+      - STREAM_ONLY=on
+      # Timezone for accurate log times
+      - TZ=Europe/Zurich
+      # Server list updater
+      # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
+      - UPDATER_PERIOD=24h
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.qbittorrent.entrypoints=http"
+      - "traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.qbittorrent-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.qbittorrent.middlewares=qbittorrent-https-redirect"
+      - "traefik.http.routers.qbittorrent-secure.entrypoints=https"
+      - "traefik.http.routers.qbittorrent-secure.rule=Host(`qbittorrent.jimsgarage.co.uk`)"
+      - "traefik.http.routers.qbittorrent-secure.tls=true"
+      - "traefik.http.routers.qbittorrent-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.qbittorrent-secure.service=qbittorrent"
+      - "traefik.http.services.qbittorrent.loadbalancer.server.port=8085"
+
+      - "traefik.http.routers.jackett.entrypoints=http"
+      - "traefik.http.routers.jackett.rule=Host(`jackett.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.jackett-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.jackett.middlewares=jackett-https-redirect"
+      - "traefik.http.routers.jackett-secure.entrypoints=https"
+      - "traefik.http.routers.jackett-secure.rule=Host(`jackett.jimsgarage.co.uk`)"
+      - "traefik.http.routers.jackett-secure.tls=true"
+      - "traefik.http.routers.jackett-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.jackett-secure.service=jackett"
+      - "traefik.http.services.jackett.loadbalancer.server.port=9117"
+
+      - "traefik.http.routers.sonarr.entrypoints=http"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.sonarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.sonarr.middlewares=sonarr-https-redirect"
+      - "traefik.http.routers.sonarr-secure.entrypoints=https"
+      - "traefik.http.routers.sonarr-secure.rule=Host(`sonarr.jimsgarage.co.uk`)"
+      - "traefik.http.routers.sonarr-secure.tls=true"
+      - "traefik.http.routers.sonarr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.sonarr-secure.service=sonarr"
+      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+
+      - "traefik.http.routers.prowlarr.entrypoints=http"
+      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.prowlarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.prowlarr.middlewares=prowlarr-https-redirect"
+      - "traefik.http.routers.prowlarr-secure.entrypoints=https"
+      - "traefik.http.routers.prowlarr-secure.rule=Host(`prowlarr.jimsgarage.co.uk`)"
+      - "traefik.http.routers.prowlarr-secure.tls=true"
+      - "traefik.http.routers.prowlarr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.prowlarr-secure.service=prowlarr"
+      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"
+
+      - "traefik.http.routers.radarr.entrypoints=http"
+      - "traefik.http.routers.radarr.rule=Host(`radarr.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.radarr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.radarr.middlewares=radarr-https-redirect"
+      - "traefik.http.routers.radarr-secure.entrypoints=https"
+      - "traefik.http.routers.radarr-secure.rule=Host(`radarr.jimsgarage.co.uk`)"
+      - "traefik.http.routers.radarr-secure.tls=true"
+      - "traefik.http.routers.radarr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.radarr-secure.service=radarr"
+      - "traefik.http.services.radarr.loadbalancer.server.port=7878"
+
+      - "traefik.http.routers.homepage-arr.entrypoints=http"
+      - "traefik.http.routers.homepage-arr.rule=Host(`homepage-arr.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.homepage-arr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.homepage-arr.middlewares=homepage-arr-https-redirect"
+      - "traefik.http.routers.homepage-arr-secure.entrypoints=https"
+      - "traefik.http.routers.homepage-arr-secure.rule=Host(`homepage-arr.jimsgarage.co.uk`)"
+      - "traefik.http.routers.homepage-arr-secure.tls=true"
+      - "traefik.http.routers.homepage-arr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.homepage-arr-secure.service=homepage-arr"
+      - "traefik.http.services.homepage-arr.loadbalancer.server.port=3000"
+
+      - "traefik.http.routers.jellyfin-arr.entrypoints=http"
+      - "traefik.http.routers.jellyfin-arr.rule=Host(`jellyfin-arr.jimsgarage.co.uk`)"
+      - "traefik.http.middlewares.jellyfin-arr-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.jellyfin-arr.middlewares=jellyfin-arr-https-redirect"
+      - "traefik.http.routers.jellyfin-arr-secure.entrypoints=https"
+      - "traefik.http.routers.jellyfin-arr-secure.rule=Host(`jellyfin-arr.jimsgarage.co.uk`)"
+      - "traefik.http.routers.jellyfin-arr-secure.tls=true"
+      - "traefik.http.routers.jellyfin-arr-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.jellyfin-arr-secure.service=jellyfin-arr"
+      - "traefik.http.services.jellyfin-arr.loadbalancer.server.port=8096"

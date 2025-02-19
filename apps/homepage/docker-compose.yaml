@@ -1,6 +1,8 @@
 ---
+version: '3.8'
+
 networks:
-  frontend:
+  proxy:
     external: true
 
 services:
@@ -36,5 +38,5 @@ services:
       - traefik.http.routers.homepage-secure.tls=true
       - traefik.http.routers.homepage-secure.tls.certresolver=cloudflare
     networks:
-      - frontend
+      - proxy
     restart: unless-stopped

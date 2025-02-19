@@ -10,6 +10,12 @@ volumes:
   prometheus-data:
     driver: local
 
+networks:
+  netmonitor:
+    driver: bridge
+  proxy:
+    external: true
+
 services:
 # --- Uptime Kuma Image
   uptimekuma:
@@ -30,7 +36,7 @@ services:
       - traefik.http.routers.uptimekuma-websecure.tls=true
       - traefik.http.routers.uptimekuma-websecure.tls.certresolver=cloudflare
     networks:
-      - netmonitor
+      - proxy
 
 
 # # --- Netdata Image
@@ -63,7 +69,7 @@ services:
 #       - traefik.http.routers.netdata-websecure.tls=true
 #       - traefik.http.routers.netdata-websecure.tls.certresolver=cloudflare
 #     networks:
-#       - netmonitor
+#       - proxy
 
 
 # --- Grafana Image
@@ -86,6 +92,7 @@ services:
       - traefik.http.routers.grafana-websecure.tls.certresolver=cloudflare
     networks:
       - netmonitor
+      - proxy
 
 
 # --- Prometheus Image
@@ -112,6 +119,7 @@ services:
       - traefik.http.routers.prometheus-https.tls.certresolver=cloudflare
     networks:
       - netmonitor
+      - proxy
 
 
 # # --- OpenSpeedTest Image
@@ -133,13 +141,3 @@ services:
 #       - traefik.http.routers.openspeedtest-websecure.tls.certresolver=cloudflare
 #     networks:
 #       - netmonitor
-
-networks:
-  netmonitor:
-    driver: bridge
-    attachable: true
-    internal: false
-    # ipam:
-    #   config:
-    #     - subnet: 172.50.0.0/16 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
-    #       gateway: 172.50.0.1 # GATEWAY GOES WITH THE SUBNET!!!

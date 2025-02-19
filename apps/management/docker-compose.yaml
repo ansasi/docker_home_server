@@ -4,6 +4,10 @@ volumes:
   portainer-data:
     driver: local
 
+networks:
+  proxy:
+    external: true
+
 services:
 # --- Portainer Image
   portainer:
@@ -13,7 +17,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer-data:/data
     networks:
-      - management
+      - proxy
     ports:
       - "9000:9000"
     labels:
@@ -58,14 +62,3 @@ services:
   #   networks:
   #     - management
   #   restart: unless-stopped
-
-
-networks:
-  management:
-    driver: bridge
-    attachable: true
-    internal: false
-    # ipam:
-    #   config:
-    #     - subnet: 172.40.0.0/16 # CHANGE THE SUBNET TO YOUR OWN PREFERRED RANGE!!!
-    #       gateway: 172.50.0.1 # GATEWAY GOES WITH THE SUBNET!!!

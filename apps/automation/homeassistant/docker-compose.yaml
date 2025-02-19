@@ -5,6 +5,12 @@ volumes:
   homeassistant-data:
     driver: local
 
+networks:
+  proxy:
+    external: true
+  home-assistant:
+    driver: bridge
+
 services:
   homeassistant:
     container_name: homeassistant
@@ -49,8 +55,3 @@ services:
       home-assistant:
     security_opt:
       - no-new-privileges:true
-
-networks:
-  proxy:
-    external: true
-  home-assistant:
