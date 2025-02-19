@@ -1,0 +1,6 @@
+---
+- name: Install Docker using geerlingguy.docker
+  hosts: pi
+  become: yes
+  roles:
+    - geerlingguy.docker

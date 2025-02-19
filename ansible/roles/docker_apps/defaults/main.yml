@@ -1,0 +1,3 @@
+---
+# Default path for docker apps (adjust based on your directory layout)
+docker_apps_path: "{{ playbook_dir }}/../../docker-apps"

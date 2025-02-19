@@ -1,0 +1,19 @@
+---
+- name: Find all docker-compose.yml files in docker apps directory
+  find:
+    paths: "{{ docker_apps_path }}"
+    patterns: "docker-compose.yml"
+    file_type: file
+  register: compose_files
+
+- name: Display number of discovered docker apps
+  debug:
+    msg: "Found {{ compose_files.matched }} docker-compose files."
+
+- name: Deploy docker-compose apps
+  community.docker.docker_compose:
+    project_src: "{{ item.path | dirname }}"
+    state: present
+  loop: "{{ compose_files.files }}"
+  # If app_name variable is defined, only run on that specific app folder.
+  when: (app_name is not defined) or (app_name == (item.path | dirname | basename))
