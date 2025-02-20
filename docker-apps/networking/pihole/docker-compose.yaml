@@ -65,10 +65,10 @@ services:
     depends_on:
       - cloudflared
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.pihole.entrypoints=web"
-      - "traefik.http.routers.pihole.rule=Host(`pihole.sheetgenius.app`)"
-      - "traefik.http.routers.pihole.rule=Host(`pihole.sheetgenius.app`)"
-      - "traefik.http.routers.pihole-websecure.entrypoints=websecure"
-      - "traefik.http.routers.pihole-websecure.rule=Host(`pihole.sheetgenius.app`)"
-      - "traefik.http.routers.pihole-websecure.tls=true"
+      - traefik.enable=true
+      - traefik.http.routers.pihole.entrypoints=web
+      - traefik.http.routers.pihole.rule=Host(`pihole.sheetgenius.app`)
+      - traefik.http.routers.pihole-websecure.entrypoints=websecure
+      - traefik.http.routers.pihole-websecure.rule=Host(`pihole.sheetgenius.app`)
+      - traefik.http.routers.pihole-websecure.tls=true
+      - traefik.http.routers.pihole-websecure.tls.certresolver=cloudflare
