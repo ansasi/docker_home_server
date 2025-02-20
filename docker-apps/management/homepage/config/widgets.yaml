@@ -18,7 +18,7 @@
     label: Lenzburg # optional
     latitude: 47.3885
     longitude: 8.175
-    timezone: Europe/Zurich # optional
+    timezone: Europe/Madrid # optional
     units: metric
     cache: 5 # Time in minutes to cache API responses, to stay within limits
     format: # optional, Intl.NumberFormat options

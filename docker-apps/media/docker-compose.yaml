@@ -417,7 +417,7 @@ services:
       - SERVER_COUNTRIES=Switzerland
       - STREAM_ONLY=on
       # Timezone for accurate log times
-      - TZ=Europe/Zurich
+      - TZ=Europe/Madrid
       # Server list updater
       # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
       - UPDATER_PERIOD=24h
