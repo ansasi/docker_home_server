@@ -1,0 +1,15 @@
+---
+- name: Install common packages
+  hosts: all
+  become: yes
+  roles:
+    - update
+
+- name: Install Roles in angel
+  hosts: angel
+  become: yes
+  roles:
+    - geerlingguy.docker
+  vars:
+    docker_users:
+      - pi

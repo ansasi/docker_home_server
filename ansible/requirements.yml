@@ -1,5 +1,4 @@
 ---
 roles:
   - name: geerlingguy.docker
-    version: "3.2.1"  # Pinned to ensure consistent behavior.
-    # src: git+https://github.com/geerlingguy/ansible-role-docker.git  # Optional: specify a source if not using Galaxy.
+    # version: "7.4.5"

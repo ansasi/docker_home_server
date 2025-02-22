@@ -1,7 +1,0 @@
----
-# Playbook to deploy all Docker Apps
-- name: Deploy all Docker Apps
-  hosts: pi
-  become: yes
-  roles:
-    - docker_apps
