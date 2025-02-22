@@ -1,8 +1,9 @@
 *.env
-apps/networking/traefik/certs/*
-apps/automation/homeassistant/config/*
+docker-apps/networking/traefik/certs/*
+docker-apps/automation/homeassistant/config/*
 *.log
-!apps/security/authentik/docker-compose.yaml
-!apps/security/authentik/README.md
-apps/security/authentik/*
-apps/monitoring/monitoring/*
+!docker-apps/security/authentik/docker-compose.yaml
+!docker-apps/security/authentik/README.md
+docker-apps/security/authentik/*
+docker-apps/monitoring/monitoring/*
+.vscode

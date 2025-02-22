@@ -1,0 +1,40 @@
+---
+networks:
+  proxy:
+    external: true
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage
+    container_name: homepage
+    environment:
+      # # Run as non-root user
+      # - PUID=1000
+      # - PGID=1000
+      # - LOG_LEVEL=debug
+      - HOMEPAGE_VAR_PORTAINER_KEY=${HOMEPAGE_VAR_PORTAINER_KEY}
+      - HOMEPAGE_VAR_GRAFANA_USERNAME=${HOMEPAGE_VAR_GRAFANA_USERNAME}
+      - HOMEPAGE_VAR_GRAFANA_PASSWORD=${HOMEPAGE_VAR_GRAFANA_PASSWORD}
+      - HOMEPAGE_VAR_WATCHTOWER_KEY=${HOMEPAGE_VAR_WATCHTOWER_KEY}
+
+      # - HOMEPAGE_VAR_AUTHENTIK_KEY=${HOMEPAGE_VAR_AUTHENTIK_KEY}
+      # - HOMEPAGE_VAR_HOMEASSISTANT_KEY=${HOMEPAGE_VAR_HOMEASSISTANT_KEY}
+    env_file:
+      - .env
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "8165:3000"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.homepage.entrypoints=web
+      - traefik.http.routers.homepage.rule=Host(`homepage.sheetgenius.app`)
+      # - traefik.http.routers.homepage.middlewares=default-whitelist@file
+      - traefik.http.routers.homepage-secure.entrypoints=websecure
+      - traefik.http.routers.homepage-secure.rule=Host(`homepage.sheetgenius.app`)
+      - traefik.http.routers.homepage-secure.tls=true
+      - traefik.http.routers.homepage-secure.tls.certresolver=cloudflare
+    networks:
+      - proxy
+    restart: unless-stopped

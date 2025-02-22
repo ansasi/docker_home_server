@@ -1,3 +1,0 @@
----
-srv-prod-1:
-    socket: /var/run/docker.sock
