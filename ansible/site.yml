@@ -5,7 +5,7 @@
   roles:
     - update
 
-- name: Install Roles in angel
+- name: Install Docker
   hosts: angel
   become: yes
   roles:
@@ -13,3 +13,29 @@
   vars:
     docker_users:
       - pi
+
+- name: Create Docker network
+  hosts: angel
+  become: yes
+  tasks:
+    - name: Create Docker network
+      docker_network:
+        name: proxy
+        state: present
+        driver: bridge
+
+- name: Install Portainer
+  hosts: angel
+  become: yes
+  roles:
+    - docker_compose_deploy
+  vars:
+    docker_compose_src: "/home/pi/docker_home_server/docker-apps/management/"
+
+- name: Install Homepage
+  hosts: angel
+  become: yes
+  roles:
+    - docker_compose_deploy
+  vars:
+    docker_compose_src: "/home/pi/docker_home_server/docker-apps/management/homepage/"

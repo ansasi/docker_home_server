@@ -1,0 +1,8 @@
+---
+- name: Ensure docker-compose is installed and Docker service is running
+  include_tasks: install.yml
+
+- name: Run docker-compose up
+  community.docker.docker_compose_v2:
+    project_src: "{{ docker_compose_src }}"
+    state: present
