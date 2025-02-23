@@ -1,10 +1,6 @@
-version: "3.8"
-
 volumes:
   uptimekuma-data:
     driver: local
-  # netdata-data:
-  #   driver: local
   grafana-data:
     driver: local
   prometheus-data:
@@ -37,39 +33,6 @@ services:
       - traefik.http.routers.uptimekuma-websecure.tls.certresolver=cloudflare
     networks:
       - proxy
-
-
-# # --- Netdata Image
-#   netdata:
-#     image: netdata/netdata
-#     container_name: netdata
-# #    hostname: example.com       # Optional set to fqdn of host
-#     cap_add:
-#       - SYS_PTRACE
-#     security_opt:
-#       - apparmor:unconfined
-#     volumes:
-#       - /proc:/host/proc:ro
-#       - /sys:/host/sys:ro
-#       - /etc/os-release:/host/etc/os-release:ro
-#       - /etc/passwd:/host/etc/passwd:ro
-#       - /etc/group:/host/etc/group:ro
-# #      - ./monitoring/netdata/netdataconfig:/etc/netdata        # Optional
-# #      - ./monitoring/netdata/netdatalib:/var/lib/netdata       # Optional
-# #      - ./monitoring/netdata/netdatacache:/var/cache/netdata   # Optional
-#     ports:
-#       - 8166:19999
-#     restart: unless-stopped
-#     labels:
-#       - traefik.enable=true
-#       - traefik.http.routers.netdata.entrypoints=web
-#       - traefik.http.routers.netdata.rule=Host(`netdata.sheetgenius.app`)
-#       - traefik.http.routers.netdata-websecure.entrypoints=websecure
-#       - traefik.http.routers.netdata-websecure.rule=Host(`netdata.sheetgenius.app`)
-#       - traefik.http.routers.netdata-websecure.tls=true
-#       - traefik.http.routers.netdata-websecure.tls.certresolver=cloudflare
-#     networks:
-#       - proxy
 
 
 # --- Grafana Image
@@ -120,24 +83,3 @@ services:
     networks:
       - netmonitor
       - proxy
-
-
-# # --- OpenSpeedTest Image
-#   openspeedtest:
-#     image: openspeedtest/latest
-#     container_name: openspeedtest
-#     ports:
-#       - 8161:3000
-#       - 8162:3001
-#     restart: unless-stopped
-#     # TODO: Check if the labels are correct for both ports
-#     labels:
-#       - traefik.enable=true
-#       - traefik.http.routers.openspeedtest.entrypoints=web
-#       - traefik.http.routers.openspeedtest.rule=Host(`openspeedtest.sheetgenius.app`)
-#       - traefik.http.routers.openspeedtest-websecure.entrypoints=websecure
-#       - traefik.http.routers.openspeedtest-websecure.rule=Host(`openspeedtest.sheetgenius.app`)
-#       - traefik.http.routers.openspeedtest-websecure.tls=true
-#       - traefik.http.routers.openspeedtest-websecure.tls.certresolver=cloudflare
-#     networks:
-#       - netmonitor
