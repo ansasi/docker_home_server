@@ -72,7 +72,8 @@ services:
       - traefik.enable=true
       - traefik.http.routers.pihole.entrypoints=web
       - traefik.http.routers.pihole.rule=Host(`pihole.sheetgenius.app`)
-      - traefik.http.routers.pihole-websecure.entrypoints=websecure
-      - traefik.http.routers.pihole-websecure.rule=Host(`pihole.sheetgenius.app`)
-      - traefik.http.routers.pihole-websecure.tls=true
-      - traefik.http.routers.pihole-websecure.tls.certresolver=cloudflare
+      # - traefik.http.routers.pihole.middlewares=default-whitelist@file
+      - traefik.http.routers.pihole-secure.entrypoints=websecure
+      - traefik.http.routers.pihole-secure.rule=Host(`pihole.sheetgenius.app`)
+      - traefik.http.routers.pihole-secure.tls=true
+      - traefik.http.routers.pihole-secure.tls.certresolver=cloudflare=

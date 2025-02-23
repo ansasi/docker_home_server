@@ -7,7 +7,7 @@ log:
   level: DEBUG
 
 api:
-  # insecure: true
+  insecure: true # allows connecting to dashboard thorugh port 8080
   dashboard: true
   debug: true
 

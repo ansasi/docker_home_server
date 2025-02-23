@@ -19,13 +19,14 @@
 
 - Storage:
     - QNAP 462:
-        href: http://192.168.178.48 # TODO
+        href: http://192.168.178.48:8080/cgi-bin/ # TODO
         icon: qnap.svg
         description: qnap-462 on rpi-angel-1
         widget:
             type: qnap
-            url: http://192.168.178.48 # TODO
-            key: {{HOMEPAGE_VAR_QNAP462_KEY}}
+            url: http://192.168.178.48:8080 # TODO
+            username: {{ HOMEPAGE_VAR_QNAP_USERNAME }}
+            password: {{ HOMEPAGE_VAR_QNAP_PASSWORD }}
 
 
 - Management:
