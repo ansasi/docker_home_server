@@ -42,9 +42,10 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-    #  - "67:67/udp" DHCP - uncomment if using it
-      - "500:80/tcp"
-    #  - "443:443/tcp"
+      # - "67:67/udp" DHCP - uncomment if using it
+      # Web Interface (using traefik)
+      - "80:80/tcp"
+      # - "443:443/tcp"
     networks:
       pihole_internal:
         ipv4_address: 172.70.9.3
