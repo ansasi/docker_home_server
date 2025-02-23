@@ -10,9 +10,9 @@
             url: http://192.168.178.1
     - PiHole:
         href: https://pihole.sheetgenius.app
-        icon: pihole.svg
+        icon: pi-hole.svg
         description: pihole-prod-1 on rpi-angel-1
-        container: pi-hole
+        container: pihole
         widget:
             type: pihole
             url: https://pihole.sheetgenius.app
