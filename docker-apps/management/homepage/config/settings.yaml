@@ -1,0 +1,55 @@
+---
+title: Homepage
+headerStyle: boxed
+
+background: 
+  image: https://images.unsplash.com/photo-1637825891028-564f672aa42c
+  blur: xl
+  brightness: 90
+  opacity: 60
+
+cardBlur: sm
+
+language: en
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+layout:
+  Networking:
+    icon: traefik.svg
+    tab: general
+    columns: 2
+  Management:
+    icon: portainer.svg
+    tab: general
+    columns: 2
+  Monitoring:
+    icon: prometheus.svg
+    tab: general
+    columns: 2
+  Storage:
+    icon: qnap.svg
+    tab: general
+    columns: 2
+  Media:
+    icon: plex.svg
+    tab: media
+    style: columns
+    columns: 3
+  Security:
+    icon: authentik.png
+    tab: general
+    columns: 2
+  Automation:
+    icon: home-assistant.svg
+    tab: general
+    columns: 2
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: duckduckgo # google, duckduckgo, bing, baidu, brave or custom
