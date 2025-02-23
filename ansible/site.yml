@@ -1,5 +1,5 @@
 ---
-- name: Install common packages
+- name: Update the system
   hosts: all
   become: yes
   roles:
