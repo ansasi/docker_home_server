@@ -24,6 +24,24 @@
         state: present
         driver: bridge
 
+- name: Make sure port 53 is free (not used by systemd-resolved)
+  hosts: angel
+  become: yes
+  tasks:
+    - name: Stop systemd-resolved
+      systemd:
+        name: systemd-resolved
+        state: stopped
+        enabled: no
+
+- name: Install PiHole
+  hosts: angel
+  become: yes
+  roles:
+    - docker_compose_deploy
+  vars:
+    docker_compose_src: "/home/pi/docker_home_server/docker-apps/networking/pihole/"
+
 - name: Install Portainer
   hosts: angel
   become: yes
