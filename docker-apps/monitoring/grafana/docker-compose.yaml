@@ -1,0 +1,59 @@
+volumes:
+  grafana-data:
+    driver: local
+  prometheus-data:
+    driver: local
+
+networks:
+  grafana-monitoring:
+    driver: bridge
+  proxy:
+    external: true
+
+services:
+  # TODO: Add services:
+  # - Loki
+
+# --- Grafana Image
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      # - ./monitoring/grafana/data:/var/lib/grafana
+      - grafana-data:/var/lib/grafana # ./monitoring/grafana/data:/var/lib/grafana
+    # ports:
+      # # Web Interface (using traefik)
+      # - "8164:3000"
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.grafana.entrypoints=web
+      - traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.middlewares.grafana-https-redirect.redirectscheme.scheme=https
+      - traefik.http.routers.grafana.middlewares=grafana-https-redirect
+      - traefik.http.routers.grafana-websecure.entrypoints=websecure
+      - traefik.http.routers.grafana-websecure.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-websecure.tls=true
+      - traefik.http.routers.grafana-websecure.tls.certresolver=cloudflare
+      - traefik.http.routers.grafana-websecure.service=grafana
+      - traefik.http.services.grafana.loadbalancer.server.port=3000
+    networks:
+      - grafana-monitoring
+      - proxy
+
+
+# --- Prometheus Image
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+    volumes:
+      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
+      - prometheus-data:/prometheus # ./monitoring/prometheus/data:/prometheus
+    restart: unless-stopped
+    networks:
+      - grafana-monitoring
+      - proxy
