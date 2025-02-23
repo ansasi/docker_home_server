@@ -12,7 +12,7 @@
         href: https://pihole.sheetgenius.app
         icon: pihole.svg
         description: pihole-prod-1 on rpi-angel-1
-        container: pihole
+        container: pi-hole
         widget:
             type: pihole
             url: https://pihole.sheetgenius.app
