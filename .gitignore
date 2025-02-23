@@ -7,3 +7,4 @@ docker-apps/automation/homeassistant/config/*
 docker-apps/security/authentik/*
 docker-apps/monitoring/monitoring/*
 .vscode
+etc-*

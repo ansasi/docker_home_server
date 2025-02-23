@@ -1,7 +1,6 @@
-# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
-volumes:
-  etc-pihole:
-  etc-dnsmasq.d:
+# volumes:
+#   etc-pihole:
+#   etc-dnsmasq.d:
 
 networks:
   pihole_internal:
