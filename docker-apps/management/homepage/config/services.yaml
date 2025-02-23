@@ -1,17 +1,17 @@
 ---
 - Networking:
     - FritzBox:
-        href: http://192.168.82.1
-        icon: avmfritzbox.svg
+        href: http://192.168.178.1
+        icon: fritzbox.svg
         description: gw-prod-1
-        siteMonitor: http://192.168.82.1
-        # widget:
-        #     type: fritzbox
-        #     url: http://192.168.82.1
+        siteMonitor: http://192.168.178.1
+        widget:
+            type: fritzbox
+            url: http://192.168.178.1
     - Traefik:
         href: https://traefik-dashboard.sheetgenius.app/
         icon: traefik.svg
-        description: traefik on srv-prod-1
+        description: traefik on rpi-angel-1
         container: traefik
         widget:
             type: traefik
@@ -19,94 +19,20 @@
 
 - Storage:
     - QNAP 462:
-        href: http://<IP> # TODO
+        href: http://192.168.178.48 # TODO
         icon: qnap.svg
-        description: qnap-462 on srv-prod-1
-        # widget:
-        #     type: qnap
-        #     url: http://<IP> # TODO
-        #     key: {{HOMEPAGE_VAR_QNAP462_KEY}}
+        description: qnap-462 on rpi-angel-1
+        widget:
+            type: qnap
+            url: http://192.168.178.48 # TODO
+            key: {{HOMEPAGE_VAR_QNAP462_KEY}}
 
-- Media:
-    - Plex:
-        href: https://plex.sheetgenius.app
-        icon: plex.svg
-        description: plex-prod-1 on srv-prod-1
-        # widget:
-        #     type: plex
-        #     url: https://plex.sheetgenius.app
-        #     key: {{HOMEPAGE_VAR_PLEX_KEY}}
-    - Jellyfin:
-        href: https://jellyfin.sheetgenius.app
-        icon: jellyfin.svg
-        description: jellyfin-prod-1 on srv-prod-1
-        # widget:
-        #     type: jellyfin
-        #     url: https://jellyfin.sheetgenius.app
-        #     key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
-    - Nexcloud:
-        href: https://nextcloud.sheetgenius.app
-        icon: nextcloud.svg
-        description: nextcloud-prod-1 on srv-prod-1
-        # widget:
-        #     type: nextcloud
-        #     url: https://nextcloud.sheetgenius.app
-        #     key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
-    - Torrent:
-        - Sonarr:
-            href: https://sonarr.sheetgenius.app
-            icon: sonarr.svg
-            description: sonarr-prod-1 on srv-prod-1
-            # widget:
-            #     type: sonarr
-            #     url: https://sonarr.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_SONARR_KEY}}
-        - Radarr:
-            href: https://radarr.sheetgenius.app
-            icon: radarr.svg
-            description: radarr-prod-1 on srv-prod-1
-            # widget:
-            #     type: radarr
-            #     url: https://radarr.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_RADARR_KEY}}
-        - Lidarr:
-            href: https://lidarr.sheetgenius.app
-            icon: lidarr.svg
-            description: lidarr-prod-1 on srv-prod-1
-            # widget:
-            #     type: lidarr
-            #     url: https://lidarr.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_LIDARR_KEY}}
-        - Readarr:
-            href: https://readarr.sheetgenius.app
-            icon: readarr.svg
-            description: readarr-prod-1 on srv-prod-1
-            # widget:
-            #     type: readarr
-            #     url: https://readarr.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_READARR_KEY}}
-        - Bazarr:
-            href: https://bazarr.sheetgenius.app
-            icon: bazarr.svg
-            description: bazarr-prod-1 on srv-prod-1
-            # widget:
-            #     type: bazarr
-            #     url: https://bazarr.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_BAZARR_KEY}}
-        - Bittorrent:
-            href: https://bittorrent.sheetgenius.app
-            icon: si-bittorrent
-            description: bittorrent-prod-1 on srv-prod-1
-            # widget:
-            #     type: bittorrent
-            #     url: https://bittorrent.sheetgenius.app
-            #     key: {{HOMEPAGE_VAR_BITTORRENT_KEY}}
 
 - Management:
     - Portainer:
         href: https://portainer.sheetgenius.app
         icon: portainer.svg
-        description: portainer-demo-1 on srv-demo-1
+        description: portainer-demo-1 on rpi-angel-1
         container: portainer
         widget:
             type: portainer
@@ -116,7 +42,7 @@
     - Watchtower:
         href: https://watchtower.sheetgenius.app
         icon: watchtower.svg
-        description: watchtower-prod-1 on srv-prod-1
+        description: watchtower-prod-1 on rpi-angel-1
         container: watchtower
         # widget:
         #     type: watchtower
@@ -126,7 +52,7 @@
 - Monitoring:
     - Grafana:
         href: https://grafana.sheetgenius.app
-        description: grafana on srv-prod-1
+        description: grafana on rpi-angel-1
         icon: grafana.svg
         container: grafana
         widget:
@@ -136,7 +62,7 @@
             password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
     - Prometheus:
         href: https://prometheus.sheetgenius.app
-        description: prometheus on srv-prod-1
+        description: prometheus on rpi-angel-1
         icon: prometheus.svg
         container: prometheus
         # widget:
@@ -156,7 +82,7 @@
             key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
     - Wireguard:
         href: https://wireguard.sheetgenius.app
-        description: wireguard-prod-1 on srv-prod-1
+        description: wireguard-prod-1 on rpi-angel-1
         icon: wireguard.svg
         container: wireguard
 
@@ -164,9 +90,84 @@
     - Home Assistant:
         href: https://homeassistant.sheetgenius.app
         icon: home-assistant.svg
-        description: homeassistant-prod-1 on srv-prod-7
+        description: homeassistant-prod-1 on rpi-angel-1
         container: homeassistant
         # widget:
         #     type: homeassistant
         #     url: https://homeassistant.sheetgenius.app
         #     key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
+
+- Media:
+    - Plex:
+        href: https://plex.sheetgenius.app
+        icon: plex.svg
+        description: plex-prod-1 on rpi-angel-1
+        # widget:
+        #     type: plex
+        #     url: https://plex.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_PLEX_KEY}}
+    - Jellyfin:
+        href: https://jellyfin.sheetgenius.app
+        icon: jellyfin.svg
+        description: jellyfin-prod-1 on rpi-angel-1
+        # widget:
+        #     type: jellyfin
+        #     url: https://jellyfin.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
+    - Nexcloud:
+        href: https://nextcloud.sheetgenius.app
+        icon: nextcloud.svg
+        description: nextcloud-prod-1 on rpi-angel-1
+        # widget:
+        #     type: nextcloud
+        #     url: https://nextcloud.sheetgenius.app
+        #     key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
+    - Torrent:
+        - Sonarr:
+            href: https://sonarr.sheetgenius.app
+            icon: sonarr.svg
+            description: sonarr-prod-1 on rpi-angel-1
+            # widget:
+            #     type: sonarr
+            #     url: https://sonarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_SONARR_KEY}}
+        - Radarr:
+            href: https://radarr.sheetgenius.app
+            icon: radarr.svg
+            description: radarr-prod-1 on rpi-angel-1
+            # widget:
+            #     type: radarr
+            #     url: https://radarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_RADARR_KEY}}
+        - Lidarr:
+            href: https://lidarr.sheetgenius.app
+            icon: lidarr.svg
+            description: lidarr-prod-1 on rpi-angel-1
+            # widget:
+            #     type: lidarr
+            #     url: https://lidarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_LIDARR_KEY}}
+        - Readarr:
+            href: https://readarr.sheetgenius.app
+            icon: readarr.svg
+            description: readarr-prod-1 on rpi-angel-1
+            # widget:
+            #     type: readarr
+            #     url: https://readarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_READARR_KEY}}
+        - Bazarr:
+            href: https://bazarr.sheetgenius.app
+            icon: bazarr.svg
+            description: bazarr-prod-1 on rpi-angel-1
+            # widget:
+            #     type: bazarr
+            #     url: https://bazarr.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_BAZARR_KEY}}
+        - Bittorrent:
+            href: https://bittorrent.sheetgenius.app
+            icon: si-bittorrent
+            description: bittorrent-prod-1 on rpi-angel-1
+            # widget:
+            #     type: bittorrent
+            #     url: https://bittorrent.sheetgenius.app
+            #     key: {{HOMEPAGE_VAR_BITTORRENT_KEY}}
