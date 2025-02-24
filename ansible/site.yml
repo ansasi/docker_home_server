@@ -26,16 +26,39 @@
         state: present
         driver: bridge
 
+- name: Download Git repository https://github.com/ansasi/docker_home_server.git
+  hosts: all
+  become: yes
+  tasks:
+    - name: Download Git repository
+      git:
+        repo: "https://github.com/ansasi/docker_home_server.git"
+        dest: "/home/pi/docker_home_server"
+        update: yes
+        version: develop # TODO: Change to master
+
 # Docker Apps
-- name: Make sure port 53 is free (not used by systemd-resolved)
+# PiHole Requirements
+# For Ubuntu Installation:
+# 1. disable DNSStubListener=yes in /etc/systemd/resolved.conf
+# 2. sudo systemctl restart systemd-resolved
+- name: Disable systemd-resolved DNSStubListener
   hosts: dns
   become: yes
   tasks:
-    - name: Stop systemd-resolved
+    - name: Disable systemd-resolved DNSStubListener
+      lineinfile:
+        path: /etc/systemd/resolved.conf
+        regexp: '^#?DNSStubListener='
+        line: 'DNSStubListener=no'
+      notify: Restart systemd-resolved
+  
+  handlers:
+    - name: Restart systemd-resolved
       systemd:
         name: systemd-resolved
-        state: stopped
-        enabled: no
+        state: restarted
+
 
 - name: Install PiHole
   hosts: dns
