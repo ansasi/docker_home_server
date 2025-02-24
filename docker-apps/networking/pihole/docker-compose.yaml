@@ -51,7 +51,7 @@ services:
     environment:
       TZ: 'Europe/Madrid'
       # TODO: Set a password to access the web interface
-      FTLCONF_webserver_api_password: ${PIHOLE_WEB_PASSWORD}"
+      FTLCONF_webserver_api_password: ${PIHOLE_WEB_PASSWORD:-123456789}"
       # If using Docker's default `bridge` network setting the dns listening mode should be set to 'all'3
       FTLCONF_dns_listeningMode: 'all'
       FTLCONF_dns_upstreams: '172.70.9.2#5053'
