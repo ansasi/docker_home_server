@@ -64,7 +64,7 @@ This repository provides a Docker Compose configuration for a comprehensive medi
   - Transcoding:
     - `/dev/shm` → `/transcode`
 - **Ports:**  
-  - `8110:8096` (Maps container port 8096 to host port 8110)
+  - TODO
 - **Network:**  
   - Static IP on network `media`: `10.0.30.100`
 
@@ -128,8 +128,7 @@ This repository provides a Docker Compose configuration for a comprehensive medi
   - Configuration: `./appdata/qbittorrent/config` → `/config`
   - Torrent Data: `./data/torrents` → `/data/torrents`
 - **Ports:**  
-  - `8290:8080` (Web UI)  
-  - `8291:6881` and `8291:6881/udp` (Torrent transfer)
+  - TODO
 - **Network:**  
   - Static IP on network `media`: `10.0.30.102`
 
@@ -172,7 +171,7 @@ This repository provides a Docker Compose configuration for a comprehensive medi
   - Configuration: `./appdata/sabnzbd/config` → `/config`
   - Usenet Data: `/media/disk/exthdd01/extarrs/data/usenet` → `/data/usenet`
 - **Ports:**  
-  - `8292:8080` and `8293:9090`
+  - TODO
 - **Network:**  
   - Static IP on network `media`: `10.0.30.103`
 - **Notes:**  

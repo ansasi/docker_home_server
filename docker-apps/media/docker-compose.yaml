@@ -39,7 +39,7 @@ services:
       - /dev/shm:/transcode
 #      - /opt/vc/lib:/opt/vc/lib # Raspberry Pi GPU libraries for multimedia operations
     # ports:
-    #   - 8110:8096
+    #   - 8096:8096
     network_mode: "service:gluetun"
     depends_on:
       - gluetun
@@ -170,8 +170,8 @@ services:
 #      - ./appdata/sabnzbd/config:/config
 #      - /media/disk/exthdd01/extarrs/data/usenet:/data/usenet:rw
 #    ports:
-#      - 8292:8080
-#      - 8293:9090
+#      - 8085:8080
+#      - 9091:9090
 #    logging:
 #      driver: json-file
 #    network_mode: "service:gluetun"
@@ -394,8 +394,8 @@ services:
       - 6881:6881
       - 6881:6881/udp
       # Port to apps
-      - 8110:8096 # Jellyfin
-      - 8111:5055 # Jellyseerr
+      - 8096:8096 # Jellyfin
+      - 5055:5055 # Jellyseerr
       - 8085:8085 # qbittorrent
       - 9696:9696 # Prowlarr
       - 7878:7878 # Radarr
