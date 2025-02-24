@@ -1,3 +1,2 @@
 ---
-# roles/docker_compose_deploy/defaults/main.yml
-docker_compose_src_folder: "/path/to/your/docker-compose-folder"
+# Empty file
