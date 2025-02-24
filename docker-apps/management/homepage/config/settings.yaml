@@ -16,9 +16,11 @@ providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
 
+# useEqualHeights: true
+
 layout:
   Networking:
-    icon: traefik.svg
+    icon: pi-hole.svg
     tab: general
     columns: 2
   Management:
@@ -39,7 +41,7 @@ layout:
     style: columns
     columns: 3
   Security:
-    icon: authentik.png
+    icon: wireguard.png
     tab: general
     columns: 2
   Automation:

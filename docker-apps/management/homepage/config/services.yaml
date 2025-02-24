@@ -9,13 +9,13 @@
             type: fritzbox
             url: http://192.168.178.1
     - PiHole:
-        href: https://pihole.sheetgenius.app
+        href: http://192.168.178.24/admin # https://pihole.sheetgenius.app
         icon: pi-hole.svg
-        description: pihole-prod-1 on rpi-angel-1
+        description: pihole-prod-1 on rpi-nico-small
         container: pihole
         widget:
             type: pihole
-            url: https://pihole.sheetgenius.app
+            url: http://192.168.178.24 # https://pihole.sheetgenius.app
             version: 6
             key: {{HOMEPAGE_VAR_PIHOLE_KEY}}
     - Traefik:
@@ -76,26 +76,21 @@
         description: prometheus on rpi-angel-1
         icon: prometheus.svg
         container: prometheus
-        # widget:
-        #     type: prometheus
-        #     url: https://prometheus.sheetgenius.app
+        widget:
+            type: prometheus
+            url: https://prometheus.sheetgenius.app
 
 
 - Security:
-    - Authentik:
-        href: https://authentik.sheetgenius.app
-        description: authentik-prod-1 on kube-prod-1
-        icon: authentik.png
-        container: authentik
+    - TailScale:
+        href: https://tailscale.sheetgenius.app
+        description: tailscale-prod-1 on rpi-angel-1
+        icon: tailscale.svg
+        container: tailscale
         widget:
-            type: authentik
-            url: https://authentik.sheetgenius.app
-            key: {{HOMEPAGE_VAR_AUTHENTIK_KEY}}
-    - Wireguard:
-        href: https://wireguard.sheetgenius.app
-        description: wireguard-prod-1 on rpi-angel-1
-        icon: wireguard.svg
-        container: wireguard
+            type: tailscale
+            deviceid: deviceid # TODO
+            key: tailscalekey # TODO
 
 - Automation:
     - Home Assistant:
@@ -103,10 +98,6 @@
         icon: home-assistant.svg
         description: homeassistant-prod-1 on rpi-angel-1
         container: homeassistant
-        # widget:
-        #     type: homeassistant
-        #     url: https://homeassistant.sheetgenius.app
-        #     key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
 
 - Media:
     - Plex:
@@ -125,14 +116,6 @@
         #     type: jellyfin
         #     url: https://jellyfin.sheetgenius.app
         #     key: {{HOMEPAGE_VAR_JELLYFIN_KEY}}
-    - Nexcloud:
-        href: https://nextcloud.sheetgenius.app
-        icon: nextcloud.svg
-        description: nextcloud-prod-1 on rpi-angel-1
-        # widget:
-        #     type: nextcloud
-        #     url: https://nextcloud.sheetgenius.app
-        #     key: {{HOMEPAGE_VAR_NEXTCLOUD_KEY}}
     - Torrent:
         - Sonarr:
             href: https://sonarr.sheetgenius.app
