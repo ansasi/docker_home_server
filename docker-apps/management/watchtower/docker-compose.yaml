@@ -12,7 +12,7 @@ services:
       # remove old volumes after update (useful for saving space)
       - WATCHTOWER_REMOVE_VOLUMES=true
       # the below will ignore labels set. It is worth checking out labels as that can be a more scalabe solution (automatic)
-      # - WATCHTOWER_DISABLE_CONTAINERS=traefik authentik bouncer-traefik
+      - WATCHTOWER_DISABLE_CONTAINERS=traefik authentik home-assistant homeassistant-db
       # Run at 4am every day (instead of the default of 24 hours)
       - WATCHTOWER_SCHEDULE=0 0 4 * * *
       # how frequently to check for images (default is 24 hours)
@@ -24,10 +24,6 @@ services:
 
       # watchtower can behave like DIUN by only notifying, and not updating
       # - WATCHTOWER_MONITOR_ONLY=true
-      # # Monitoring
-      # - WATCHTOWER_HTTP_API_METRICS=true
-      # - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_HTTP_API_TOKEN}
-      # - WATCHTOWER_HTTP_API_PERIODIC_POLLS=true
     # env_file:
     #   - .env
     volumes:
