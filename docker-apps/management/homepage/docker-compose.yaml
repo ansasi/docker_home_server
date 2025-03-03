@@ -12,15 +12,14 @@ services:
       # - PUID=1000
       # - PGID=1000
       # - LOG_LEVEL=debug
-      - HOMEPAGE_VAR_PORTAINER_KEY=${HOMEPAGE_VAR_PORTAINER_KEY}
-      - HOMEPAGE_VAR_GRAFANA_USERNAME=${HOMEPAGE_VAR_GRAFANA_USERNAME}
-      - HOMEPAGE_VAR_GRAFANA_PASSWORD=${HOMEPAGE_VAR_GRAFANA_PASSWORD}
-      - HOMEPAGE_VAR_WATCHTOWER_KEY=${HOMEPAGE_VAR_WATCHTOWER_KEY}
+      HOMEPAGE_VAR_PIHOLE_KEY: '${HOMEPAGE_VAR_PIHOLE_KEY}'
+      HOMEPAGE_VAR_QNAP_USERNAME: '${HOMEPAGE_VAR_QNAP_USERNAME}'
+      HOMEPAGE_VAR_QNAP_PASSWORD: '${HOMEPAGE_VAR_QNAP_PASSWORD}'
     volumes:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    ports:
-      - "8081:3000"
+    # ports:
+    #   - "8081:3000"
     labels:
       - traefik.enable=true
       - traefik.http.routers.homepage.entrypoints=web
@@ -29,6 +28,8 @@ services:
       - traefik.http.routers.homepage-secure.rule=Host(`homepage.sheetgenius.app`)
       - traefik.http.routers.homepage-secure.tls=true
       - traefik.http.routers.homepage-secure.tls.certresolver=cloudflare
+      - traefik.http.routers.homepage-secure.service=homepage
+      - traefik.http.services.homepage.loadbalancer.server.port=3000
     networks:
       - proxy
     restart: unless-stopped

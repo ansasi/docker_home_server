@@ -8,3 +8,5 @@ docker-apps/security/authentik/*
 docker-apps/monitoring/monitoring/*
 .vscode
 etc-*
+# TODO: Remove this line after the first run
+ansible/inventory/group_vars/all.yml

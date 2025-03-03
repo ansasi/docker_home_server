@@ -24,10 +24,24 @@ services:
 
       # watchtower can behave like DIUN by only notifying, and not updating
       # - WATCHTOWER_MONITOR_ONLY=true
+      # # TODO: Add a token for the HTTP API
+      # - WATCHTOWER_HTTP_API_METRICS=true
+      # - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_HTTP_API_TOKEN}
     # env_file:
     #   - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - watchtower
+    # labels:
+    #   - traefik.enable=true
+    #   - traefik.http.routers.watchtower.entrypoints=web
+    #   - traefik.http.routers.watchtower.rule=Host(`watchtower.sheetgenius.app`)
+    #   # - traefik.http.routers.watchtower.middlewares=default-whitelist@file
+    #   - traefik.http.routers.watchtower-secure.entrypoints=websecure
+    #   - traefik.http.routers.watchtower-secure.rule=Host(`watchtower.sheetgenius.app`)
+    #   - traefik.http.routers.watchtower-secure.tls=true
+    #   - traefik.http.routers.watchtower-secure.tls.certresolver=cloudflare
+    #   - traefik.http.routers.watchtower-secure.service=watchtower
+    #   - "traefik.http.services.watchtower.loadbalancer.server.port=8080"
     restart: unless-stopped

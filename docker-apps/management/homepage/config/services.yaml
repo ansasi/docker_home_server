@@ -17,7 +17,7 @@
             type: pihole
             url: http://192.168.178.24 # https://pihole.sheetgenius.app
             version: 6
-            key: {{HOMEPAGE_VAR_PIHOLE_KEY}}
+            key: '{{HOMEPAGE_VAR_PIHOLE_KEY}}'
     - Traefik:
         href: https://traefik-dashboard.sheetgenius.app/
         icon: traefik.svg
@@ -35,8 +35,8 @@
         widget:
             type: qnap
             url: http://192.168.178.48:8080 # TODO
-            username: {{ HOMEPAGE_VAR_QNAP_USERNAME }}
-            password: {{ HOMEPAGE_VAR_QNAP_PASSWORD }}
+            username: '{{ HOMEPAGE_VAR_QNAP_USERNAME }}'
+            password: '{{ HOMEPAGE_VAR_QNAP_PASSWORD }}'
 
 
 - Management:
@@ -45,11 +45,6 @@
         icon: portainer.svg
         description: portainer-demo-1 on rpi-angel-1
         container: portainer
-        widget:
-            type: portainer
-            url: https://portainer.sheetgenius.app
-            env: 1
-            key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
     - Watchtower:
         href: https://watchtower.sheetgenius.app
         icon: watchtower.svg
@@ -66,19 +61,16 @@
         description: grafana on rpi-angel-1
         icon: grafana.svg
         container: grafana
-        widget:
-            type: grafana
-            url: https://grafana.sheetgenius.app
-            username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
-            password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+        # widget:
+        #     type: grafana
+        #     url: https://grafana.sheetgenius.app
+        #     username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
+        #     password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
     - Prometheus:
         href: https://prometheus.sheetgenius.app
         description: prometheus on rpi-angel-1
         icon: prometheus.svg
         container: prometheus
-        widget:
-            type: prometheus
-            url: https://prometheus.sheetgenius.app
 
 
 - Security:
@@ -87,10 +79,10 @@
         description: tailscale-prod-1 on rpi-angel-1
         icon: tailscale.svg
         container: tailscale
-        widget:
-            type: tailscale
-            deviceid: deviceid # TODO
-            key: tailscalekey # TODO
+        # widget:
+        #     type: tailscale
+        #     deviceid: {{ HOMEPAGE_VAR_TAILSCALE_DEVICEID }}
+        #     key: {{ HOMEPAGE_VAR_TAILSCALE_KEY }}
 
 - Automation:
     - Home Assistant:
@@ -98,6 +90,12 @@
         icon: home-assistant.svg
         description: homeassistant-prod-1 on rpi-angel-1
         container: homeassistant
+        # widget:
+        #     type: homeassistant
+        #     url: https://homeassistant.sheetgenius.app
+        #     key: {{ HOMEPAGE_VAR_HOMEASSISTANT_KEY }}
+        #     custom:
+        #         - state: sensor.total_power
 
 - Media:
     - Plex:

@@ -2,7 +2,16 @@
 - name: Ensure docker-compose is installed and Docker service is running
   include_tasks: install.yml
 
+- name: Copy docker-compose folder to host
+  ansible.builtin.copy:
+    src: "{{ docker_compose_src }}"
+    dest: "{{ docker_compose_dest }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+
 - name: Run docker-compose up
+  environment: "{{ docker_compose_env | default({}) }}"
   community.docker.docker_compose_v2:
-    project_src: "{{ docker_compose_src }}"
+    project_src: "{{ docker_compose_dest }}"
     state: present
