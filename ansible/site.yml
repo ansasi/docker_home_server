@@ -86,13 +86,22 @@
       HOMEPAGE_VAR_QNAP_USERNAME: "{{ QNAP_USERNAME }}"
       HOMEPAGE_VAR_QNAP_PASSWORD: "{{ QNAP_PASSWORD }}"
 
+# Home Assistant using PostgreSQL as the database
 - name: Install Home Assistant
   hosts: docker
   become: yes
+  tasks:
+    - name: Create secrets.yaml file with PostgreSQL credentials
+      copy:
+        content: |
+          recorder_db_url: "postgresql://{{ docker_compose_env.HOMEASSISTANT_PG_USER }}:{{ docker_compose_env.HOMEASSISTANT_PG_PASSWORD }}@homeassistant-db/homeassistant-db"
+        dest: "{{ docker_compose_dest }}/config/secrets.yaml" # TODO: Review if we need to use docker_compose_dest
+        mode: '0644'
   roles:
     - docker_compose_deploy
   vars:
     docker_compose_src: "{{ playbook_dir }}/../docker-apps/automation/homeassistant/"
     docker_compose_dest: "/home/{{ ansible_user }}/docker_home_server/docker-apps/automation/homeassistant/"
     docker_compose_env:
-      HOMEASSISTANT_PASSWORD: "{{ HOMEASSISTANT_PASSWORD }}"
+      HOMEASSISTANT_PG_USER: "{{ HOMEASSISTANT_PG_USER }}"
+      HOMEASSISTANT_PG_PASSWORD: "{{ HOMEASSISTANT_PG_PASSWORD }}"

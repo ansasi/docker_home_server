@@ -44,8 +44,8 @@ services:
     container_name: homeassistant-db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: 'homeassistant_user'
-      POSTGRES_PASSWORD: '${HOMEASSISTANT_PASSWORD}' # TODO: Change this password
+      POSTGRES_USER: '${HOMEASSISTANT_PG_USER}'
+      POSTGRES_PASSWORD: '${HOMEASSISTANT_PG_PASSWORD}' # TODO: Change this password
       POSTGRES_DB: 'homeassistant-db'
       # ensure the database gets created correctly
       # https://github.com/matrix-org/synapse/blob/master/docs/postgres.md#set-up-database
