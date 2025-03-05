@@ -63,6 +63,9 @@
   vars:
     docker_compose_src: "{{ playbook_dir }}/../docker-apps/networking/traefik/"
     docker_compose_dest: "/home/{{ ansible_user }}/docker_home_server/docker-apps/networking/traefik/"
+    docker_compose_env:
+      CF_DNS_API_TOKEN: "{{ TRAEFIK_CF_DNS_API_TOKEN }}"
+      CF_API_EMAIL: "{{ TRAEFIK_CF_API_EMAIL }}"
 
 - name: Install Portainer
   hosts: all
