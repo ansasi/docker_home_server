@@ -15,8 +15,8 @@ services:
       - WATCHTOWER_DISABLE_CONTAINERS=traefik authentik home-assistant homeassistant-db
       # Run at 4am every day (instead of the default of 24 hours)
       - WATCHTOWER_SCHEDULE=0 0 4 * * *
-      # how frequently to check for images (default is 24 hours)
-      # - WATCHTOWER_POLL_INTERVAL=86400
+      # # how frequently to check for images (default is 24 hours = 86400 seconds)
+      # - WATCHTOWER_POLL_INTERVAL=30
       # choose whether to restart the containers after updates
       # - WATCHTOWER_INCLUDE_RESTARTING=true
       # you can tell watchtower to do updates and restarts one by one - can be helpful
@@ -26,18 +26,19 @@ services:
       # - WATCHTOWER_MONITOR_ONLY=true
       # # TODO: Add a token for the HTTP API
       # - WATCHTOWER_HTTP_API_METRICS=true
-      # - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_HTTP_API_TOKEN}
+      # - WATCHTOWER_HTTP_API_TOKEN='${WATCHTOWER_HTTP_API_TOKEN:-mytoken}'
     # env_file:
     #   - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    # ports:
+    #   - 8080:8080
     networks:
       - watchtower
     # labels:
     #   - traefik.enable=true
     #   - traefik.http.routers.watchtower.entrypoints=web
     #   - traefik.http.routers.watchtower.rule=Host(`watchtower.sheetgenius.app`)
-    #   # - traefik.http.routers.watchtower.middlewares=default-whitelist@file
     #   - traefik.http.routers.watchtower-secure.entrypoints=websecure
     #   - traefik.http.routers.watchtower-secure.rule=Host(`watchtower.sheetgenius.app`)
     #   - traefik.http.routers.watchtower-secure.tls=true

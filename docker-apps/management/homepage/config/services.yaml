@@ -52,7 +52,7 @@
         container: watchtower
         # widget:
         #     type: watchtower
-        #     url: http://<ip-machine>:8080
+        #     url: http://watchtower:8080
         #     key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
 
 - Monitoring:
