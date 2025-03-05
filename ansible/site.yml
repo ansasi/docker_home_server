@@ -14,7 +14,7 @@
     - geerlingguy.docker
   vars:
     docker_users:
-      - pi
+      - "{{ ansible_user }}"
 
 - name: Create Docker network
   hosts: all
@@ -56,7 +56,7 @@
       PIHOLE_WEB_PASSWORD: "{{ PIHOLE_PASSWORD }}"
 
 - name: Install Traefik
-  hosts: angel
+  hosts: docker
   become: yes
   roles:
     - docker_compose_deploy
@@ -74,7 +74,7 @@
     docker_compose_dest: "/home/{{ ansible_user }}/docker_home_server/docker-apps/management/portainer/"
 
 - name: Install Homepage
-  hosts: angel
+  hosts: docker
   become: yes
   roles:
     - docker_compose_deploy
@@ -85,3 +85,14 @@
       HOMEPAGE_VAR_PIHOLE_KEY: "{{ PIHOLE_PASSWORD }}"
       HOMEPAGE_VAR_QNAP_USERNAME: "{{ QNAP_USERNAME }}"
       HOMEPAGE_VAR_QNAP_PASSWORD: "{{ QNAP_PASSWORD }}"
+
+- name: Install Home Assistant
+  hosts: docker
+  become: yes
+  roles:
+    - docker_compose_deploy
+  vars:
+    docker_compose_src: "{{ playbook_dir }}/../docker-apps/automation/homeassistant/"
+    docker_compose_dest: "/home/{{ ansible_user }}/docker_home_server/docker-apps/automation/homeassistant/"
+    docker_compose_env:
+      HOMEASSISTANT_PASSWORD: "{{ HOMEASSISTANT_PASSWORD }}"
