@@ -24,7 +24,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.home-assistant-https.entrypoints=websecure
-      - traefik.http.routers.home-assistant-https.rule=Host(`home-assistant.sheetgenius.app`)
+      - traefik.http.routers.home-assistant-https.rule=Host(`home-assistant.${DOMAIN}`)
       - traefik.http.routers.home-assistant-https.tls=true
       - traefik.http.routers.home-assistant-https.tls.certresolver=cloudflare
       - traefik.http.routers.home-assistant-https.service=home-assistant

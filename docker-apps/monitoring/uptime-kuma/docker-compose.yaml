@@ -21,11 +21,11 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.uptimekuma.entrypoints=web
-      - traefik.http.routers.uptimekuma.rule=Host(`uptimekuma.sheetgenius.app`)
+      - traefik.http.routers.uptimekuma.rule=Host(`uptimekuma.${DOMAIN}`)
       - traefik.http.middlewares.uptimekuma-https-redirect.redirectscheme.scheme=https
       - traefik.http.routers.uptimekuma.middlewares=uptimekuma-https-redirect
       - traefik.http.routers.uptimekuma-websecure.entrypoints=websecure
-      - traefik.http.routers.uptimekuma-websecure.rule=Host(`uptimekuma.sheetgenius.app`)
+      - traefik.http.routers.uptimekuma-websecure.rule=Host(`uptimekuma.${DOMAIN}`)
       - traefik.http.routers.uptimekuma-websecure.tls=true
       - traefik.http.routers.uptimekuma-websecure.tls.certresolver=cloudflare
       - traefik.http.routers.uptimekuma-websecure.service=uptimekuma

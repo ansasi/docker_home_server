@@ -2,7 +2,8 @@
 ansible_become: true
 ansible_become_method: sudo
 
-# TODO: Vault
+# General
+DOMAIN: # TODO
 
 # Docker Apps
 PIHOLE_PASSWORD: # TODO
@@ -12,3 +13,5 @@ HOMEASSISTANT_PG_USER: 'homeassistant_user'
 HOMEASSISTANT_PG_PASSWORD: # TODO
 TRAEFIK_CF_DNS_API_TOKEN: # TODO
 TRAEFIK_CF_API_EMAIL: # TODO
+
+# TODO: Vault

@@ -50,7 +50,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portainer.entrypoints=websecure"
-      - "traefik.http.routers.portainer.rule=Host(`portainer.sheetgenius.app`)"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN}`)"
       - "traefik.http.routers.portainer.tls=true"
       - "traefik.http.routers.portainer.tls.certresolver=cloudflare"
       - "traefik.http.services.portainer.loadbalancer.server.port=9000"
@@ -83,9 +83,9 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.grafana-http.entrypoints=web
-      - traefik.http.routers.grafana-http.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-http.rule=Host(`grafana.${DOMAIN}`)
       - traefik.http.routers.grafana-https.entrypoints=websecure
-      - traefik.http.routers.grafana-https.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-https.rule=Host(`grafana.${DOMAIN}`)
       - traefik.http.routers.grafana-https.tls=true
       - traefik.http.routers.grafana-https.tls.certresolver=cloudflare
     restart: unless-stopped

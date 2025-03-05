@@ -28,11 +28,11 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.grafana.entrypoints=web
-      - traefik.http.routers.grafana.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana.rule=Host(`grafana.${DOMAIN}`)
       - traefik.http.middlewares.grafana-https-redirect.redirectscheme.scheme=https
       - traefik.http.routers.grafana.middlewares=grafana-https-redirect
       - traefik.http.routers.grafana-websecure.entrypoints=websecure
-      - traefik.http.routers.grafana-websecure.rule=Host(`grafana.sheetgenius.app`)
+      - traefik.http.routers.grafana-websecure.rule=Host(`grafana.${DOMAIN}`)
       - traefik.http.routers.grafana-websecure.tls=true
       - traefik.http.routers.grafana-websecure.tls.certresolver=cloudflare
       - traefik.http.routers.grafana-websecure.service=grafana

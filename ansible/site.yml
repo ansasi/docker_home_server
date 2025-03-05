@@ -66,6 +66,7 @@
     docker_compose_env:
       CF_DNS_API_TOKEN: "{{ TRAEFIK_CF_DNS_API_TOKEN }}"
       CF_API_EMAIL: "{{ TRAEFIK_CF_API_EMAIL }}"
+      DOMAIN: "{{ DOMAIN }}"
 
 - name: Install Portainer
   hosts: all
@@ -75,6 +76,8 @@
   vars:
     docker_compose_src: "{{ playbook_dir }}/../docker-apps/management/portainer/"
     docker_compose_dest: "/home/{{ ansible_user }}/docker_home_server/docker-apps/management/portainer/"
+    docker_compose_env:
+      DOMAIN: "{{ DOMAIN }}"
 
 - name: Install Homepage
   hosts: docker
@@ -88,6 +91,7 @@
       HOMEPAGE_VAR_PIHOLE_KEY: "{{ PIHOLE_PASSWORD }}"
       HOMEPAGE_VAR_QNAP_USERNAME: "{{ QNAP_USERNAME }}"
       HOMEPAGE_VAR_QNAP_PASSWORD: "{{ QNAP_PASSWORD }}"
+      DOMAIN: "{{ DOMAIN }}"
 
 # Home Assistant using PostgreSQL as the database
 - name: Install Home Assistant
@@ -108,3 +112,4 @@
     docker_compose_env:
       HOMEASSISTANT_PG_USER: "{{ HOMEASSISTANT_PG_USER }}"
       HOMEASSISTANT_PG_PASSWORD: "{{ HOMEASSISTANT_PG_PASSWORD }}"
+      DOMAIN: "{{ DOMAIN }}"
